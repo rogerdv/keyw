@@ -1,0 +1,115 @@
+fileFormatVersion: 2
+guid: 2ccc0730c01057d4c83da146e6fcd799
+timeCreated: 1429465751
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: railing_1.00
+    100002: railing_1.00.000
+    100004: railing_1.00.001
+    100006: railing_1.00.002
+    100008: railing_1.00.003
+    100010: railing_1.00.004
+    100012: railing_1.00.005
+    100014: railing_1.00.006
+    100016: //RootNode
+    400000: railing_1.00
+    400002: railing_1.00.000
+    400004: railing_1.00.001
+    400006: railing_1.00.002
+    400008: railing_1.00.003
+    400010: railing_1.00.004
+    400012: railing_1.00.005
+    400014: railing_1.00.006
+    400016: //RootNode
+    2300000: railing_1.00
+    2300002: railing_1.00.000
+    2300004: railing_1.00.001
+    2300006: railing_1.00.002
+    2300008: railing_1.00.003
+    2300010: railing_1.00.004
+    2300012: railing_1.00.005
+    2300014: railing_1.00.006
+    3300000: railing_1.00
+    3300002: railing_1.00.000
+    3300004: railing_1.00.001
+    3300006: railing_1.00.002
+    3300008: railing_1.00.003
+    3300010: railing_1.00.004
+    3300012: railing_1.00.005
+    3300014: railing_1.00.006
+    4300000: railing_1.00
+    4300002: railing_1.00.000
+    4300004: railing_1.00.001
+    4300006: railing_1.00.002
+    4300008: railing_1.00.003
+    4300010: railing_1.00.004
+    4300012: railing_1.00.005
+    4300014: railing_1.00.006
+    6400000: railing_1.00
+    6400002: railing_1.00.000
+    6400004: railing_1.00.001
+    6400006: railing_1.00.002
+    6400008: railing_1.00.003
+    6400010: railing_1.00.004
+    6400012: railing_1.00.005
+    6400014: railing_1.00.006
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 45
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

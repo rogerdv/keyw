@@ -1,0 +1,176 @@
+fileFormatVersion: 2
+guid: bedb98d2c65d8de42afc63a72d7463ca
+timeCreated: 1437755746
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bed_1.005
+    100002: bed_1.006
+    100004: bed_1.007
+    100006: chair_1.008
+    100008: Cube.003
+    100010: fireplace_1.006
+    100012: house_2.002
+    100014: house_2.004
+    100016: Mesh01.007
+    100018: //RootNode
+    100020: sideboard_1.023
+    100022: sideboard_1.024
+    100024: sideboard_1.025
+    100026: sideboard_1.026
+    100028: sideboard_1.027
+    100030: sideboard_1.028
+    100032: store_2.017
+    100034: store_2.018
+    100036: woodchair_2.008
+    100038: woodchair_2.009
+    100040: woodchair_2.010
+    100042: woodcircleta.001
+    400000: bed_1.005
+    400002: bed_1.006
+    400004: bed_1.007
+    400006: chair_1.008
+    400008: Cube.003
+    400010: fireplace_1.006
+    400012: house_2.002
+    400014: house_2.004
+    400016: Mesh01.007
+    400018: //RootNode
+    400020: sideboard_1.023
+    400022: sideboard_1.024
+    400024: sideboard_1.025
+    400026: sideboard_1.026
+    400028: sideboard_1.027
+    400030: sideboard_1.028
+    400032: store_2.017
+    400034: store_2.018
+    400036: woodchair_2.008
+    400038: woodchair_2.009
+    400040: woodchair_2.010
+    400042: woodcircleta.001
+    2300000: bed_1.005
+    2300002: bed_1.006
+    2300004: bed_1.007
+    2300006: chair_1.008
+    2300008: Cube.003
+    2300010: fireplace_1.006
+    2300012: house_2.002
+    2300014: house_2.004
+    2300016: Mesh01.007
+    2300018: sideboard_1.023
+    2300020: sideboard_1.024
+    2300022: sideboard_1.025
+    2300024: sideboard_1.026
+    2300026: sideboard_1.027
+    2300028: sideboard_1.028
+    2300030: store_2.017
+    2300032: store_2.018
+    2300034: woodchair_2.008
+    2300036: woodchair_2.009
+    2300038: woodchair_2.010
+    2300040: woodcircleta.001
+    3300000: bed_1.005
+    3300002: bed_1.006
+    3300004: bed_1.007
+    3300006: chair_1.008
+    3300008: Cube.003
+    3300010: fireplace_1.006
+    3300012: house_2.002
+    3300014: house_2.004
+    3300016: Mesh01.007
+    3300018: sideboard_1.023
+    3300020: sideboard_1.024
+    3300022: sideboard_1.025
+    3300024: sideboard_1.026
+    3300026: sideboard_1.027
+    3300028: sideboard_1.028
+    3300030: store_2.017
+    3300032: store_2.018
+    3300034: woodchair_2.008
+    3300036: woodchair_2.009
+    3300038: woodchair_2.010
+    3300040: woodcircleta.001
+    4300000: sideboard_1.028
+    4300002: woodchair_2.010
+    4300004: store_2.018
+    4300006: store_2.017
+    4300008: sideboard_1.027
+    4300010: sideboard_1.026
+    4300012: sideboard_1.025
+    4300014: sideboard_1.024
+    4300016: sideboard_1.023
+    4300018: woodchair_2.009
+    4300020: bed_1.007
+    4300022: bed_1.006
+    4300024: bed_1.005
+    4300026: woodcircleta.001
+    4300028: woodchair_2.008
+    4300030: chair_1.008
+    4300032: Mesh01.007
+    4300034: fireplace_1.006
+    4300036: Cube.003
+    4300038: house_2.004
+    4300040: house_2.002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

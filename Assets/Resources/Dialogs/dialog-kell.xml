@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!--Valid checks:
+    HasQuest
+    AttribLess
+    AttribGreat
+    DiscLess
+    DiscGreat
+    HasItem
+-->
+
+<!--The root node is the entry point to the dialog.
+It is quite complex, because it is like the trunk of the tree.
+ -->
+<dialog>
+<node id="root">
+    <line check="HasQuest" value="defend-getgear" eval="no" answers="s1 s2">Hey! What side are you?</line>
+    <line check="HasQuest" value="defend-getgear" eval="active" answers="s4">What are you waiting for! Get the stuff and report to me!</line>
+    <line check="HasQuest" value="defend-getgear" eval="stage1" answers="s3">Great, you got the stuff! Now you need some healing potions. Go with Bubbles, our alchemist. He is right there in front of me.</line>
+ </node>
+
+<answer id="s1">   
+    <option link="side1">Side? didnt knew I had to choose a side.</option>
+</answer>
+
+<answer id="s2">
+ <option link="side2">Im with the winner side.</option>
+</answer>
+
+<answer id="s4">
+ <option link="end">On my way!</option>
+</answer>
+
+<answer id="s3">
+    <option link="end">On my way.</option>
+    <action type="AssignQuest" value="get-potions"/>
+</answer>
+
+<node id="side1">
+    <line answers="s1-o1 s1-o2 s1-o3">We are about to be attacked by demons. Are you with us or with them?</line>
+</node>
+
+<answer id="s1-o1">
+  <option  link="accept">Im with myself.</option>
+</answer>
+
+<answer id="s1-o2">
+<option link="accept">As Im inside the castle, I suppose that means Im against them, dont you think?</option>
+</answer>
+
+<answer id="s1-o3">
+  <option link="door">Why dont you simply close the door?</option>
+</answer>
+
+<node id="accept">
+    <line answers="ok">Excellent! We need more defenders, go with Daratha the Blacksmith, tell him to give you an armord and a sword.</line>
+</node>
+
+<node id="door">
+    <line answers="door2">The door is stucked. Wasnt closed in several years and now it does not moves.</line>
+</node>
+
+<answer id="door2">
+  <option link="accept">Well, what do you want from me?</option>
+</answer>
+
+<node id="side2">
+    <line answers="s2-rep">Strong spirit... I am the winning side.</line>
+</node>
+
+<answer id="s2-rep">
+  <option link="accept">Then we are in the same team.</option>
+</answer>
+
+<answer id="ok">
+  <option link="end">Ok.</option>
+   <action type="AssignQuest" value="defend-getgear" />
+</answer>
+
+</dialog>

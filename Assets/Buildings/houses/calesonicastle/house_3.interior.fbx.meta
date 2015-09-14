@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: fa0e0b4014f838b49a99bf8e8fd7adc9
+timeCreated: 1437755746
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bed_1.002
+    100002: chair_1.004
+    100004: chair_1.005
+    100006: Cube.002
+    100008: fireplace_1.003
+    100010: house_3.003
+    100012: //RootNode
+    100014: Mesh01.005
+    100016: Mesh01.006
+    100018: sideboard_1.006
+    100020: sideboard_1.007
+    100022: sideboard_1.008
+    100024: sideboard_1.009
+    100026: store_2.004
+    100028: store_2.005
+    100030: store_2.006
+    100032: store_2.007
+    100034: woodchair_1.001
+    100036: woodchair_1.002
+    100038: woodchair_1.003
+    100040: woodchair_1.004
+    100042: woodchair_1.005
+    100044: woodchair_1.006
+    100046: woodlargetab.002
+    100048: woodlargetab.003
+    100050: woodlargetab.004
+    400000: bed_1.002
+    400002: chair_1.004
+    400004: chair_1.005
+    400006: Cube.002
+    400008: fireplace_1.003
+    400010: house_3.003
+    400012: //RootNode
+    400014: Mesh01.005
+    400016: Mesh01.006
+    400018: sideboard_1.006
+    400020: sideboard_1.007
+    400022: sideboard_1.008
+    400024: sideboard_1.009
+    400026: store_2.004
+    400028: store_2.005
+    400030: store_2.006
+    400032: store_2.007
+    400034: woodchair_1.001
+    400036: woodchair_1.002
+    400038: woodchair_1.003
+    400040: woodchair_1.004
+    400042: woodchair_1.005
+    400044: woodchair_1.006
+    400046: woodlargetab.002
+    400048: woodlargetab.003
+    400050: woodlargetab.004
+    2300000: bed_1.002
+    2300002: chair_1.004
+    2300004: chair_1.005
+    2300006: Cube.002
+    2300008: fireplace_1.003
+    2300010: house_3.003
+    2300012: Mesh01.005
+    2300014: Mesh01.006
+    2300016: sideboard_1.006
+    2300018: sideboard_1.007
+    2300020: sideboard_1.008
+    2300022: sideboard_1.009
+    2300024: store_2.004
+    2300026: store_2.005
+    2300028: store_2.006
+    2300030: store_2.007
+    2300032: woodchair_1.001
+    2300034: woodchair_1.002
+    2300036: woodchair_1.003
+    2300038: woodchair_1.004
+    2300040: woodchair_1.005
+    2300042: woodchair_1.006
+    2300044: woodlargetab.002
+    2300046: woodlargetab.003
+    2300048: woodlargetab.004
+    3300000: bed_1.002
+    3300002: chair_1.004
+    3300004: chair_1.005
+    3300006: Cube.002
+    3300008: fireplace_1.003
+    3300010: house_3.003
+    3300012: Mesh01.005
+    3300014: Mesh01.006
+    3300016: sideboard_1.006
+    3300018: sideboard_1.007
+    3300020: sideboard_1.008
+    3300022: sideboard_1.009
+    3300024: store_2.004
+    3300026: store_2.005
+    3300028: store_2.006
+    3300030: store_2.007
+    3300032: woodchair_1.001
+    3300034: woodchair_1.002
+    3300036: woodchair_1.003
+    3300038: woodchair_1.004
+    3300040: woodchair_1.005
+    3300042: woodchair_1.006
+    3300044: woodlargetab.002
+    3300046: woodlargetab.003
+    3300048: woodlargetab.004
+    4300000: woodlargetab.004
+    4300002: store_2.007
+    4300004: sideboard_1.009
+    4300006: store_2.006
+    4300008: sideboard_1.008
+    4300010: woodchair_1.006
+    4300012: Mesh01.006
+    4300014: Cube.002
+    4300016: woodchair_1.005
+    4300018: woodchair_1.004
+    4300020: woodchair_1.003
+    4300022: woodchair_1.002
+    4300024: woodlargetab.003
+    4300026: chair_1.005
+    4300028: woodlargetab.002
+    4300030: store_2.005
+    4300032: Mesh01.005
+    4300034: bed_1.002
+    4300036: fireplace_1.003
+    4300038: sideboard_1.007
+    4300040: store_2.004
+    4300042: sideboard_1.006
+    4300044: chair_1.004
+    4300046: woodchair_1.001
+    4300048: house_3.003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

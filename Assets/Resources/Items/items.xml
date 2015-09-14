@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<items>
+ <item
+  id="great-sword"
+  name="Great sword"
+  weight="5"
+  quality="4"
+  type="weapon"
+  description="Ancient style great sword. It is old fashioned."
+  portrait="great-sword"
+  prefab="ancient-grtsword"
+  bone="hand.R"
+  slot="weapon"
+  offset="0 0 0"
+  scale="0 0 0"
+  rotation="0 0 0">
+  <properties>
+   <property name="slash" value="12" type="damage" />
+   <property name="speed" value="1.0" type="speed" />
+   <property name="range" value="1" type="range" />
+  </properties>
+ </item>
+
+ <item
+  id="round-shield"
+  name="rounded shield"
+  weight="6"
+  quality="4"
+  type="shield"
+  description="A basic, rounded shield, with iron decorations to give you a sense of protection."
+  portrait="iron-shield"
+  prefab=""
+  bone="hand.R"
+  slot="shield"
+  offset="0 0 0"
+  scale="0 0 0"
+  rotation="0 0 0">
+  <properties>
+   <property name="block" value="3" type="block" />   
+  </properties>
+ </item>
+ 
+ <item
+  id="iron-sword"
+  name="Iron sword"
+  weight="4"
+  quality="4"
+  type="weapon"
+  description="A basic, rounded shield, with iron decorations to give you a sense of protection."
+  portrait="iron-shield"
+  prefab="iron-sword"
+  bone="hand.R"
+  slot="weapon"
+  offset="0 0 0"
+  scale="1 1 1"
+  rotation="0 0 0">
+  <properties>
+   <property name="slash" value="8" type="damage" />
+   <property name="speed" value="1.0" type="speed" />
+   <property name="range" value="1" type="range" />
+  </properties>
+ </item>
+ 
+  <item
+  id="iron-armor"
+  name="Iron armor"
+  weight="15"
+  quality="4"
+  type="chest"
+  description="A rough armor. It is rusted in a few spots... like a 90% of the surface."
+  portrait="iron-shield"
+  prefab="iron-armor-pref"
+  bone="hand.R"
+  slot="chest"
+  offset="0 0 0"
+  scale="1 1 1"
+  rotation="0 0 0">
+  <properties>
+   <property name="protection" value="10" type="damage" />   
+  </properties>
+ </item>
+</items>

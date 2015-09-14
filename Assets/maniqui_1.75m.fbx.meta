@@ -1,0 +1,94 @@
+fileFormatVersion: 2
+guid: 4c70c1c854ed9974fb6a82885af3ff87
+timeCreated: 1436476175
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Mesh01
+    7400000: Mesh01|IK Chain001|Take 001|BaseLayer
+    7400002: Mesh01|Point001|Take 001|BaseLayer
+    7400004: Mesh01|Point002|Take 001|BaseLayer
+    7400006: Mesh01|Point003|Take 001|BaseLayer
+    7400008: Mesh01|Point004|Take 001|BaseLayer
+    7400010: Mesh01|Point005|Take 001|BaseLayer
+    7400012: Mesh01|Point006|Take 001|BaseLayer
+    7400014: Mesh01|Point007|Take 001|BaseLayer
+    7400016: Mesh01|Point008|Take 001|BaseLayer
+    7400018: Mesh01|Point009|Take 001|BaseLayer
+    7400020: Mesh01|Point010|Take 001|BaseLayer
+    7400022: Mesh01|Point011|Take 001|BaseLayer
+    7400024: Mesh01|Point012|Take 001|BaseLayer
+    7400026: Mesh01|Point013|Take 001|BaseLayer
+    7400028: Mesh01|Point014|Take 001|BaseLayer
+    7400030: Mesh01|Point015|Take 001|BaseLayer
+    7400032: Mesh01|Point016|Take 001|BaseLayer
+    7400034: Mesh01|Point017|Take 001|BaseLayer
+    7400036: Mesh01|Point018|Take 001|BaseLayer
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

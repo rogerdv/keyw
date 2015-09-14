@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<dialog>
+ <node id="root">
+    <line check="HasQuest" value="defend-getgear" eval="no" answers="1 ask-trade">Need a service?</line>
+    <line check="HasQuest" value="defend-getgear" eval="active" answers="1 2 ask-trade">What do you need?</line>
+ </node>
+
+ <answer id="1">
+    <option link="getout">Not now, just was admiring your work.</option>
+ </answer>
+
+ <answer id="2">
+    <option link="giveit">Captain Kell sent me.</option>
+ </answer>
+
+<answer id="ask-trade">
+    <option link="giveit">Wanna trade?.</option>
+ </answer>
+
+ <node id="getout">
+    <line answers="bye">Then go admire something else. I need no people watching over my shoulder.</line>
+ </node>
+
+ <node id="giveit">
+    <line answers="thanks">Take this.</line>
+ </node>
+
+ <answer id="bye">
+    <option link="end">Im leaving.</option>
+ </answer>
+
+ <answer id="thanks">
+    <option link="end">Thanks.</option>
+    <action type="GiveItem" value="iron-sword" />
+    <action type="GiveItem" value="iron-armor" />
+    <action type="SetQuest" value="stage1" />
+ </answer>
+</dialog>

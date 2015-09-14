@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: 547748cf0db26244b9fa451cbc97e347
+timeCreated: 1437755746
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bed_1
+    100002: bedtable_1
+    100004: bedtable_1.001
+    100006: chair_1
+    100008: chair_1.001
+    100010: chair_2
+    100012: Cylinder
+    100014: Cylinder.001
+    100016: fireplace_1
+    100018: house_1.002
+    100020: //RootNode
+    100022: Mesh01.001
+    100024: sideboard_1
+    100026: store_1
+    100028: store_2
+    100030: table_1
+    100032: table_1.001
+    400000: bed_1
+    400002: bedtable_1
+    400004: bedtable_1.001
+    400006: chair_1
+    400008: chair_1.001
+    400010: chair_2
+    400012: Cylinder
+    400014: Cylinder.001
+    400016: fireplace_1
+    400018: house_1.002
+    400020: //RootNode
+    400022: Mesh01.001
+    400024: sideboard_1
+    400026: store_1
+    400028: store_2
+    400030: table_1
+    400032: table_1.001
+    2300000: bed_1
+    2300002: bedtable_1
+    2300004: bedtable_1.001
+    2300006: chair_1
+    2300008: chair_1.001
+    2300010: chair_2
+    2300012: Cylinder
+    2300014: Cylinder.001
+    2300016: fireplace_1
+    2300018: house_1.002
+    2300020: Mesh01.001
+    2300022: sideboard_1
+    2300024: store_1
+    2300026: store_2
+    2300028: table_1
+    2300030: table_1.001
+    3300000: bed_1
+    3300002: bedtable_1
+    3300004: bedtable_1.001
+    3300006: chair_1
+    3300008: chair_1.001
+    3300010: chair_2
+    3300012: Cylinder
+    3300014: Cylinder.001
+    3300016: fireplace_1
+    3300018: house_1.002
+    3300020: Mesh01.001
+    3300022: sideboard_1
+    3300024: store_1
+    3300026: store_2
+    3300028: table_1
+    3300030: table_1.001
+    4300000: bedtable_1.001
+    4300002: Mesh01.001
+    4300004: chair_1.001
+    4300006: table_1.001
+    4300008: Cylinder.001
+    4300010: Cylinder
+    4300012: table_1
+    4300014: chair_2
+    4300016: chair_1
+    4300018: store_2
+    4300020: store_1
+    4300022: fireplace_1
+    4300024: sideboard_1
+    4300026: bedtable_1
+    4300028: bed_1
+    4300030: house_1.002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

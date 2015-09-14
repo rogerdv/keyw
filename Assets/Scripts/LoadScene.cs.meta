@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aeceb416d12f63140afcc20987753b80
+timeCreated: 1433530767
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - crNormal: {fileID: 2800000, guid: d735d1ea4f800864aa9b30378aa9074e, type: 3}
+  - crHover: {fileID: 2800000, guid: 5551c49fbc0856d469db095c1c88497d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

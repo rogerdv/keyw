@@ -1,0 +1,145 @@
+fileFormatVersion: 2
+guid: 1d6642976ce71af46a66257853646cba
+timeCreated: 1429465750
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: rockwall_1.0
+    100004: rockwall_1.0.000
+    100006: rockwall_1.0.001
+    100008: rockwall_1.0.002
+    100010: rockwall_1.0.003
+    100012: rockwall_1.0.004
+    100014: rockwall_1.0.005
+    100016: rockwall_1.0.006
+    100018: rockwall_1.0.007
+    100020: rockwall_1.0.008
+    100022: rockwall_1.0.009
+    100024: rockwall_1.0.010
+    100026: rockwall_1.0.011
+    400000: //RootNode
+    400002: rockwall_1.0
+    400004: rockwall_1.0.000
+    400006: rockwall_1.0.001
+    400008: rockwall_1.0.002
+    400010: rockwall_1.0.003
+    400012: rockwall_1.0.004
+    400014: rockwall_1.0.005
+    400016: rockwall_1.0.006
+    400018: rockwall_1.0.007
+    400020: rockwall_1.0.008
+    400022: rockwall_1.0.009
+    400024: rockwall_1.0.010
+    400026: rockwall_1.0.011
+    2300000: rockwall_1.0
+    2300002: rockwall_1.0.000
+    2300004: rockwall_1.0.001
+    2300006: rockwall_1.0.002
+    2300008: rockwall_1.0.003
+    2300010: rockwall_1.0.004
+    2300012: rockwall_1.0.005
+    2300014: rockwall_1.0.006
+    2300016: rockwall_1.0.007
+    2300018: rockwall_1.0.008
+    2300020: rockwall_1.0.009
+    2300022: rockwall_1.0.010
+    2300024: rockwall_1.0.011
+    3300000: rockwall_1.0
+    3300002: rockwall_1.0.000
+    3300004: rockwall_1.0.001
+    3300006: rockwall_1.0.002
+    3300008: rockwall_1.0.003
+    3300010: rockwall_1.0.004
+    3300012: rockwall_1.0.005
+    3300014: rockwall_1.0.006
+    3300016: rockwall_1.0.007
+    3300018: rockwall_1.0.008
+    3300020: rockwall_1.0.009
+    3300022: rockwall_1.0.010
+    3300024: rockwall_1.0.011
+    4300000: rockwall_1.0
+    4300002: rockwall_1.0.000
+    4300004: rockwall_1.0.001
+    4300006: rockwall_1.0.002
+    4300008: rockwall_1.0.003
+    4300010: rockwall_1.0.004
+    4300012: rockwall_1.0.005
+    4300014: rockwall_1.0.006
+    4300016: rockwall_1.0.007
+    4300018: rockwall_1.0.008
+    4300020: rockwall_1.0.009
+    4300022: rockwall_1.0.010
+    4300024: rockwall_1.0.011
+    6400000: rockwall_1.0
+    6400002: rockwall_1.0.000
+    6400004: rockwall_1.0.001
+    6400006: rockwall_1.0.002
+    6400008: rockwall_1.0.003
+    6400010: rockwall_1.0.004
+    6400012: rockwall_1.0.005
+    6400014: rockwall_1.0.006
+    6400016: rockwall_1.0.007
+    6400018: rockwall_1.0.008
+    6400020: rockwall_1.0.009
+    6400022: rockwall_1.0.010
+    6400024: rockwall_1.0.011
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 90
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
