@@ -145,8 +145,9 @@ public class GameInstance : MonoBehaviour {
 								//instantiate dialog
 								var dlgWindow = Instantiate(dlgPrefab);
 								var canvas = GameObject.Find("Canvas");
-								var rt = dlgWindow.GetComponent<RectTransform>(); 
-								rt.SetParent(canvas.GetComponent<RectTransform>());
+								//var rt = dlgWindow.GetComponent<RectTransform>(); 
+								//rt.SetParent(canvas.GetComponent<RectTransform>());
+								dlgWindow.transform.SetParent(canvas.transform, false);
 								//rt.anchoredPosition = new Vector2(10,-400);
 								//clicks = false;
 							} else 
