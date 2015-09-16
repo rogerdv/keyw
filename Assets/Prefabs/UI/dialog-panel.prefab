@@ -83,9 +83,9 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 789e4eaa5612e55429ca30bf9f5bd735, type: 3}
+    m_Font: {fileID: 12800000, guid: f332303cae7f3dd498dcffcc86baf353, type: 3}
     m_FontSize: 15
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -205,6 +205,15 @@ Prefab:
       propertyPath: ButtonPrefab
       value: 
       objectReference: {fileID: 182362, guid: eb23c697cf024ae4883ef639f15b1f89, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f332303cae7f3dd498dcffcc86baf353,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145406}
