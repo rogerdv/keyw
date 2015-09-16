@@ -4,6 +4,7 @@
  <node id="root">
     <line check="HasQuest" value="defend-getgear" eval="no" answers="1 ask-trade">Need a service?</line>
     <line check="HasQuest" value="defend-getgear" eval="active" answers="1 2 ask-trade">What do you need?</line>
+    <line check="HasQuest" value="defend-getgear" eval="stage1" answers="1 ask-trade">Need a service?</line>
  </node>
 
  <answer id="1">
@@ -32,8 +33,8 @@
 
  <answer id="thanks">
     <option link="end">Thanks.</option>
-    <action type="GiveItem" value="iron-sword" />
-    <action type="GiveItem" value="iron-armor" />
-    <action type="SetQuest" value="stage1" />
+    <action type="GiveItem" id="iron-sword" value="1" />
+    <action type="GiveItem" id="iron-armor" value="1" />
+    <action type="SetQuest" id="defend-getgear" value="stage1" />
  </answer>
 </dialog>

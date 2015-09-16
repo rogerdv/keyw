@@ -15,7 +15,7 @@ It is quite complex, because it is like the trunk of the tree.
 <node id="root">
     <line check="HasQuest" value="defend-getgear" eval="no" answers="s1 s2">Hey! What side are you?</line>
     <line check="HasQuest" value="defend-getgear" eval="active" answers="s4">What are you waiting for! Get the stuff and report to me!</line>
-    <line check="HasQuest" value="defend-getgear" eval="stage1" answers="s3">Great, you got the stuff! Now you need some healing potions. Go with Bubbles, our alchemist. He is right there in front of me.</line>
+    <line check="HasQuest" value="defend-getgear" eval="stage1" answers="b1">Great, you got the stuff! Now you need some healing potions, in case you get hurt in the battle. Go with Bubbles, our alchemist. He is house...</line>
  </node>
 
 <answer id="s1">   
@@ -52,7 +52,7 @@ It is quite complex, because it is like the trunk of the tree.
 </answer>
 
 <node id="accept">
-    <line answers="ok">Excellent! We need more defenders, go with Daratha the Blacksmith, tell him to give you an armord and a sword.</line>
+    <line answers="ok">Excellent! We need more defenders, go with Daratha the Blacksmith, tell him to give you an armor and a sword.</line>
 </node>
 
 <node id="door">
@@ -71,9 +71,21 @@ It is quite complex, because it is like the trunk of the tree.
   <option link="accept">Then we are in the same team.</option>
 </answer>
 
+<answer id="b1">
+  <option link="ignore">Wait, you didnt mentioned that I could get hurt!.</option>
+</answer>
+
+<node id="ignore">
+    <line answers="leave">The guy ignores you and barks some orders to the soldiers in the door.</line>
+</node>
+
+<answer id="leave">
+  <option link="end">(Leave)</option>
+</answer>
+
 <answer id="ok">
   <option link="end">Ok.</option>
-   <action type="AssignQuest" value="defend-getgear" />
+   <action type="AssignQuest" id="defend-getgear" value="" />
 </answer>
 
 </dialog>
