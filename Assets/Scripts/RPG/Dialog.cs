@@ -23,7 +23,8 @@ public class Check {
  * */
 public class Action {
 	public string ActionType;
-	public string value;
+	public string id;		//quest or item id
+	public string value;	//value to set, amount of items
 }
 
 /**
@@ -53,21 +54,13 @@ public class PlayerLine {
  * */
 public class Dialog  {
 
-	private static bool render = false;
-	//private static string NPCline;
-	private static Dictionary<string, PlayerLine> choices;	// Player lines
-	private static Dictionary<int, string> choicelinks;	//links to next NPC line
 	private static XmlDocument doc;
 	public Texture2D backg;
 
 	private static BaseCharacter player;
 
 	public Dialog() {
-		choices = new Dictionary<string, PlayerLine> ();
-		choicelinks = new Dictionary<int, string>();	
-		choices.Clear ();
-		choicelinks.Clear ();
-		//render = false;
+
 	}
 
 	/**
@@ -142,6 +135,8 @@ public class Dialog  {
 	}
 
 	public Dictionary<string, PlayerLine> GetAnswers(string alist) {
+		Dictionary<string, PlayerLine> choices;	// Player lines
+		choices = new Dictionary<string, PlayerLine> ();
 
 		var answers= alist.Split(' ');
 		XmlNodeList answlist = doc.SelectNodes ("dialog/answer");
@@ -162,6 +157,7 @@ public class Dialog  {
 						} else if (cnode.Name== "action") { //action description
 							Action a = new Action();
 							a.ActionType = cnode.Attributes.GetNamedItem("type").Value;
+							a.id = cnode.Attributes.GetNamedItem("id").Value;
 							a.value = cnode.Attributes.GetNamedItem("value").Value;
 							l.actions.Add(a);
 						}
