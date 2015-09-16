@@ -118,7 +118,7 @@ public class GameInstance : MonoBehaviour {
 				clock.Update (Time.deltaTime);
 			}		
 
-			if (Input.GetKey (KeyCode.Mouse0) && clicks) {
+			if (Input.GetKeyDown (KeyCode.Mouse0) && clicks) {
 				if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {				
 					RaycastHit hit;
 					Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
