@@ -184,4 +184,12 @@ public class BaseCharacter : MonoBehaviour {
 		return "no";	//the quest is not assigned yet
 	}
 
+	public void SetQuestStatus(string id, string status){
+		foreach (Quest q in quests) {
+			if (q.Name==id) {
+				q.status = status;
+			}
+		}
+	}
+
 }
