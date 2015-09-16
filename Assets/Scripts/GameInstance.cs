@@ -64,8 +64,12 @@ public class GameInstance : MonoBehaviour {
 	}
 	public static bool clicks = true;		//false if dialog or inventory windows are displayed
 
+	GameSettings options;
+
 	//ui elements
 	public GameObject dlgPrefab;
+	public GameObject invPrefab;
+	public GameObject optPrefab;
 
 
 	void Awake() {
@@ -89,6 +93,7 @@ public class GameInstance : MonoBehaviour {
 		Cursor.SetCursor (crNormal, Vector2.zero, CursorMode.Auto);
 		itFactory = new ItemFactory (); 
 		itFactory.Init("Items/items");
+		options = new GameSettings ();
 	}
 
 
@@ -160,13 +165,23 @@ public class GameInstance : MonoBehaviour {
 			} else if (Input.GetKeyDown(KeyCode.Keypad5)) { //reset camera to player position
 				var camObj = GameObject.Find("target");
 				camObj.transform.position = player.transform.position;
-			} else if (Input.GetKey (KeyCode.Mouse1) && clicks) {		//right click unselects
+			} else if (Input.GetKeyDown(KeyCode.I)) { //show inventory
+				var inv = Instantiate(invPrefab);
+				var canvas = GameObject.Find("Canvas");
+				inv.transform.SetParent(canvas.transform, false);
+			}  else if (Input.GetKey (KeyCode.Mouse1) && clicks) {		//right click unselects
 				if (selected) {
 					selected.GetComponentInChildren<Projector>().enabled  = false;		//disable projector, turn off selection marker
 					selected = null;
 					pcScript.target = null;
 				}
 			} //if Input events
+		}
+
+		if (Input.GetKeyDown(KeyCode.O)) { //show options window
+			var opts = Instantiate(optPrefab);
+			var canvas = GameObject.Find("Canvas");
+			opts.transform.SetParent(canvas.transform, false);
 		}
 			
 	}

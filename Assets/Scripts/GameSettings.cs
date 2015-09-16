@@ -1,20 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameSettings : MonoBehaviour {
+public class GameSettings {
 	int DificultLevel;
+	public bool shadows;
+	public bool ssao;
+	public int aa;
 
-	void Awake() {
-		DontDestroyOnLoad (this);
+	/**
+	 * Load from user saved preferences
+	 * 
+	*/	 
+	bool Load() {
+		return true;
 	}
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
