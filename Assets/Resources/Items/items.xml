@@ -9,11 +9,12 @@
   description="Ancient style great sword. It is old fashioned."
   portrait="great-sword"
   prefab="ancient-grtsword"
-  bone="hand.R"
+  bone="weapon_target_side.R_end"
   slot="weapon"
-  offset="0 0 0"
-  scale="0 0 0"
-  rotation="0 0 0">
+  offset="9.2 -9.9 -12.4"
+  scale="7 7 7"
+  rotation="35.56 358.5 358.9"
+  range = "3.0" >  
   <properties>
    <property name="slash" value="12" type="damage" />
    <property name="speed" value="1.0" type="speed" />
@@ -34,7 +35,8 @@
   slot="shield"
   offset="0 0 0"
   scale="0 0 0"
-  rotation="0 0 0">
+  rotation="0 0 0"
+  range = "1.0" >
   <properties>
    <property name="block" value="3" type="block" />   
   </properties>
@@ -49,11 +51,12 @@
   description="A basic, rounded shield, with iron decorations to give you a sense of protection."
   portrait="iron-shield"
   prefab="iron-sword"
-  bone="hand.R"
+  bone="weapon_target_side.R_end"
   slot="weapon"
   offset="0 0 0"
   scale="1 1 1"
-  rotation="0 0 0">
+  rotation="0 0 0"
+  range = "1.0" >
   <properties>
    <property name="slash" value="8" type="damage" />
    <property name="speed" value="1.0" type="speed" />
@@ -74,9 +77,12 @@
   slot="chest"
   offset="0 0 0"
   scale="1 1 1"
-  rotation="0 0 0">
+  rotation="0 0 0"
+  range = "1.0" >
   <properties>
-   <property name="protection" value="10" type="damage" />   
+   <property name="slash" value="5" type="protection" />   
+   <property name="blunt" value="2" type="protection" /> 
+   <property name="fire" value="1" type="protection" /> 
   </properties>
  </item>
 </items>
