@@ -38,8 +38,11 @@ public class BaseCharacter : MonoBehaviour {
 	public BaseAttrib[] attrib;
 	public int[] HitPoints;		//[0] is current hitpoints [1] is max points
 	public int[] EnergyPoints;
+
 	protected int level;
 	protected int group;
+	public string profession;
+
 	protected int state;		//Animation state: combat, idle, etc
 	public List<BaseItem> inventory;
 	public List<BaseSkill> skills;
@@ -48,8 +51,8 @@ public class BaseCharacter : MonoBehaviour {
 	public BaseItem[] equip;		//equipped items
 
 	
-	private NavMeshAgent agent;
-	private Animator anim;
+	protected NavMeshAgent agent;
+	protected Animator anim;
 	public GameObject target;		/// selected entity
 
 	void Awake() {
@@ -62,15 +65,17 @@ public class BaseCharacter : MonoBehaviour {
 		inventory = new List<BaseItem>();
 		quests = new List<Quest> ();
 		skills = new List<BaseSkill> ();
+
+		equip = new BaseItem[9];
 		//add two test items
-		BaseItem t = new BaseItem();
+		/*BaseItem t = new BaseItem();
 		t.Name = "Basic sword of the player";
 		t.portrait = "Icons/great-sword";
 		inventory.Add(t);
 		t = new BaseItem();
 		t.Name = "Iron shield";
 		t.portrait = "Icons/iron-shield";
-		inventory.Add(t);
+		inventory.Add(t);*/
 	}
 
 	// Use this for initialization
@@ -122,14 +127,14 @@ public class BaseCharacter : MonoBehaviour {
 				state = (int)CharacterState.Idle;
 			}
 
-			if (Input.GetKey (KeyCode.Mouse1)) {
+			/*if (Input.GetKey (KeyCode.Mouse1)) {
 				anim.SetInteger ("CharacterState", (int)CharacterState.AttackMelee1h);
 				
-			}
-			if (Input.GetKey (KeyCode.C)) {
+			}*/
+			/*if (Input.GetKey (KeyCode.C)) {
 				anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
-			} 
-			if (Input.GetKeyDown (KeyCode.T)) {
+			} */
+			/*if (Input.GetKeyDown (KeyCode.T)) {
 				//attach tests
 				//automatyically set combat stance
 				anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
@@ -145,7 +150,7 @@ public class BaseCharacter : MonoBehaviour {
 				weapon.transform.localRotation = Quaternion.Euler (Vector3.zero);
 				weapon.transform.localScale = new Vector3(7,7,7);
 				//CreateDamagePopup (200);
-			}
+			}*/
 		} else {
 			anim.enabled =false;
 		}

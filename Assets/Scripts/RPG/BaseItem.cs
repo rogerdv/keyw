@@ -23,13 +23,21 @@ public class Modifier {
 	public int value;
 }
 
+public class Property {
+	public string name;		//property (slash damage, fire protection, etc)
+	public string type;		//type: damage, protection, stat
+	public float value;
+}
+
 [Serializable]
 public class BaseItem  {
 	public string Name;
 	public string Desc;
+	public string type;		//item type
 	public int weight;
+	public float range;
 	public int quality;
-	public string mesh;
+	public string prefab;
 	public string portrait;	//icon image
 	public string attach;	//where to attach this item
 	public bool swap;		//does it swap a body section, like chest, hands, etc?
@@ -39,9 +47,11 @@ public class BaseItem  {
 	public float UseTime;
 	public float cooldown;
 	List<Modifier> mods;		//bonus and penalizations of this item
+	public List<Property> props;
 
 	public BaseItem() {
 		mods = new List<Modifier> ();
+		props = new List<Property> ();
 	}
 
 	public void Use(GameObject owner, GameObject target) {
@@ -56,5 +66,22 @@ public class BaseItem  {
 		}
 	}
 
+	/*
+	 * Returns the value of a given property
+	 */
+	public float GetPropertyValue(string pname) {
+		foreach (var p in props) {
+			if (p.name == pname) 
+				return p.value;
+		}
+		return 0;
+	}
 
+	/*
+	 * Returns the list of properties of a given type
+	 * 
+	 */
+	public List<Property> GetProperties(string type) {
+		return null;
+	}
 }
