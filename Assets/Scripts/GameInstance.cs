@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.ImageEffects;
 
 #region TransformCatalog
 public class TransformCatalog : Dictionary<string, Transform>
@@ -64,12 +65,16 @@ public class GameInstance : MonoBehaviour {
 	}
 	public static bool clicks = true;		//false if dialog or inventory windows are displayed
 
-	GameSettings options;
+	static public GameSettings options;
+
 
 	//ui elements
 	public GameObject dlgPrefab;
 	public GameObject invPrefab;
 	public GameObject optPrefab;
+	public GameObject listPrefab;
+	GameObject MsgBox;
+
 
 
 	void Awake() {
@@ -94,8 +99,8 @@ public class GameInstance : MonoBehaviour {
 		itFactory = new ItemFactory (); 
 		itFactory.Init("Items/items");
 		options = new GameSettings ();
+		options.Load ();		//init config
 	}
-
 
 	void OnLevelWasLoaded(int level){
 		pause = false;
@@ -108,7 +113,19 @@ public class GameInstance : MonoBehaviour {
 				var playerPos = GameObject.Find ("player");
 				player.transform.position = playerPos.transform.position;
 			}
-		} 
+			MsgBox = Instantiate(listPrefab);
+			var canvas = GameObject.Find("Canvas");
+			MsgBox.transform.SetParent(canvas.transform, false);
+			if (!options.shadows) {	//disable shadows, if needed
+				foreach( var light in FindObjectsOfType<Light>()) {
+					light.shadows = LightShadows.None;
+				}//foreach
+			}//if shadows
+			if (!options.ssao) {
+				var cam = GameObject.FindGameObjectWithTag("MainCamera");
+				cam.GetComponent<ScreenSpaceAmbientOcclusion>().enabled = false;
+			}
+		} //if SceneInfo
 
 	}
 	
@@ -137,7 +154,8 @@ public class GameInstance : MonoBehaviour {
 							var npcsc = selected.GetComponent<NPC> ();
 							//display NPC information
 							///@TODO: Migrate OnGUI based stuff to new UI system
-							MsgList.SetText ("Clicked on " + npcsc.VisibleName);
+							//MsgList.SetText ("Clicked on " + npcsc.VisibleName);
+							MsgBox.GetComponent<MsgList>().SetText("Clicked on " + npcsc.VisibleName);
 							displayPortrait = true;
 							portrait = npcsc.portrait;
 
@@ -145,18 +163,12 @@ public class GameInstance : MonoBehaviour {
 							//enable projector to display the selection marker
 							selected.GetComponentInChildren<Projector>().enabled  = true;
 							if (Vector3.Distance (selected.transform.position, player.transform.position) < 5.0f) { //close enough to talk?
-								/*Dialog.Load (pcScript, "Dialogs/" + npcsc.dialog);
-								Dialog.ToggleDialog ();*/
 								//instantiate dialog
 								var dlgWindow = Instantiate(dlgPrefab);
 								var canvas = GameObject.Find("Canvas");
-								//var rt = dlgWindow.GetComponent<RectTransform>(); 
-								//rt.SetParent(canvas.GetComponent<RectTransform>());
 								dlgWindow.transform.SetParent(canvas.transform, false);
-								//rt.anchoredPosition = new Vector2(10,-400);
-								//clicks = false;
 							} else 
-								MsgList.SetText ("You are too far to talk.");
+								MsgBox.GetComponent<MsgList>().SetText ("You are too far to talk.");
 						} else {
 							pcScript.MoveTo (new Vector3 (hit.point.x, hit.point.y, hit.point.z));
 						}
@@ -175,10 +187,20 @@ public class GameInstance : MonoBehaviour {
 					selected = null;
 					pcScript.target = null;
 				}
+			} else if (Input.GetKeyDown(KeyCode.Alpha1)) { //action slot 1
+				//temporary hack: attack
+				if (pcScript.target!=null) {
+					var npcsc = pcScript.target.GetComponent<NPC>();
+					npcsc.AIstate = (int)AIStates.Combat;
+					npcsc.target = player;
+				} else {//no target
+					MsgBox.GetComponent<MsgList>().SetText("You swing your weapon in the air and people looks at you as if you were crazy");
+				}
 			} //if Input events
 		}
 
 		if (Input.GetKeyDown(KeyCode.O)) { //show options window
+			pause = true;
 			var opts = Instantiate(optPrefab);
 			var canvas = GameObject.Find("Canvas");
 			opts.transform.SetParent(canvas.transform, false);
