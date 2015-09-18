@@ -85,7 +85,5 @@ public class DialogUI : MonoBehaviour {
 		else 
 			Destroy (gameObject);
 
-
-		//Debug.Log("Equip item '" + i.Name);
 	}
 }
