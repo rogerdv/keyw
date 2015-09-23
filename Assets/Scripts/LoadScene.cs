@@ -10,6 +10,7 @@ public class LoadScene : MonoBehaviour {
 	public Texture2D crNormal;	//< Normal cursor
 	public Texture2D crHover;	//< Hover cursor
 	public string level;	//Scene to load
+	public string location;	//gameobject marking spawn location. If none, player marker will be used
 
 	// Use this for initialization
 	void Start () {

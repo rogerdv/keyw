@@ -7,8 +7,9 @@ using System.Xml;
 public class GameSettings {
 	int DificultLevel;
 	public bool shadows;
+	public bool bloom;
 	public bool ssao;
-	public int aa;
+	public bool fxaa;
 
 	/**
 	 * Load from user saved preferences
@@ -23,11 +24,11 @@ public class GameSettings {
 		//config file doesnt exists, create one and fill
 		//it with some default (conservative) values
 		if (!File.Exists (UserDir + "/keyw/keyw.config")) {
-			System.IO.Directory.CreateDirectory (UserDir + "/keyw");
+			//System.IO.Directory.CreateDirectory (UserDir + "/keyw");
 			var cfg = File.CreateText (UserDir + "/keyw/keyw.config");
 			cfg.WriteLine ("<?xml version=\"1.0\" ?>");
 			cfg.WriteLine ("<config>");
-			cfg.WriteLine (" <option name=\"aa\" value=\"2\" />"); 
+			cfg.WriteLine (" <option name=\"fxaa\" value=\"yes\" />"); 
 			cfg.WriteLine (" <option name=\"bloom\" value=\"no\" />");
 			cfg.WriteLine (" <option name=\"ssao\" value=\"no\" />");
 			cfg.WriteLine (" <option name=\"shadows\" value=\"yes\" />");
@@ -36,8 +37,9 @@ public class GameSettings {
 			cfg.Flush ();
 			cfg.Close();
 			ssao = false;
-			aa = 2;
+			fxaa = true;
 			shadows = false;
+			bloom = false;
 			DificultLevel = 1;
 		} else {
 			//var cfg = File.OpenRead(UserDir + "/keyw/keyw.config");
@@ -46,9 +48,10 @@ public class GameSettings {
 			doc.LoadXml(t);
 			XmlNodeList optNodes = doc.SelectNodes ("config/option");
 			foreach (XmlNode n in optNodes){
-				if (n.Attributes.GetNamedItem("name").Value=="aa") {//antialias
+				if (n.Attributes.GetNamedItem("name").Value=="fxaa") {//antialias
 					var v = n.Attributes.GetNamedItem("value").Value;
-					aa = int.Parse(v);
+					if (v=="yes") fxaa = true;
+					else fxaa = false;
 				} else if (n.Attributes.GetNamedItem("name").Value=="ssao") {//ssao
 					var v = n.Attributes.GetNamedItem("value").Value;
 					if (v=="yes") ssao = true;
@@ -57,6 +60,10 @@ public class GameSettings {
 					var v = n.Attributes.GetNamedItem("value").Value;
 					if (v=="yes") shadows = true;
 						else shadows = false;
+				}else if (n.Attributes.GetNamedItem("name").Value=="bloom") {
+					var v = n.Attributes.GetNamedItem("value").Value;
+					if (v=="yes") bloom = true;
+					else bloom = false;
 				}
 			}
 		}
@@ -80,7 +87,10 @@ public class GameSettings {
 			cfg.WriteLine ("<config>");			
 
 		}
-		cfg.WriteLine (" <option name=\"aa\" value=\"2\" />"); 
+		if (!fxaa)
+			cfg.WriteLine (" <option name=\"fxaa\" value=\"no\" />"); 
+		else 
+			cfg.WriteLine (" <option name=\"fxaa\" value=\"yes\" />"); 
 		cfg.WriteLine (" <option name=\"bloom\" value=\"no\" />");
 		if (!ssao)
 			cfg.WriteLine (" <option name=\"ssao\" value=\"no\" />");

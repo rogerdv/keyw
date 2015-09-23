@@ -96,10 +96,11 @@ public class GameInstance : MonoBehaviour {
 
 		clock = new GameTime ();
 		Cursor.SetCursor (crNormal, Vector2.zero, CursorMode.Auto);
-		itFactory = new ItemFactory (); 
-		itFactory.Init("Items/items");
 		options = new GameSettings ();
 		options.Load ();		//init config
+		itFactory = new ItemFactory (); 
+		itFactory.Init("Items/items");
+
 	}
 
 	void OnLevelWasLoaded(int level){
@@ -121,9 +122,17 @@ public class GameInstance : MonoBehaviour {
 					light.shadows = LightShadows.None;
 				}//foreach
 			}//if shadows
-			if (!options.ssao) {
+			if (!options.ssao) { //disable ssao component
 				var cam = GameObject.FindGameObjectWithTag("MainCamera");
 				cam.GetComponent<ScreenSpaceAmbientOcclusion>().enabled = false;
+			}
+			if (!options.fxaa) { //disable ssao component
+				var cam = GameObject.FindGameObjectWithTag("MainCamera");
+				cam.GetComponent<Antialiasing>().enabled = false;
+			}
+			if (!options.bloom) { //disable ssao component
+				var cam = GameObject.FindGameObjectWithTag("MainCamera");
+				cam.GetComponent<Bloom>().enabled = false;
 			}
 		} //if SceneInfo
 
@@ -191,6 +200,7 @@ public class GameInstance : MonoBehaviour {
 				//temporary hack: attack
 				if (pcScript.target!=null) {
 					var npcsc = pcScript.target.GetComponent<NPC>();
+					var ai = pcScript.target.GetComponent<NPC>();
 					npcsc.AIstate = (int)AIStates.Combat;
 					npcsc.target = player;
 				} else {//no target
