@@ -14,12 +14,10 @@
   offset="9.2 -9.9 -12.4"
   scale="7 7 7"
   rotation="35.56 358.5 358.9"
-  range = "3.0" >  
-  <properties>
+  range = "3.0" >   
    <property name="slash" value="12" type="damage" />
    <property name="speed" value="1.0" type="speed" />
-   <property name="range" value="1" type="range" />
-  </properties>
+   <property name="range" value="1" type="range" /> 
  </item>
 
  <item
@@ -37,9 +35,7 @@
   scale="0 0 0"
   rotation="0 0 0"
   range = "1.0" >
-  <properties>
-   <property name="block" value="3" type="block" />   
-  </properties>
+   <property name="block" value="3" type="block" />    
  </item>
  
  <item
@@ -56,12 +52,10 @@
   offset="0 0 0"
   scale="1 1 1"
   rotation="0 0 0"
-  range = "1.0" >
-  <properties>
+  range = "1.0" > 
    <property name="slash" value="8" type="damage" />
    <property name="speed" value="1.0" type="speed" />
-   <property name="range" value="1" type="range" />
-  </properties>
+   <property name="range" value="1" type="range" /> 
  </item>
  
   <item
@@ -78,11 +72,9 @@
   offset="0 0 0"
   scale="1 1 1"
   rotation="0 0 0"
-  range = "1.0" >
-  <properties>
+  range = "1.0" >  
    <property name="slash" value="5" type="protection" />   
    <property name="blunt" value="2" type="protection" /> 
    <property name="fire" value="1" type="protection" /> 
-  </properties>
  </item>
 </items>
