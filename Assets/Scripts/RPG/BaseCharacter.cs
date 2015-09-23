@@ -43,7 +43,7 @@ public class BaseCharacter : MonoBehaviour {
 	protected int group;
 	public string profession;
 
-	protected int state;		//Animation state: combat, idle, etc
+	public int state;		//Animation state: combat, idle, etc
 	public List<BaseItem> inventory;
 	public List<BaseSkill> skills;
 	public List<Quest> quests;
@@ -51,8 +51,8 @@ public class BaseCharacter : MonoBehaviour {
 	public BaseItem[] equip;		//equipped items
 
 	
-	protected NavMeshAgent agent;
-	protected Animator anim;
+	public NavMeshAgent agent;
+	public Animator anim;
 	public GameObject target;		/// selected entity
 
 	void Awake() {

@@ -75,22 +75,6 @@ public class Dialog  {
 		doc.LoadXml (textAsset.text);
 	}
 
-	public void ToggleDialog(){
-		/*render = !render;
-		var canvas = GameObject.Find("Canvas");
-		var ParentTransform = canvas.GetComponent<RectTransform> ();
-		var DlgPanel = Instantiate (myPanel, Vector3.zero, Quaternion.identity) as GameObject;
-		DlgPanel.GetComponent<RectTransform>().SetParent (ParentTransform); 
-		var rt = DlgPanel.GetComponent<RectTransform>();
-		rt.anchoredPosition = new Vector2(-2,205);
-		foreach (Transform t in DlgPanel.GetComponentsInChildren<Transform>()){
-			if (t.name ==  "Text") {	
-				var text = t.GetComponent<Text>();
-				text.text = "this is the NPC line";
-			} 
-		}*/
-	}
-
 	/**
 	 * Receives a node and starts parsing from there, returning
 	 */

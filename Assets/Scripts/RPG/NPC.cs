@@ -67,53 +67,6 @@ public class NPC : BaseCharacter {
 	
 	// Update is called once per frame
 	void Update () {
-		//Actual AI goes here
-		if (AIstate == (int)AIStates.Idle) {
-			//wander
 
-		} else if (AIstate == (int)AIStates.Combat) {
-			//check if I have a weapon equipped
-			if (equip[(int)ItemSlot.Weapon]==null) {
-				Debug.Log("I have no weapon equipped!");
-				foreach (var i in inventory) {	//TODO: choose the best weapon
-					if (i.type=="weapon") {
-						equip[(int)ItemSlot.Weapon] = i;
-						/* Test */
-						GameObject wprefab = Resources.Load ("Weapons/"+i.prefab) as GameObject;
-						GameObject weapon = Instantiate (wprefab) as GameObject; 
-
-						foreach (Transform t in gameObject.GetComponentsInChildren<Transform>()) {
-							if (t.name == i.attach) { //"weapon_target_side.R_end"
-								weapon.transform.SetParent (t);
-								weapon.transform.localPosition = new Vector3(9.2f, -9.9f,-12.4f);
-								weapon.transform.localRotation = Quaternion.Euler (new Vector3(35.56f, 358.5f, 358.9f));
-								weapon.transform.localScale = new Vector3(1,7f,7);
-							}
-						}
-						/* Test**/
-						break;
-					}
-				}
-				anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
-				state = (int)CharacterState.Combat1h;
-				if (Vector3.Distance (gameObject.transform.position, target.transform.position) > equip[(int)ItemSlot.Weapon].range) {
-					//move towards enemy
-					var dest = Vector3.zero;
-					if (gameObject.transform.position.x > target.transform.position.x)
-						dest.x = target.transform.position.x+equip[(int)ItemSlot.Weapon].range;
-					else 
-						dest.x = target.transform.position.x-equip[(int)ItemSlot.Weapon].range;
-					if (gameObject.transform.position.z > target.transform.position.z)
-						dest.z = target.transform.position.z+equip[(int)ItemSlot.Weapon].range;
-					else dest.z = target.transform.position.z-equip[(int)ItemSlot.Weapon].range;
-					dest.y = target.transform.position.y;
-					MoveTo(target.transform.position);
-				} 
-			} else {
-				//swing
-				anim.SetInteger ("CharacterState", (int)CharacterState.AttackMelee1h);
-				state = (int)CharacterState.AttackMelee1h;
-			}
-		}
 	}
 }

@@ -36,7 +36,7 @@ public class ItemFactory  {
 			temp.attach = node.Attributes.GetNamedItem("bone").Value;
 			string[] vals; 
 			vals = node.Attributes.GetNamedItem("offset").Value.Split(' ');
-			XmlNodeList properties = doc.SelectNodes ("items/item/properties");
+			XmlNodeList properties = node.ChildNodes;
 			foreach (XmlNode pn in properties) {
 				var p = new Property();
 				p.name = pn.Attributes.GetNamedItem("name").Value;
@@ -58,7 +58,16 @@ public class ItemFactory  {
 	public BaseItem RandomItem(){
 		int r; 
 		var temp = new BaseItem ();
-		r = Random.Range (1, 100);
+		r = Random.Range (1, ItemDefs.Count);
+		Debug.Log (r);
+		int c = 1;
+		foreach (var value in ItemDefs.Values)
+		{
+			if (c==r) 
+				return value;
+			c++;
+		}
+
 		return null;
 	}
 
