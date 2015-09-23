@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 712f5db0da7e9e048bb554ef84331f3c
+timeCreated: 1441047209
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - ButtonPref: {fileID: 194802, guid: 0ab356ab0eb2e244cabeaff0619b8be0, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
