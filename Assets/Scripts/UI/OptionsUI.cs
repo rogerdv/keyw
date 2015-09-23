@@ -9,8 +9,14 @@ public class OptionsUI : MonoBehaviour {
 	int i;		//resolution index
 	Resolution[] resolutions;
 
+	GameObject VideoPanel;
+	GameObject GamePanel;
+
 	// Use this for initialization
 	void Start () {
+		//get all the panels
+		foreach (var t in gameObject.GetComponentsInChildren<Transform>()) {
+		}
 		resolutions = Screen.resolutions;
 		Debug.Log (resolutions.Length);
 		Resolution current = Screen.currentResolution;
@@ -42,6 +48,10 @@ public class OptionsUI : MonoBehaviour {
 
 	public void VideoClick() {
 
+	}
+
+	public void GameplayClick() {
+		//disable the other panels
 	}
 
 	public void SSAOToggle() {
@@ -84,7 +94,24 @@ public class OptionsUI : MonoBehaviour {
 				}
 			}
 		}
+	}
 
+	public void FXAAToggle() {
+		foreach (var c in gameObject.GetComponentsInChildren<Toggle>()) {
+			if (c.name == "fxaa") {
+				if (c.isOn) {
+					GameInstance.options.fxaa = true;
+					var cam = GameObject.FindGameObjectWithTag("MainCamera");
+					var aacomp = cam.GetComponent<Antialiasing>();
+					if (aacomp !=null) aacomp.enabled = true;
+				} else {
+					GameInstance.options.fxaa = false;
+					var cam = GameObject.FindGameObjectWithTag("MainCamera");
+					var aacomp = cam.GetComponent<Antialiasing>();
+					if (aacomp !=null) aacomp.enabled = false;
+				}
+			}
+		}
 	}
 
 	public void PrevResolution() {
