@@ -8,6 +8,7 @@ public class OptionsUI : MonoBehaviour {
 	public GameObject shadow;
 	int i;		//resolution index
 	Resolution[] resolutions;
+	string[] DiffLevel;
 
 	GameObject VideoPanel;
 	GameObject GamePanel;
