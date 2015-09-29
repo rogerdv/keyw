@@ -6,6 +6,7 @@
   weight="5"
   quality="4"
   type="weapon"
+  skill="swords"
   description="Ancient style great sword. It is old fashioned."
   portrait="great-sword"
   prefab="ancient-grtsword"
@@ -14,7 +15,7 @@
   offset="9.2 -9.9 -12.4"
   scale="7 7 7"
   rotation="35.56 358.5 358.9"
-  range = "3.0" >   
+  range = "2.0" >   
    <property name="slash" value="12" type="damage" />
    <property name="speed" value="1.0" type="speed" />
    <property name="range" value="1" type="range" /> 
@@ -26,6 +27,7 @@
   weight="6"
   quality="4"
   type="shield"
+  skill=""
   description="A basic, rounded shield, with iron decorations to give you a sense of protection."
   portrait="iron-shield"
   prefab=""
@@ -34,7 +36,7 @@
   offset="0 0 0"
   scale="0 0 0"
   rotation="0 0 0"
-  range = "1.0" >
+  range = "0.0" >
    <property name="block" value="3" type="block" />    
  </item>
  
@@ -44,6 +46,7 @@
   weight="4"
   quality="4"
   type="weapon"
+  skill="swords"
   description="A basic, rounded shield, with iron decorations to give you a sense of protection."
   portrait="iron-shield"
   prefab="iron-sword"
@@ -52,7 +55,7 @@
   offset="0 0 0"
   scale="1 1 1"
   rotation="0 0 0"
-  range = "1.0" > 
+  range = "2.0" > 
    <property name="slash" value="8" type="damage" />
    <property name="speed" value="1.0" type="speed" />
    <property name="range" value="1" type="range" /> 
@@ -64,6 +67,7 @@
   weight="15"
   quality="4"
   type="chest"
+  skill=""
   description="A rough armor. It is rusted in a few spots... like a 90% of the surface."
   portrait="iron-shield"
   prefab="iron-armor-pref"
