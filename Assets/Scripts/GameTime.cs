@@ -40,6 +40,20 @@ public class GameTime {
 		} else toggleNightLights (true);
 	}
 
+	/*
+	 * Advance time X minutes
+	 * param m minutes to increase
+	 */
+	public void AdvanceMinutes(int m) {
+	}
+
+	/*
+	 * Advance time X hours
+	 * param h hours to increase
+	 */
+	public void AdvanceHours(int h) {
+	}
+
 	public void toggleNightLights(bool toggle){
 		/*if (lightsOn == toggle)
 			return;
