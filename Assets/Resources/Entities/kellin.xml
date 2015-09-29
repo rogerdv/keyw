@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <entity name="Kelling" level="8" class="warrior" attrib="19 15 12 18 11">
 	<skills>
-	 <skill id="sword" level="5" />
+	 <skill id="swords" level="5" />
 	 <skill id="combat" level="3" />
 	</skills>
 	<inventory>
