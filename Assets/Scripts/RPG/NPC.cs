@@ -54,19 +54,19 @@ public class NPC : BaseCharacter {
 
 		XmlNodeList myskills = doc.SelectNodes ("entity/skills/skill");	
 		foreach (XmlNode node in myskills) {
-			Debug.Log("skill "+node.Attributes.GetNamedItem("id").Value);
+			//Debug.Log("skill "+node.Attributes.GetNamedItem("id").Value);
+			BaseSkill s = new BaseSkill();
+			s.Name = node.Attributes.GetNamedItem("id").Value;
+			s.baseValue = int.Parse(node.Attributes.GetNamedItem("level").Value);
+			skills.Add(s);
 		}
 
 		XmlNodeList myitems = doc.SelectNodes ("entity/inventory/item");	
 		foreach (XmlNode node in myitems) {
-			Debug.Log("item "+node.Attributes.GetNamedItem("id").Value);
+			//Debug.Log("item "+node.Attributes.GetNamedItem("id").Value);
 			var item = GameInstance.ItFactory.CreateItem(node.Attributes.GetNamedItem("id").Value);
 			inventory.Add(item);
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
-	}
 }

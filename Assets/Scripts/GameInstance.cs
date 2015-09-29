@@ -70,8 +70,11 @@ public class GameInstance : MonoBehaviour {
 
 	//ui elements
 	public GameObject dlgPrefab;
+	GameObject dlgWindow;
 	public GameObject invPrefab;
+	GameObject inv;
 	public GameObject optPrefab;
+	GameObject opts;		//options window
 	public GameObject listPrefab;
 	GameObject MsgBox;
 
@@ -141,15 +144,22 @@ public class GameInstance : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			pause = !pause;
-		}
+
 		if (SceneInf != null) {
 			if (!pause) {
 				clock.Update (Time.deltaTime);
 			}		
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				pause = !pause;
+			} else if (Input.GetKeyDown(KeyCode.Escape)) {
+				if (inv)
+					Destroy(inv);
+				if (opts) {
+					pause = false;
+					Destroy(opts);
+				}
 
-			if (Input.GetKeyDown (KeyCode.Mouse0) && clicks) {
+			} else if (Input.GetKeyDown (KeyCode.Mouse0) && clicks) {
 				if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {				
 					RaycastHit hit;
 					Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -173,7 +183,7 @@ public class GameInstance : MonoBehaviour {
 							selected.GetComponentInChildren<Projector>().enabled  = true;
 							if (Vector3.Distance (selected.transform.position, player.transform.position) < 5.0f) { //close enough to talk?
 								//instantiate dialog
-								var dlgWindow = Instantiate(dlgPrefab);
+								dlgWindow = Instantiate(dlgPrefab);
 								var canvas = GameObject.Find("Canvas");
 								dlgWindow.transform.SetParent(canvas.transform, false);
 							} else 
@@ -187,9 +197,13 @@ public class GameInstance : MonoBehaviour {
 				var camObj = GameObject.Find("target");
 				camObj.transform.position = player.transform.position;
 			} else if (Input.GetKeyDown(KeyCode.I)) { //show inventory
-				var inv = Instantiate(invPrefab);
-				var canvas = GameObject.Find("Canvas");
-				inv.transform.SetParent(canvas.transform, false);
+				if (inv) {
+					Destroy(inv);
+				} else {
+					inv = Instantiate(invPrefab);
+					var canvas = GameObject.Find("Canvas");
+					inv.transform.SetParent(canvas.transform, false);
+				}
 			}  else if (Input.GetKey (KeyCode.Mouse1) && clicks) {		//right click unselects
 				if (selected) {
 					selected.GetComponentInChildren<Projector>().enabled  = false;		//disable projector, turn off selection marker
@@ -210,10 +224,15 @@ public class GameInstance : MonoBehaviour {
 		}
 
 		if (Input.GetKeyDown(KeyCode.O)) { //show options window
+			if (opts) { 
+				pause = false;	
+				Destroy(opts);
+			} else {
 			pause = true;
-			var opts = Instantiate(optPrefab);
+			opts = Instantiate(optPrefab);
 			var canvas = GameObject.Find("Canvas");
 			opts.transform.SetParent(canvas.transform, false);
+			}
 		}
 			
 	}
@@ -268,15 +287,7 @@ public class GameInstance : MonoBehaviour {
 		return targets;
 	}
 
-	void OnGUI() {
-		if (displayPortrait) {
-			//GUI.DrawTexture(new Rect(150, 5, 128,128), portrait);
-			//GUI.Label(new Rect(150,135,128,25),selectedName);
-		}
-	}
-
 	//// Getters/Setters
-
 	static public ItemFactory ItFactory{
 		get {return itFactory;}
 	}

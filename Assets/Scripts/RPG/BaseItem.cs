@@ -24,7 +24,7 @@ public class Modifier {
 }
 
 public class Property {
-	public string name;		//property (slash damage, fire protection, etc)
+	public string name;		//property (slash, fire, etc), sort of a subtype
 	public string type;		//type: damage, protection, stat
 	public float value;
 }
@@ -69,9 +69,9 @@ public class BaseItem  {
 	/*
 	 * Returns the value of a given property
 	 */
-	public float GetPropertyValue(string pname) {
+	public float GetPropertyValue(string pname, string type) {
 		foreach (var p in props) {
-			if (p.name == pname) 
+			if (p.name == pname && p.type==type) 
 				return p.value;
 		}
 		return 0;

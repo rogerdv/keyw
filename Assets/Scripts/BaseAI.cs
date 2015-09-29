@@ -8,15 +8,7 @@ public class BaseAI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		owner = gameObject.GetComponent<NPC> ();
-	}
-
-
-
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	void State_Idle() {}

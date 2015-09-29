@@ -28,6 +28,7 @@ public class ItemFactory  {
 			temp.range = float.Parse(node.Attributes.GetNamedItem("range").Value);
 			temp.prefab = node.Attributes.GetNamedItem("prefab").Value;
 			temp.weight = int.Parse(node.Attributes.GetNamedItem("weight").Value);
+			temp.ParentSkill = node.Attributes.GetNamedItem("skill").Value;
 			var slot = node.Attributes.GetNamedItem("slot").Value;
 			if(slot=="weapon") 
 				temp.slot = ItemSlot.Weapon;

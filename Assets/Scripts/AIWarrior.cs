@@ -3,8 +3,6 @@ using System.Collections;
 
 public class AIWarrior : BaseAI {
 
-
-	
 	// Update is called once per frame
 	void Update () {
 		if (owner.AIstate == (int)AIStates.Idle) {
@@ -20,7 +18,6 @@ public class AIWarrior : BaseAI {
 	
 	void State_Combat() {
 		//Debug.Log("Warrior combat");
-
 		if (owner.equip[(int)ItemSlot.Weapon]==null) {
 			Debug.Log("I have no weapon equipped!");
 			foreach (var i in owner.inventory) {	//TODO: choose the best weapon
@@ -44,23 +41,40 @@ public class AIWarrior : BaseAI {
 			}
 			owner.anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
 			owner.state = (int)CharacterState.Combat1h;
-			if (Vector3.Distance (owner.gameObject.transform.position, owner.target.transform.position) > owner.equip[(int)ItemSlot.Weapon].range) {
-				//move towards enemy
-				var dest = Vector3.zero;
-				if (gameObject.transform.position.x > owner.target.transform.position.x)
-					dest.x = owner.target.transform.position.x+owner.equip[(int)ItemSlot.Weapon].range;
-				else 
-					dest.x = owner.target.transform.position.x-owner.equip[(int)ItemSlot.Weapon].range;
-				if (gameObject.transform.position.z > owner.target.transform.position.z)
-					dest.z = owner.target.transform.position.z+owner.equip[(int)ItemSlot.Weapon].range;
-				else dest.z = owner.target.transform.position.z-owner.equip[(int)ItemSlot.Weapon].range;
-				dest.y = owner.target.transform.position.y;
-				owner.MoveTo(owner.target.transform.position);
-			} 
+
 		} else {
-			//swing
-			owner.anim.SetInteger ("CharacterState", (int)CharacterState.AttackMelee1h);
-			owner.state = (int)CharacterState.AttackMelee1h;
+			if (Vector3.Distance (owner.gameObject.transform.position, owner.target.transform.position) > owner.equip[(int)ItemSlot.Weapon].range && !owner.agent.hasPath) {
+				//move towards enemy
+				owner.MoveTo(owner.target.transform.position);
+			} else if (owner.agent.hasPath) {
+				if (Vector3.Distance (owner.gameObject.transform.position, owner.target.transform.position)<owner.equip[(int)ItemSlot.Weapon].range) {
+					//swing
+					Debug.Log("We are close. Attacking");
+					owner.agent.ResetPath();
+					CharacterAction a = new CharacterAction();
+					a.type = ActionType.UseItem;
+					a.loop = true;
+					a.time = 1.0f;
+					a.cooldown = 0;
+					a.OriginCharacter = gameObject;
+					a.TargetCharacter = owner.target;
+					a.OriginItem = owner.equip[(int)ItemSlot.Weapon];
+					owner.actions.addAction(a);
+					//owner.anim.SetInteger ("CharacterState", (int)CharacterState.AttackMelee1h);
+					//owner.state = (int)CharacterState.AttackMelee1h;
+					owner.anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
+					owner.state = (int)CharacterState.Combat1h;
+				} 
+			}
+		}
+		//check if target is dead
+		if (owner.target.GetComponent<BaseCharacter> ().HitPoints [0] < 0) {
+			Debug.Log("Target dead!");
+			//TODO: check if group fight and get another target
+			owner.AIstate = (int)AIStates.Idle;
+			owner.actions.Clear();
+			owner.anim.SetInteger ("CharacterState", (int)CharacterState.Idle);			
+			owner.state = (int)CharacterState.Idle;
 		}
 	}
 }

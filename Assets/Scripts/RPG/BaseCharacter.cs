@@ -11,7 +11,7 @@ enum CharacterState {
 	Combat1h = 4,
 	Combat2h = 5,
 	AttackMelee1h = 6,
-	WalkMelee1h = 7
+	RunMelee1h = 7
 }
 
 
@@ -36,7 +36,7 @@ public class BaseCharacter : MonoBehaviour {
 	public string VisibleName;
 	public string faction;
 	public BaseAttrib[] attrib;
-	public int[] HitPoints;		//[0] is current hitpoints [1] is max points
+	public float[] HitPoints;		//[0] is current hitpoints [1] is max points
 	public int[] EnergyPoints;
 
 	protected int level;
@@ -47,6 +47,7 @@ public class BaseCharacter : MonoBehaviour {
 	public List<BaseItem> inventory;
 	public List<BaseSkill> skills;
 	public List<Quest> quests;
+	public ActionQueue actions;
 	Transform AttachPoint;
 	public BaseItem[] equip;		//equipped items
 
@@ -60,22 +61,15 @@ public class BaseCharacter : MonoBehaviour {
 		attrib = new BaseAttrib[Enum.GetValues (typeof(Attributes)).Length];
 		attrib [(int)Attributes.Str] = new BaseAttrib();
 		equip = new BaseItem[Enum.GetValues (typeof(ItemSlot)).Length]; 
-		HitPoints = new int[2];
+		HitPoints = new float[2];
+		HitPoints [0] = 30;
 		EnergyPoints = new int[2];
 		inventory = new List<BaseItem>();
 		quests = new List<Quest> ();
 		skills = new List<BaseSkill> ();
 
 		equip = new BaseItem[9];
-		//add two test items
-		/*BaseItem t = new BaseItem();
-		t.Name = "Basic sword of the player";
-		t.portrait = "Icons/great-sword";
-		inventory.Add(t);
-		t = new BaseItem();
-		t.Name = "Iron shield";
-		t.portrait = "Icons/iron-shield";
-		inventory.Add(t);*/
+		actions = new ActionQueue ();
 	}
 
 	// Use this for initialization
@@ -94,8 +88,8 @@ public class BaseCharacter : MonoBehaviour {
 
 	public void MoveTo(Vector3 coord) {
 		if (state == (int)CharacterState.Combat1h) {
-			anim.SetInteger ("CharacterState", (int)CharacterState.WalkMelee1h);
-			state = (int)CharacterState.WalkMelee1h;
+			anim.SetInteger ("CharacterState", (int)CharacterState.RunMelee1h);
+			state = (int)CharacterState.RunMelee1h;
 		} else {
 			anim.SetInteger ("CharacterState", (int)CharacterState.Walking);
 			state = (int)CharacterState.Walking;
@@ -115,7 +109,47 @@ public class BaseCharacter : MonoBehaviour {
 		EnergyPoints[1]= 2 * attrib [(int)Attributes.Const].getValue() + 3 * attrib [(int)Attributes.Str].getValue();	//set max energy
 		EnergyPoints [0] = EnergyPoints [1];
 	}
-	
+
+	void ExecuteActions() {
+		//execute queued actions
+		if (!actions.isEmpty()) {
+			Debug.Log("Not empty, executign action");
+			var a = actions.getAction();
+			if (a.cooldown == 0) {
+				Debug.Log("Cooldown is zero");
+				//not used yet
+				a.cooldown += Time.deltaTime;
+				if (a.type == ActionType.UseItem) {
+					if (a.OriginItem.type=="weapon") {
+						//TODO: get weapon damages, etc
+						//get item parent skill level
+						var ps = a.OriginCharacter.GetComponent<BaseCharacter>().GetSkill(a.OriginItem.ParentSkill);
+						///weapon does damage: get all damage properties
+						List<Property> dmg = a.OriginItem.GetProperties("damage");
+						foreach (Property p in dmg) {
+							Debug.Log("Dmg "+p.name);
+
+						}
+						//Debug.Log("Parent skill  is "+ps.Name);
+						//Debug.Log(ps.baseValue);
+						a.TargetCharacter.GetComponent<BaseCharacter> ().HitPoints [0]-= 5;
+					}
+				} else if (a.type == ActionType.CastSpell) {
+				} //if type
+			} else {
+				//action is in cooldown
+				Debug.Log("Action in cooldown");
+				a.cooldown += Time.deltaTime; 
+				if (a.cooldown >= a.time) {
+					if (a.loop) 
+						a.cooldown = 0; //reset cooldown, so action can be used again
+					else 
+						actions.popAction();	//remove action
+				}
+			} //if cooldown			
+		} //if actions
+	}
+
 	// Update is called once per frame
 	void Update () {
 
@@ -126,7 +160,7 @@ public class BaseCharacter : MonoBehaviour {
 				anim.SetInteger ("CharacterState", (int)CharacterState.Idle);			
 				state = (int)CharacterState.Idle;
 			}
-
+			ExecuteActions();
 			/*if (Input.GetKey (KeyCode.Mouse1)) {
 				anim.SetInteger ("CharacterState", (int)CharacterState.AttackMelee1h);
 				
