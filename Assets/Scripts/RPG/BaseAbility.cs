@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+enum TargetType {
+}
+
 public class BaseAbility {
-	public int TargetType;		//area effect, single target
+	public int ttype;		//area effect, single target
 	public string ParentSkill; 
 
 	/**
@@ -10,7 +13,18 @@ public class BaseAbility {
 	 * @param owner The caster entity
 	 * @param target the receiving entity
 	 * */
-	public void Apply(BaseCharacter owner, BaseCharacter target) {
+	public void Apply(GameObject owner, GameObject target) {
 		//get skill level from owner
+		var ps = owner.GetComponent<BaseCharacter>().GetSkill(ParentSkill);
+	}
+
+	public void Apply(GameObject owner, Vector3 position) {
+		//get skill level from owner
+		var ps = owner.GetComponent<BaseCharacter>().GetSkill(ParentSkill);
+		var colliders = Physics.OverlapSphere (position, 30.0f);
+		foreach (var c in colliders) {
+			//Debug.Log(c.name);
+		}
+
 	}
 }

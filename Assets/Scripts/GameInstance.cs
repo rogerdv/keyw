@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 using UnityStandardAssets.ImageEffects;
 
 #region TransformCatalog
@@ -54,16 +57,21 @@ public class GameInstance : MonoBehaviour {
 	public static string[] BodyParts;
 	public static string[] meshes;	//mesh files for body parts
 	public static string prefab;	//prefab to use to build player
+	public static int[] stats;				//the base stats to create the character
 	GameTime clock;		//game clock
 	//Dialog dlgWin;
 	bool displayPortrait=false;	//true if entity selected, to display the portrait
 	Texture2D portrait;
+
+	static Dictionary<string, List<GameObject>> entities; 	//list of scene entities
+
 	static GameObject selected; 
 	static public GameObject Selected {
 		get { return selected; }
 		set { selected = value; }
 	}
 	public static bool clicks = true;		//false if dialog or inventory windows are displayed
+	bool areaMode = false;		//Area target select mode
 
 	static public GameSettings options;
 
@@ -78,6 +86,9 @@ public class GameInstance : MonoBehaviour {
 	public GameObject listPrefab;
 	GameObject MsgBox;
 
+	//other prefabs required
+	public GameObject areaProjector;		//Area marker projector
+	GameObject marker;
 
 
 	void Awake() {
@@ -96,6 +107,7 @@ public class GameInstance : MonoBehaviour {
 		BodyParts[4] = "feet";
 		meshes = new string[5];
 
+		entities = new Dictionary<string, List<GameObject>> ();
 
 		clock = new GameTime ();
 		Cursor.SetCursor (crNormal, Vector2.zero, CursorMode.Auto);
@@ -115,8 +127,10 @@ public class GameInstance : MonoBehaviour {
 			else {
 				//find player marker
 				var playerPos = GameObject.Find ("player");
-				player.transform.position = playerPos.transform.position;
+				player.transform.position = new Vector3(playerPos.transform.position.x, playerPos.transform.position.y,playerPos.transform.position.z);
+
 			}
+
 			MsgBox = Instantiate(listPrefab);
 			var canvas = GameObject.Find("Canvas");
 			MsgBox.transform.SetParent(canvas.transform, false);
@@ -137,8 +151,38 @@ public class GameInstance : MonoBehaviour {
 				var cam = GameObject.FindGameObjectWithTag("MainCamera");
 				cam.GetComponent<Bloom>().enabled = false;
 			}
+			ReactivateEntities();
 		} //if SceneInfo
 
+	}
+
+	public static void DeactivateEntities() {
+		var ents = GameObject.FindGameObjectsWithTag("NPC");
+		string level = Application.loadedLevelName;
+		if (!entities.ContainsKey(level)) {
+			entities[level] = new List<GameObject>();
+		}
+		foreach (GameObject e in ents) {
+			e.SetActive(false);
+			entities[level].Add(e);
+		}
+	}
+	
+	public void ReactivateEntities() {
+		string level = Application.loadedLevelName;
+		if (entities.ContainsKey (level)) {
+			foreach (GameObject g in entities[level]) {
+				g.SetActive (true);
+			}
+		} //else, the level have never been loaded, nothing to reactivate
+	}
+
+	public void Save(){
+		BinaryFormatter bf = new BinaryFormatter();
+		FileStream file = File.Open(Application.persistentDataPath + "/FileName.dat", FileMode.Create);
+
+		bf.Serialize(file, pcScript);
+		file.Close();
 	}
 	
 	// Update is called once per frame
@@ -158,9 +202,25 @@ public class GameInstance : MonoBehaviour {
 					pause = false;
 					Destroy(opts);
 				}
-
+				if (areaMode) {
+					Destroy(marker);
+					areaMode = false;
+				}
 			} else if (Input.GetKeyDown (KeyCode.Mouse0) && clicks) {
-				if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {				
+				if (areaMode) {
+					RaycastHit hit;					
+					Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+					if (Physics.Raycast (ray, out hit, 1000)) {
+						int layerMask = 1 << 9;
+						// marker.GetComponent<Projector>().orthographicSize*2
+						var colliders = Physics.OverlapSphere (marker.transform.position,marker.GetComponent<Projector>().orthographicSize, layerMask);
+						foreach (var c in colliders) {
+							Debug.Log(c.name);
+						}
+					}
+					Destroy(marker);
+					areaMode = false;
+				} else if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) {				
 					RaycastHit hit;
 					Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 					if (Physics.Raycast (ray, out hit, 1000)) {
@@ -181,7 +241,7 @@ public class GameInstance : MonoBehaviour {
 							pcScript.target = selected;
 							//enable projector to display the selection marker
 							selected.GetComponentInChildren<Projector>().enabled  = true;
-							if (Vector3.Distance (selected.transform.position, player.transform.position) < 5.0f) { //close enough to talk?
+							if (Vector3.Distance (selected.transform.position, player.transform.position) < 3.0f) { //close enough to talk?
 								//instantiate dialog
 								dlgWindow = Instantiate(dlgPrefab);
 								var canvas = GameObject.Find("Canvas");
@@ -210,6 +270,10 @@ public class GameInstance : MonoBehaviour {
 					selected = null;
 					pcScript.target = null;
 				}
+				if (areaMode) {
+					Destroy(marker);
+					areaMode = false;
+				}
 			} else if (Input.GetKeyDown(KeyCode.Alpha1)) { //action slot 1
 				//temporary hack: attack
 				if (pcScript.target!=null) {
@@ -220,19 +284,56 @@ public class GameInstance : MonoBehaviour {
 				} else {//no target
 					MsgBox.GetComponent<MsgList>().SetText("You swing your weapon in the air and people looks at you as if you were crazy");
 				}
+			} else if (Input.GetKeyDown(KeyCode.Alpha2)) { //action slot 1
+				//temporary hack: area test
+				areaMode = true;
+				marker = Instantiate(areaProjector);
+				RaycastHit hit;					
+				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+				if (Physics.Raycast (ray, out hit, 1000)) {
+					marker.transform.position = new Vector3(hit.point.x, 1,hit.point.z);
+				}
 			} //if Input events
 		}
 
-		if (Input.GetKeyDown(KeyCode.O)) { //show options window
+		if (areaMode) {
+			if (Input.GetAxis("Mouse X")!=0 || Input.GetAxis("Mouse Y")!=0) {
+				RaycastHit hit;					
+				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+				if (Physics.Raycast (ray, out hit, 1000)) {
+					marker.transform.position = new Vector3(hit.point.x, 1,hit.point.z);
+				}
+			} 
+			Vector3 end = new Vector3(marker.transform.position.x+marker.GetComponent<Projector>().orthographicSize,1, marker.transform.position.z);
+			Debug.DrawLine(marker.transform.position, end, Color.red);
+			/*if(Input.GetAxis("Mouse X")>0) {
+				marker.transform.Translate(8*Time.deltaTime,0,0);
+			}
+			if(Input.GetAxis("Mouse X")<0) {
+				marker.transform.Translate(-8*Time.deltaTime,0,0);
+			}
+			if(Input.GetAxis("Mouse Y")>0) {
+				marker.transform.Translate(0,8*Time.deltaTime, 0);
+			}
+			if(Input.GetAxis("Mouse Y")<0) {
+				marker.transform.Translate(0,-8*Time.deltaTime, 0);
+			}*/
+			//Vector3 end = new Vector3(marker.transform.position.x+4,marker.transform.position.y, marker.transform.position.z);
+			//Debug.DrawLine(marker.transform.position, end, Color.red, 1);
+		}
+		if (Input.GetKeyDown (KeyCode.O)) { //show options window
 			if (opts) { 
 				pause = false;	
-				Destroy(opts);
+				Destroy (opts);
 			} else {
-			pause = true;
-			opts = Instantiate(optPrefab);
-			var canvas = GameObject.Find("Canvas");
-			opts.transform.SetParent(canvas.transform, false);
+				pause = true;
+				opts = Instantiate (optPrefab);
+				var canvas = GameObject.Find ("Canvas");
+				opts.transform.SetParent (canvas.transform, false);
 			}
+		} else if (Input.GetKeyDown (KeyCode.F5)) {
+			//quicksave
+			Save();
 		}
 			
 	}
@@ -241,6 +342,9 @@ public class GameInstance : MonoBehaviour {
 		GameObject playerPrefab = Resources.Load(prefab) as GameObject;
 		player = Instantiate (playerPrefab) as GameObject;
 		pcScript = player.GetComponent<BaseCharacter> ();
+		pcScript.SetAttributes (stats);
+		//for (int i=0; i<5; i++)
+		//	pcScript.attrib [i].baseValue = stats [i];
 		//player.transform.localPosition = Vector3.zero;
 		player.transform.localRotation = Quaternion.identity;
 		var playerPos = GameObject.Find ("player");

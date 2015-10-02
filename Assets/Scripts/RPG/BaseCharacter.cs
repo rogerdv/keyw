@@ -37,7 +37,7 @@ public class BaseCharacter : MonoBehaviour {
 	public string faction;
 	public BaseAttrib[] attrib;
 	public float[] HitPoints;		//[0] is current hitpoints [1] is max points
-	public int[] EnergyPoints;
+	public float[] EnergyPoints;
 
 	protected int level;
 	protected int group;
@@ -59,11 +59,12 @@ public class BaseCharacter : MonoBehaviour {
 	void Awake() {
 		DontDestroyOnLoad (this);
 		attrib = new BaseAttrib[Enum.GetValues (typeof(Attributes)).Length];
-		attrib [(int)Attributes.Str] = new BaseAttrib();
+		for (int i=0;i<5;i++)
+			attrib [i] = new BaseAttrib();
 		equip = new BaseItem[Enum.GetValues (typeof(ItemSlot)).Length]; 
 		HitPoints = new float[2];
 		HitPoints [0] = 30;
-		EnergyPoints = new int[2];
+		EnergyPoints = new float[2];
 		inventory = new List<BaseItem>();
 		quests = new List<Quest> ();
 		skills = new List<BaseSkill> ();
@@ -85,6 +86,8 @@ public class BaseCharacter : MonoBehaviour {
 		if (anim)
 			anim.SetInteger ("CharacterState", (int)CharacterState.Idle);
 	}
+
+
 
 	public void MoveTo(Vector3 coord) {
 		if (state == (int)CharacterState.Combat1h) {
@@ -120,20 +123,9 @@ public class BaseCharacter : MonoBehaviour {
 				//not used yet
 				a.cooldown += Time.deltaTime;
 				if (a.type == ActionType.UseItem) {
-					if (a.OriginItem.type=="weapon") {
-						//TODO: get weapon damages, etc
-						//get item parent skill level
-						var ps = a.OriginCharacter.GetComponent<BaseCharacter>().GetSkill(a.OriginItem.ParentSkill);
-						///weapon does damage: get all damage properties
-						List<Property> dmg = a.OriginItem.GetProperties("damage");
-						foreach (Property p in dmg) {
-							Debug.Log("Dmg "+p.name);
+					a.OriginItem.Use(a.OriginCharacter, a.TargetCharacter);
+					a.TargetCharacter.GetComponent<BaseCharacter> ().HitPoints [0]-= 5;
 
-						}
-						//Debug.Log("Parent skill  is "+ps.Name);
-						//Debug.Log(ps.baseValue);
-						a.TargetCharacter.GetComponent<BaseCharacter> ().HitPoints [0]-= 5;
-					}
 				} else if (a.type == ActionType.CastSpell) {
 				} //if type
 			} else {
@@ -161,6 +153,10 @@ public class BaseCharacter : MonoBehaviour {
 				state = (int)CharacterState.Idle;
 			}
 			ExecuteActions();
+			//Check countdown timers for bonus or buffs
+
+			//Regenerate life and energy
+
 			/*if (Input.GetKey (KeyCode.Mouse1)) {
 				anim.SetInteger ("CharacterState", (int)CharacterState.AttackMelee1h);
 				

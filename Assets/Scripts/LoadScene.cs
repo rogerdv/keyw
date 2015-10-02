@@ -10,7 +10,7 @@ public class LoadScene : MonoBehaviour {
 	public Texture2D crNormal;	//< Normal cursor
 	public Texture2D crHover;	//< Hover cursor
 	public string level;	//Scene to load
-	public string location;	//gameobject marking spawn location. If none, player marker will be used
+	public string location;	//Destination coordinates. If none, player marker will be used
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +25,13 @@ public class LoadScene : MonoBehaviour {
 	void OnMouseDown(){
 		//restore cursor
 		Cursor.SetCursor (crNormal, Vector2.zero, CursorMode.Auto);
+		//deactivate scene NPCs
+		GameInstance.DeactivateEntities ();
 		//load next scene
-		Application.LoadLevel(level);
+		Application.LoadLevel(level);	
+		var playerGO = GameObject.FindGameObjectWithTag ("Player");
+		var destGO = GameObject.Find (location); 
+		playerGO.transform.position = destGO.transform.position;
 	}
 
 	void OnMouseEnter() {
