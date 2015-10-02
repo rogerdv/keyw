@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity name="Leoren" level="18" class="mage" attrib="12 12 15 13 11">
+	<skills>
+	 <skill id="wands" level="6" />
+	 <skill id="fire" level="16" />
+	 <skill id="magic-items" level="4" />
+	</skills>
+	<inventory>
+	 <item id="great-sword" amount="1" />	 	 
+	</inventory>
+</entity>

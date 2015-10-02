@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity name="Guard" level="8" class="warrior" attrib="15 12 11 14 11">
+	<skills>
+	</skills>
+	<inventory>
+	 <item id="long-sword" amount="1" />	 
+	 <item id="iron-shield" amount="1" />
+	</inventory>
+</entity>

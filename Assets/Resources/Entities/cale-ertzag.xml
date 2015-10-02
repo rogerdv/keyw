@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity name="Ertzag" level="5" class="thief" attrib="12 13 11 11 13">
+	<skills>
+	 <skill id="swords" level="2" />
+	 <skill id="combat" level="1" />
+	</skills>
+	<inventory>
+	 <item id="great-sword" amount="1" />	 
+	</inventory>
+</entity>
