@@ -113,7 +113,7 @@ public class GameInstance : MonoBehaviour {
 		clock = new GameTime ();
 		Cursor.SetCursor (crNormal, Vector2.zero, CursorMode.Auto);
 		options = new GameSettings ();
-		options.Load ();		//init config
+		//options.Load ();		//init config
 		itFactory = new ItemFactory (); 
 		itFactory.Init("Items/items");
 
@@ -153,6 +153,7 @@ public class GameInstance : MonoBehaviour {
 				cam.GetComponent<Bloom>().enabled = false;
 			}
 			ReactivateEntities();
+			clock.Adjust();
 		} //if SceneInfo
 
 	}
