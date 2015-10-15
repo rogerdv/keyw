@@ -25,7 +25,7 @@ public class InventoryWindow : MonoBehaviour {
 				
 				var rt = go.GetComponent<RectTransform>();
 				rt.SetParent(scrollArea.transform);
-				rt.anchoredPosition = new Vector2(-100,140-row*31);
+				rt.anchoredPosition = new Vector2(-200,155-row*31);
 				//Debug.Log("Button not null");
 				foreach (Transform t in go.GetComponentsInChildren<Transform>()){
 					if (t.name ==  "icon") {							

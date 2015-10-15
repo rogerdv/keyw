@@ -954,6 +954,8 @@ MonoBehaviour:
   invPrefab: {fileID: 170236, guid: b5089f076f3f1ae4494d7a808d606849, type: 2}
   optPrefab: {fileID: 158794, guid: 5e071a79340498f4e9b7e38bd4fb2dcf, type: 2}
   listPrefab: {fileID: 133228, guid: ca54d5f3787cbce4da82356676b57dac, type: 2}
+  portraitPrefab: {fileID: 108416, guid: 1cf60334aec5a7b47b6250b9ca862157, type: 2}
+  FloatPrefab: {fileID: 175598, guid: 671641cfdf49dac4c9a70b04f1df20cb, type: 2}
   areaProjector: {fileID: 176256, guid: 584e56f51c62a964794a4b9860ad6152, type: 2}
 --- !u!1 &1788629732
 GameObject:

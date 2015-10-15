@@ -49,6 +49,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 0122e2273f0764441b8e939f125cf54c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -82,6 +88,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: f332303cae7f3dd498dcffcc86baf353, type: 3}
     m_FontSize: 15
@@ -138,10 +150,10 @@ RectTransform:
   - {fileID: 22429392}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: .0156173548}
-  m_AnchorMax: {x: 1, y: .399205804}
-  m_AnchoredPosition: {x: 1.50003052, y: 5}
-  m_SizeDelta: {x: -8, y: 26}
+  m_AnchorMin: {x: .0306839943, y: 0}
+  m_AnchorMax: {x: .966657996, y: .301746547}
+  m_AnchoredPosition: {x: 3.50003052, y: 44.5}
+  m_SizeDelta: {x: -122, y: 83}
   m_Pivot: {x: .5, y: .5}
 --- !u!225 &22524672
 CanvasGroup:
@@ -167,7 +179,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SizeDelta.x
-      value: 1000
+      value: 1300
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Pivot.x

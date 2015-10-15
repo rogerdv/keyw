@@ -1,22 +1,47 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class AIWarrior : BaseAI {
 
-	// Update is called once per frame
-	void Update () {
-		if (owner.AIstate == (int)AIStates.Idle) {
-			State_Idle();
-		} else if (owner.AIstate == (int)AIStates.Combat) {
-			State_Combat();
+	// Use this for initialization
+	void Start () {
+		owner = gameObject.GetComponent<NPC> ();
+		StartCoroutine(AIFSM());
+	}
+
+	IEnumerator AIFSM()
+	{
+		while (true) {
+			if (owner.AIstate == (int)AIStates.Idle) {
+				yield return StartCoroutine ("Idle");
+			} else if (owner.AIstate == (int)AIStates.Combat) {
+				yield return StartCoroutine ("Combat");
+			}
 		}
 	}
 
-	void State_Idle() {
+	IEnumerator Idle() {
 		//Debug.Log("Warrior idle");
+		while(owner.AIstate == (int)AIStates.Idle)
+		{	
+			var prob = Random.Range(0,100);
+			if (prob>95) {
+				var prefab = Resources.Load("FloatingText") as GameObject;
+				var t = Instantiate (prefab) as GameObject;
+				RectTransform r = t.GetComponent<RectTransform> ();
+				t.transform.SetParent (gameObject.transform.FindChild ("MyCanvas"));
+				r.transform.localPosition = prefab.transform.localPosition;
+				r.transform.localScale = prefab.transform.localScale;
+				r.transform.localRotation = prefab.transform.localRotation;
+				t.GetComponent<Text>().text = "I have a cast for a real game next week";
+				Destroy (t, 3);
+			}
+			yield return null;
+		}
 	}
 	
-	void State_Combat() {
+	IEnumerator Combat() {
 		//Debug.Log("Warrior combat");
 		if (owner.equip[(int)ItemSlot.Weapon]==null) {
 			Debug.Log("I have no weapon equipped!");
@@ -41,11 +66,12 @@ public class AIWarrior : BaseAI {
 			}
 			owner.anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
 			owner.state = (int)CharacterState.Combat1h;
-
+			yield return null;
 		} else {
 			if (Vector3.Distance (owner.gameObject.transform.position, owner.target.transform.position) > owner.equip[(int)ItemSlot.Weapon].range && !owner.agent.hasPath) {
 				//move towards enemy
 				owner.MoveTo(owner.target.transform.position);
+				yield return null;
 			} else if (owner.agent.hasPath) {
 				if (Vector3.Distance (owner.gameObject.transform.position, owner.target.transform.position)<owner.equip[(int)ItemSlot.Weapon].range) {
 					//swing
@@ -65,6 +91,7 @@ public class AIWarrior : BaseAI {
 					owner.anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
 					owner.state = (int)CharacterState.Combat1h;
 				} 
+				yield return null;
 			}
 		}
 		//check if target is dead
@@ -75,6 +102,7 @@ public class AIWarrior : BaseAI {
 			owner.actions.Clear();
 			owner.anim.SetInteger ("CharacterState", (int)CharacterState.Idle);			
 			owner.state = (int)CharacterState.Idle;
+			yield return null;
 		}
 	}
 }

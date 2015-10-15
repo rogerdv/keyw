@@ -60,8 +60,7 @@ public class GameInstance : MonoBehaviour {
 	public static int[] stats;				//the base stats to create the character
 	GameTime clock;		//game clock
 	//Dialog dlgWin;
-	bool displayPortrait=false;	//true if entity selected, to display the portrait
-	Texture2D portrait;
+	//bool displayPortrait=false;	//true if entity selected, to display the portrait
 
 	static Dictionary<string, List<GameObject>> entities; 	//list of scene entities
 
@@ -85,6 +84,8 @@ public class GameInstance : MonoBehaviour {
 	GameObject opts;		//options window
 	public GameObject listPrefab;
 	GameObject MsgBox;
+	public GameObject portraitPrefab;
+	GameObject portrait;
 
 	//other prefabs required
 	public GameObject areaProjector;		//Area marker projector
@@ -179,10 +180,28 @@ public class GameInstance : MonoBehaviour {
 
 	public void Save(){
 		BinaryFormatter bf = new BinaryFormatter();
-		FileStream file = File.Open(Application.persistentDataPath + "/FileName.dat", FileMode.Create);
+		var UserDir = System.Environment.GetFolderPath (System.Environment.SpecialFolder.MyDocuments);
+		FileStream file = File.Open(UserDir + "/keyw/quicksave.save", FileMode.Create);
 
-		bf.Serialize(file, pcScript);
+		//todo: save level, game time, etc
+		bf.Serialize(file, Application.loadedLevelName);
+		pcScript.SaveToFile (file);
+		int NumNPC = entities.Count;
+		//get total number of 
+		foreach (KeyValuePair<string, List<GameObject>> l in entities) {
+			NumNPC += l.Value.Count;
+		}
+		bf.Serialize(file, NumNPC);
 		file.Close();
+	}
+
+	public void Load() {
+		BinaryFormatter bf = new BinaryFormatter();
+		var UserDir = System.Environment.GetFolderPath (System.Environment.SpecialFolder.MyDocuments);
+		FileStream file = File.Open(UserDir + "/keyw/quicksave.save", FileMode.Open);
+		string level = (string)bf.Deserialize (file);
+		Debug.Log (level);
+
 	}
 	
 	// Update is called once per frame
@@ -234,17 +253,28 @@ public class GameInstance : MonoBehaviour {
 							//display NPC information
 							///@TODO: Migrate OnGUI based stuff to new UI system
 							//MsgList.SetText ("Clicked on " + npcsc.VisibleName);
-							MsgBox.GetComponent<MsgList>().SetText("Clicked on " + npcsc.VisibleName);
-							displayPortrait = true;
-							portrait = npcsc.portrait;
+							MsgBox.GetComponent<MsgList>().SetText("Clicked on " + npcsc.Name);
+							//displayPortrait = true;
+							portrait = Instantiate(portraitPrefab);
+							var canvas = GameObject.Find("Canvas");
+							portrait.transform.SetParent(canvas.transform, false);
+							portrait.GetComponent<Image>().sprite = npcsc.portrait;
 
 							pcScript.target = selected;
 							//enable projector to display the selection marker
 							selected.GetComponentInChildren<Projector>().enabled  = true;
+							//calculate hp bar size
+							float percent = npcsc.HitPoints[0]/npcsc.HitPoints[1];
+							foreach (Transform t in portrait.GetComponentsInChildren<Transform>()) {
+								if (t.name == "HP") {
+									t.localScale = new Vector3(percent, 1.0f,1.0f);
+								} else if (t.name == "level") {
+									t.GetComponent<Text>().text = npcsc.level.ToString();
+								}
+							}
 							if (Vector3.Distance (selected.transform.position, player.transform.position) < 3.0f) { //close enough to talk?
 								//instantiate dialog
 								dlgWindow = Instantiate(dlgPrefab);
-								var canvas = GameObject.Find("Canvas");
 								dlgWindow.transform.SetParent(canvas.transform, false);
 							} else 
 								MsgBox.GetComponent<MsgList>().SetText ("You are too far to talk.");
@@ -269,6 +299,7 @@ public class GameInstance : MonoBehaviour {
 					selected.GetComponentInChildren<Projector>().enabled  = false;		//disable projector, turn off selection marker
 					selected = null;
 					pcScript.target = null;
+					Destroy(portrait);
 				}
 				if (areaMode) {
 					Destroy(marker);
@@ -281,6 +312,14 @@ public class GameInstance : MonoBehaviour {
 					var ai = pcScript.target.GetComponent<NPC>();
 					npcsc.AIstate = (int)AIStates.Combat;
 					npcsc.target = player;
+					var prefab = Resources.Load("FloatingText") as GameObject;
+					var t = Instantiate (prefab) as GameObject;
+					RectTransform r = t.GetComponent<RectTransform> ();
+					t.transform.SetParent (pcScript.target.transform.FindChild ("MyCanvas"));
+					r.transform.localPosition = prefab.transform.localPosition;
+					r.transform.localScale = prefab.transform.localScale;
+					r.transform.localRotation = prefab.transform.localRotation;
+					Destroy (t, 2);
 				} else {//no target
 					MsgBox.GetComponent<MsgList>().SetText("You swing your weapon in the air and people looks at you as if you were crazy");
 				}
@@ -334,6 +373,9 @@ public class GameInstance : MonoBehaviour {
 		} else if (Input.GetKeyDown (KeyCode.F5)) {
 			//quicksave
 			Save();
+		} else if (Input.GetKeyDown (KeyCode.F9)) {
+			//quickload
+			Load();
 		}
 			
 	}

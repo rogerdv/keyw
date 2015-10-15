@@ -3,17 +3,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public enum AIStates {
 	Idle = 0,
-	Combat
+	Combat = 1
 }
 
 public class NPC : BaseCharacter {
 	public string dialog;	//Dialog file
 	public string definition;	//xml file containing entity description
-	public uint AIstate;	//FSm state: idle, combat
-	public Texture2D portrait;
+	public int AIstate;	//FSm state: idle, combat
+	public Sprite portrait;
 
 	// Use this for initialization
 	void Start () {       
@@ -30,6 +32,16 @@ public class NPC : BaseCharacter {
 		HitPoints [0] = HitPoints [1];
 		EnergyPoints[1] = attrib [(int)Attributes.Int].baseValue * 3 + attrib [(int)Attributes.Const].baseValue * 2;
 		EnergyPoints [0] = EnergyPoints [1];
+	}
+
+	public override void SaveToFile(FileStream SaveFile) {
+		BinaryFormatter bf = new BinaryFormatter();
+		bf.Serialize(SaveFile, name);
+		bf.Serialize(SaveFile, attrib);
+		bf.Serialize(SaveFile, HitPoints);
+		bf.Serialize(SaveFile, EnergyPoints);
+		bf.Serialize(SaveFile, definition);
+		bf.Serialize(SaveFile, AIstate);
 	}
 
 	/**

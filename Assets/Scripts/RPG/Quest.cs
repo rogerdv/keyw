@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,11 +9,13 @@ enum RewardType {
 	Exp = 2
 }
 
-
+[Serializable]
 public class Reward {
 	RewardType type;
 	int amount;			//this could be exp/gold amount or item id
 }
+
+[Serializable]
 public class Quest {
 	public string Name;
 	public string Description;

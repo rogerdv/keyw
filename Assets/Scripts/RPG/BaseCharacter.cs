@@ -2,6 +2,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 enum CharacterState {
 	Idle = 0,
@@ -33,13 +35,13 @@ enum BodySections {
  * */
 [Serializable]
 public class BaseCharacter : MonoBehaviour {
-	public string VisibleName;
+	public string Name;
 	public string faction;
 	public BaseAttrib[] attrib;
 	public float[] HitPoints;		//[0] is current hitpoints [1] is max points
 	public float[] EnergyPoints;
 
-	protected int level;
+	public int level;
 	protected int group;
 	public string profession;
 
@@ -50,7 +52,6 @@ public class BaseCharacter : MonoBehaviour {
 	public ActionQueue actions;
 	Transform AttachPoint;
 	public BaseItem[] equip;		//equipped items
-
 	
 	public NavMeshAgent agent;
 	public Animator anim;
@@ -87,9 +88,17 @@ public class BaseCharacter : MonoBehaviour {
 			anim.SetInteger ("CharacterState", (int)CharacterState.Idle);
 	}
 
-
+	public virtual void SaveToFile(FileStream SaveFile) {
+		BinaryFormatter bf = new BinaryFormatter();
+		bf.Serialize(SaveFile, name);
+		bf.Serialize(SaveFile, attrib);
+		bf.Serialize(SaveFile, HitPoints);
+		bf.Serialize(SaveFile, EnergyPoints);
+	}
 
 	public void MoveTo(Vector3 coord) {
+		//moving clears the action queue
+		actions.Clear ();
 		if (state == (int)CharacterState.Combat1h) {
 			anim.SetInteger ("CharacterState", (int)CharacterState.RunMelee1h);
 			state = (int)CharacterState.RunMelee1h;
@@ -122,12 +131,7 @@ public class BaseCharacter : MonoBehaviour {
 				Debug.Log("Cooldown is zero");
 				//not used yet
 				a.cooldown += Time.deltaTime;
-				if (a.type == ActionType.UseItem) {
-					a.OriginItem.Use(a.OriginCharacter, a.TargetCharacter);
-					a.TargetCharacter.GetComponent<BaseCharacter> ().HitPoints [0]-= 5;
-
-				} else if (a.type == ActionType.CastSpell) {
-				} //if type
+				a.Execute();
 			} else {
 				//action is in cooldown
 				Debug.Log("Action in cooldown");

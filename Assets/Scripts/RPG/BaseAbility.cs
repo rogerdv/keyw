@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
-enum TargetType {
+public enum TargetType {
+	Single,
+	Area
 }
 
+[Serializable]
 public class BaseAbility {
-	public int ttype;		//area effect, single target
+	public TargetType ttype;		//area effect, single target
 	public string ParentSkill; 
 
 	/**

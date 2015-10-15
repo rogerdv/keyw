@@ -18,11 +18,14 @@ public enum ItemSlot {
 /**
  * Modifiers add/decrease stuff like attributes or skills
  * */
+[Serializable]
 public class Modifier {
-	public string type;
+	public string type;		//is it an stat or skill?
+	public string target;	//what skill or stat is affected?
 	public int value;
 }
 
+[Serializable]
 public class Property {
 	public string name;		//property (slash, fire, etc), sort of a subtype
 	public string type;		//type: damage, protection, stat
@@ -95,7 +98,7 @@ public class BaseItem  {
 	public void Equip(GameObject owner){
 		var OwnSc = owner.GetComponent<BaseCharacter> ();
 		foreach (var m in mods) {
-			if (m.type == "strength") {
+			if (m.type == "strength") { 		//redo!!!
 				int currentMod = OwnSc.GetBaseAttribute((int)Attributes.Str).modifier;
 			}
 		}

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,7 +18,7 @@ public enum ActionType {
  * dexterity, etc. Such time must be elapsed to perform this (or any queued)
  * action again
 */
-
+[Serializable]
 public class CharacterAction {
 	string name;
 	public ActionType type;
@@ -27,11 +28,20 @@ public class CharacterAction {
 	//origin are the item or skill being used/casted by the caster
 	public BaseItem OriginItem;
 	public GameObject OriginCharacter;
+	public BaseAbility OriginAbility;
 	//targets are the destination of the skill or item being used
 	public GameObject TargetCharacter;
-	void Execute() {
+	public Vector3 TargetPosition;
+	public void Execute() {
 		if (type == ActionType.UseItem) {
-		} else if (type == ActionType.CastSpell) {
+			OriginItem.Use(OriginCharacter, TargetCharacter);
+			TargetCharacter.GetComponent<BaseCharacter> ().HitPoints [0]-= 5;
+		} else if (type == ActionType.CastSpell) {	//execute spell or ability on target/spot
+			//get level from spell parent skill
+			if (OriginAbility.ttype == TargetType.Single) {
+				//we only need the target
+			} else {	//it is an area spell
+			}
 		}
 	}
 
@@ -41,6 +51,7 @@ public class CharacterAction {
 /**
  * Entity action queue 
  */
+[Serializable]
 public class ActionQueue {
 	public ActionQueue() {
 		actions = new List<CharacterAction> ();
