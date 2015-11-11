@@ -136,10 +136,11 @@ public class GameInstance : MonoBehaviour {
 			var canvas = GameObject.Find("Canvas");
 			MsgBox.transform.SetParent(canvas.transform, false);
 			if (!options.shadows) {	//disable shadows, if needed
+				Debug.Log("Shadows are off!!!");
 				foreach( var light in FindObjectsOfType<Light>()) {
 					light.shadows = LightShadows.None;
 				}//foreach
-			}//if shadows
+			} //if shadows
 			if (!options.ssao) { //disable ssao component
 				var cam = GameObject.FindGameObjectWithTag("MainCamera");
 				cam.GetComponent<ScreenSpaceAmbientOcclusion>().enabled = false;

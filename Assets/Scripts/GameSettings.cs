@@ -6,10 +6,10 @@ using System.Xml;
 
 public class GameSettings {
 	int DificultLevel;
-	public bool shadows;
-	public bool bloom;
-	public bool ssao;
-	public bool fxaa;
+	public bool shadows = true;
+	public bool bloom = false;
+	public bool ssao = false;
+	public bool fxaa = true;
 
 	/**
 	 * Load from user saved preferences
@@ -38,7 +38,7 @@ public class GameSettings {
 			cfg.Close();
 			ssao = false;
 			fxaa = true;
-			shadows = false;
+			shadows = true;
 			bloom = false;
 			DificultLevel = 1;
 		} else {

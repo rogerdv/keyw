@@ -67,7 +67,7 @@ public class GameTime {
 			sun = GameObject.Find("Sun");
 			moon = GameObject.Find("Moon");
 			Debug.Log("Sun angle");
-			sunAngle = 0.25f*(hour*60+minute)-90;
+			sunAngle = 0.25f*(hour*60+minute)-180;
 			moonAngle = sunAngle - 180;
 			Debug.Log(sunAngle);
 			sun.transform.rotation = Quaternion.Euler(sunAngle,0,0);
