@@ -126,10 +126,6 @@ Material:
         second: .078125
       data:
         first:
-          name: _Occlusion
-        second: 7.19999981
-      data:
-        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -166,6 +162,10 @@ Material:
         second: 0
       data:
         first:
+          name: _Occlusion
+        second: 2
+      data:
+        first:
           name: _EmissionScaleUI
         second: 0
       data:
@@ -183,11 +183,11 @@ Material:
       data:
         first:
           name: _BaseLight
-        second: .418000013
+        second: .49000001
       data:
         first:
           name: _AO
-        second: 2.76999998
+        second: 2.29999995
     m_Colors:
       data:
         first:
