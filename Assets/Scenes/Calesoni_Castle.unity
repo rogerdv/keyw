@@ -12920,7 +12920,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155936, guid: c31d5afc74bd6c84fa8c59300de9e081, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c31d5afc74bd6c84fa8c59300de9e081, type: 2}
@@ -16649,18 +16649,18 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 667791394}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: .352941185, g: .352941155, b: .470588237, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: .300000012
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
-    m_Strength: 1
+    m_Strength: .896000028
     m_Bias: .0500000007
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
@@ -47690,7 +47690,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 155936, guid: c31d5afc74bd6c84fa8c59300de9e081, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c31d5afc74bd6c84fa8c59300de9e081, type: 2}
