@@ -3,9 +3,16 @@
 	<skills>
 	 <skill id="swords" level="5" />
 	 <skill id="combat" level="3" />
+	 <skill id="dodge" level="3" />
+	 <skill id="evasion" level="3" />
 	</skills>
+	<abilities>
+	 <ability id="foul-hit" />
+	 <ability id="double-swing" />
+	</abilities>
 	<inventory>
 	 <item id="great-sword" amount="1" />	 
 	 <item id="round-shield" amount="1" />
+	 <item id="small-hp-potion" amount="3" />
 	</inventory>
 </entity>
