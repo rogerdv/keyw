@@ -48,6 +48,7 @@ public class BaseCharacter : MonoBehaviour {
 	public int state;		//Animation state: combat, idle, etc
 	public List<BaseItem> inventory;
 	public List<BaseSkill> skills;
+	public List<BaseAbility> abilities;
 	public List<Quest> quests;
 	public ActionQueue actions;
 	Transform AttachPoint;
@@ -69,6 +70,7 @@ public class BaseCharacter : MonoBehaviour {
 		inventory = new List<BaseItem>();
 		quests = new List<Quest> ();
 		skills = new List<BaseSkill> ();
+		abilities = new List<BaseAbility> ();
 
 		equip = new BaseItem[9];
 		actions = new ActionQueue ();

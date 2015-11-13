@@ -73,6 +73,14 @@ public class NPC : BaseCharacter {
 			skills.Add(s);
 		}
 
+		XmlNodeList myabilities = doc.SelectNodes ("entity/skills/abilities");	
+		foreach (XmlNode node in myabilities) {
+			//Debug.Log("skill "+node.Attributes.GetNamedItem("id").Value);
+			BaseAbility a = new BaseAbility();
+			a.Name = node.Attributes.GetNamedItem("id").Value;
+			abilities.Add(a);
+		}
+
 		XmlNodeList myitems = doc.SelectNodes ("entity/inventory/item");	
 		foreach (XmlNode node in myitems) {
 			//Debug.Log("item "+node.Attributes.GetNamedItem("id").Value);
