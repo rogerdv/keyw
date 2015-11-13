@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 
 [Serializable]
-public class BaseSkill {
+public class BaseSkill: ScriptableObject {
 	public string Name;
 	public int baseValue;
 	int modifier;

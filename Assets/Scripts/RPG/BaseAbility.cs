@@ -8,9 +8,12 @@ public enum TargetType {
 }
 
 [Serializable]
-public class BaseAbility {
+public class BaseAbility: ScriptableObject {
 	public TargetType ttype;		//area effect, single target
-	public string ParentSkill; 
+	public string ParentSkill;
+	public GameObject particle;		//particle system prefab
+	public int baseValue;
+	int modifier;
 
 	/**
 	 * Applies the ability to a target

@@ -33,7 +33,7 @@ public class Property {
 }
 
 [Serializable]
-public class BaseItem  {
+public class BaseItem: ScriptableObject  {
 	public string Name;
 	public string Desc;
 	public string type;		//item type
