@@ -253,10 +253,8 @@ public class GameInstance : MonoBehaviour {
 							selected = hit.collider.gameObject;
 							var npcsc = selected.GetComponent<NPC> ();
 							//display NPC information
-							///@TODO: Migrate OnGUI based stuff to new UI system
-							//MsgList.SetText ("Clicked on " + npcsc.VisibleName);
 							MsgBox.GetComponent<MsgList>().SetText("Clicked on " + npcsc.Name);
-							//displayPortrait = true;
+
 							portrait = Instantiate(portraitPrefab);
 							var canvas = GameObject.Find("Canvas");
 							portrait.transform.SetParent(canvas.transform, false);
@@ -272,6 +270,12 @@ public class GameInstance : MonoBehaviour {
 									t.localScale = new Vector3(percent, 1.0f,1.0f);
 								} else if (t.name == "level") {
 									t.GetComponent<Text>().text = npcsc.level.ToString();
+									if (npcsc.level>pcScript.level+2) {//set color red
+										t.GetComponent<Text>().color = Color.red;
+									} else if (npcsc.level>pcScript.level-2) {
+										t.GetComponent<Text>().color = Color.white;
+									} else
+										t.GetComponent<Text>().color = Color.blue;
 								}
 							}
 							if (Vector3.Distance (selected.transform.position, player.transform.position) < 3.0f) { //close enough to talk?
