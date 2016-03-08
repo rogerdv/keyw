@@ -19,7 +19,7 @@ public class GameTime {
 			RenderSettings.ambientLight = new Color(0.5f, 0.55f, 0.6f); 
 		}
 		moonAngle = sunAngle - 180;
-		Debug.Log(sunAngle);
+		//Debug.Log(sunAngle);
 		sun.transform.rotation = Quaternion.Euler(sunAngle,0,0);
 		var moon = GameObject.Find("Moon");
 		moon.transform.rotation = Quaternion.Euler(moonAngle,0,0);
@@ -66,10 +66,10 @@ public class GameTime {
 			//adjust sun
 			sun = GameObject.Find("Sun");
 			moon = GameObject.Find("Moon");
-			Debug.Log("Sun angle");
+			//Debug.Log("Sun angle");
 			sunAngle = 0.25f*(hour*60+minute)-180;
 			moonAngle = sunAngle - 180;
-			Debug.Log(sunAngle);
+			//Debug.Log(sunAngle);
 			sun.transform.rotation = Quaternion.Euler(sunAngle,0,0);
 			moon.transform.rotation = Quaternion.Euler(moonAngle,0,0);
 		}

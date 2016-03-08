@@ -158,6 +158,9 @@ public class BaseCharacter : MonoBehaviour {
 				anim.SetInteger ("CharacterState", (int)CharacterState.Idle);			
 				state = (int)CharacterState.Idle;
 			}
+			if (state == (int)CharacterState.Combat1h) {
+				anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);	
+			}
 			ExecuteActions();
 			//Check countdown timers for bonus or buffs
 

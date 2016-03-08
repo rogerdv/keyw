@@ -5,29 +5,32 @@ using System.Collections;
 
 public class InventoryWindow : MonoBehaviour {
 	public GameObject invGridPrefab;
+	public GameObject panelPrefab;		//info panel prefab
 	GameObject player;
 	GameObject ghost;		//clone of the widget being dragged
+	GameObject[] buttons; 
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player");
 		var inv = gameObject;
 			
-			//create the list
-			var scrollArea = GameObject.Find("ScrollArea");		
+		//create the list
+		var scrollArea = GameObject.Find("ScrollArea");		
 			
-			var InvList = player.GetComponent<BaseCharacter> ().inventory;
-			int row = 0;
-			foreach (var item in InvList) {
-				Debug.Log("Item "+item.Name);
-				var go = Instantiate(invGridPrefab);
-				go.name =  "Button_"+item.Name;
+		var InvList = player.GetComponent<BaseCharacter> ().inventory;
+		buttons = new GameObject[InvList.Count];
+		int row = 0;
+		foreach (var item in InvList) {
+			Debug.Log("Item "+item.Name);
+			buttons[row] = Instantiate(invGridPrefab);
+			buttons[row].name =  "Button_"+item.Name;
 				
-				var rt = go.GetComponent<RectTransform>();
-				rt.SetParent(scrollArea.transform);
-				rt.anchoredPosition = new Vector2(-200,155-row*31);
-				//Debug.Log("Button not null");
-				foreach (Transform t in go.GetComponentsInChildren<Transform>()){
+			var rt = buttons[row].GetComponent<RectTransform>();
+			rt.SetParent(scrollArea.transform);
+			rt.anchoredPosition = new Vector2(-200,155-row*31);
+			//Debug.Log("Button not null");
+			foreach (Transform t in buttons[row].GetComponentsInChildren<Transform>()){
 					if (t.name ==  "icon") {							
 						var icon = t.GetComponent<Image>();
 						icon.sprite = Resources.Load<Sprite>(item.portrait);
@@ -36,15 +39,12 @@ public class InventoryWindow : MonoBehaviour {
 						text.text = item.Name;
 					}
 				}
-				row++;
-				//setup events
-				/*var b = go.GetComponent<Button>();
-					b.onClick.AddListener(() => MouseClick(go));*/
-				SetupEvents(go);
-				
+			//setup events
+			/*var b = buttons[row].GetComponent<Button>();
+			b.onClick.AddListener(() => MouseClick(buttons[row]));*/
+			SetupEvents(buttons[row]);	
+			row++;						
 			}
-			
-
 	}
 	
 	// Update is called once per frame
@@ -97,6 +97,25 @@ public class InventoryWindow : MonoBehaviour {
 		
 		//Add the EventTrigger entry to the event trigger component
 		eventTrigger.triggers.Add(begindrag);
+
+		//enter event
+		EventTrigger.Entry enter = new EventTrigger.Entry();
+		
+		//This event will respond to a drop event
+		enter.eventID = EventTriggerType.PointerEnter;
+		
+		//Create a new trigger to hold our callback methods
+		enter.callback = new EventTrigger.TriggerEvent();
+		
+		//Create a new UnityAction, it contains our DropEventMethod delegate to respond to events
+		UnityEngine.Events.UnityAction<BaseEventData> enterCallback =
+			new UnityEngine.Events.UnityAction<BaseEventData>(MouseEnter);
+		
+		//Add our callback to the listeners
+		enter.callback.AddListener(enterCallback);
+		
+		//Add the EventTrigger entry to the event trigger component
+		eventTrigger.triggers.Add(enter);
 	}
 
 	void MouseClick(GameObject obj){

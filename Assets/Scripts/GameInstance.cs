@@ -314,6 +314,7 @@ public class GameInstance : MonoBehaviour {
 			} else if (Input.GetKeyDown(KeyCode.Alpha1)) { //action slot 1
 				//temporary hack: attack
 				if (pcScript.target!=null) {
+					pcScript.state = (int)CharacterState.Combat1h;
 					var npcsc = pcScript.target.GetComponent<NPC>();
 					var ai = pcScript.target.GetComponent<NPC>();
 					npcsc.AIstate = (int)AIStates.Combat;
