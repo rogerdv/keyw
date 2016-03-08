@@ -81,6 +81,7 @@ It is quite complex, because it is like the trunk of the tree.
 
 <answer id="leave">
   <option link="end">(Leave)</option>
+  <action type="AssignQuest" value="get-potions"/>
 </answer>
 
 <answer id="ok">
