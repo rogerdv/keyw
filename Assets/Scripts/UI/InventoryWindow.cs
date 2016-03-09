@@ -28,7 +28,7 @@ public class InventoryWindow : MonoBehaviour {
 				
 			var rt = buttons[row].GetComponent<RectTransform>();
 			rt.SetParent(scrollArea.transform);
-			rt.anchoredPosition = new Vector2(-200,155-row*31);
+			rt.anchoredPosition = new Vector2(-150,200-row*31);
 			//Debug.Log("Button not null");
 			foreach (Transform t in buttons[row].GetComponentsInChildren<Transform>()){
 					if (t.name ==  "icon") {							
