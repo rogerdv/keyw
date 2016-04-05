@@ -77,7 +77,7 @@ public class AIWarrior : BaseAI {
 					//swing
 					Debug.Log("We are close. Attacking");
 					owner.agent.ResetPath();
-					CharacterAction a = new CharacterAction();
+					ActionAttack a = new ActionAttack();
 					a.type = ActionType.UseItem;
 					a.loop = true;
 					a.time = 1.0f;
