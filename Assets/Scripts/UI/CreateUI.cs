@@ -105,7 +105,8 @@ public class CreateUI : MonoBehaviour {
 		GameInstance.prefab = prefab;
 		GameInstance.stats = baseStats;
 		Destroy (player);
-		Application.LoadLevel("Calesoni_Castle");
+		Application.LoadLevel("char-creation-step2");
+		//LevelManager.Load("Calesoni_Castle");
 	}
 
 	public void NextTorso() {
@@ -241,5 +242,31 @@ public class CreateUI : MonoBehaviour {
 			charLab.GetComponent<Text>().text = baseStats[(int)Attributes.Char].ToString();
 			generalLabel.GetComponent<Text>().text = "Attribute points available: "+statPoints.ToString();
 		}
+	}
+
+	// Help display
+	public void StrHelp() {
+		var t = GameObject.Find ("Attr-help");
+		t.GetComponent<Text>().text = "Physical power. Strength determines total damage inflicted with melee weapons. Some items like heavy weapons and armor might require high strength.";
+	}
+
+	public void DextHelp() {
+		var t = GameObject.Find ("Attr-help");
+		t.GetComponent<Text>().text = "Character's agility. Used for walk speed and attack/defense/dodge rolls.";
+	}
+
+	public void IntHelp() {
+		var t = GameObject.Find ("Attr-help");
+		t.GetComponent<Text>().text = "This attribute influences speech, trading, amount of experience acquired, Energy points and spell casting.";
+	}
+
+	public void ConHelp() {
+		var t = GameObject.Find ("Attr-help");
+		t.GetComponent<Text>().text = "Affects hit and Energy points, life and Energy regeneration rate and resistance to all  damage types.";
+	}
+
+	public void CharHelp() {
+		var t = GameObject.Find ("Attr-help");
+		t.GetComponent<Text>().text = "Charisma influences trade and speech (but less than intelligence). It is also used in animal training.";
 	}
 }
