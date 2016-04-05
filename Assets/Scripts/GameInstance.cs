@@ -44,7 +44,7 @@ public class DictionaryExtensions
 /**
  * Manages all game info, instancing character, NPCs, etc
  * */
-public class GameInstance : MonoBehaviour {
+public class GameInstance : Singleton<GameInstance> {
 
 	public static bool pause;
 	public Texture2D crNormal;	//< Normal cursor
@@ -56,8 +56,8 @@ public class GameInstance : MonoBehaviour {
 	GameObject SceneInf;
 	public static string[] BodyParts;
 	public static string[] meshes;	//mesh files for body parts
-	public static string prefab;	//prefab to use to build player
-	public static int[] stats;				//the base stats to create the character
+	public static string prefab = "male-player-pref";	//prefab to use to build player
+	public static int[] stats = {11,11,11,11,11};				//the base stats to create the character
 	GameTime clock;		//game clock
 	//Dialog dlgWin;
 	//bool displayPortrait=false;	//true if entity selected, to display the portrait
@@ -133,6 +133,7 @@ public class GameInstance : MonoBehaviour {
 			}
 
 			MsgBox = Instantiate(listPrefab);
+			MsgBox.name = "MessageBox";
 			var canvas = GameObject.Find("Canvas");
 			MsgBox.transform.SetParent(canvas.transform, false);
 			if (!options.shadows) {	//disable shadows, if needed
@@ -388,6 +389,7 @@ public class GameInstance : MonoBehaviour {
 	}
 
 	public static void InstancePlayer() {
+		Debug.Log("prefab!!!! "+prefab);
 		GameObject playerPrefab = Resources.Load(prefab) as GameObject;
 		player = Instantiate (playerPrefab) as GameObject;
 		pcScript = player.GetComponent<BaseCharacter> ();
@@ -400,7 +402,10 @@ public class GameInstance : MonoBehaviour {
 		player.transform.localPosition = playerPos.transform.position;
 		//player.transform.rotation = playerPos.transform.rotation;
 		BuildCharacter (player, meshes);
-
+		BaseSkill s = new BaseSkill();
+		s.Name = "dodge";
+		s.baseValue = 18;
+		player.GetComponent<BaseCharacter>().skills.Add(s);
 	}
 
 	public static void BuildCharacter(GameObject parentGO, string[] pieces) { 
