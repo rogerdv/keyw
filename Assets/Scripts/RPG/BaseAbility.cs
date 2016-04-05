@@ -8,7 +8,7 @@ public enum TargetType {
 }
 
 [Serializable]
-public class BaseAbility: ScriptableObject {
+public class BaseAbility {
 	public string Name;
 	public TargetType ttype;		//area effect, single target
 	public string ParentSkill;
@@ -21,12 +21,12 @@ public class BaseAbility: ScriptableObject {
 	 * @param owner The caster entity
 	 * @param target the receiving entity
 	 * */
-	public void Apply(GameObject owner, GameObject target) {
+	public virtual void Apply(GameObject owner, GameObject target) {
 		//get skill level from owner
 		var ps = owner.GetComponent<BaseCharacter>().GetSkill(ParentSkill);
 	}
 
-	public void Apply(GameObject owner, Vector3 position) {
+	public virtual void Apply(GameObject owner, Vector3 position) {
 		//get skill level from owner
 		var ps = owner.GetComponent<BaseCharacter>().GetSkill(ParentSkill);
 		var colliders = Physics.OverlapSphere (position, 30.0f);

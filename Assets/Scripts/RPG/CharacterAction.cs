@@ -32,8 +32,8 @@ public class CharacterAction {
 	//targets are the destination of the skill or item being used
 	public GameObject TargetCharacter;
 	public Vector3 TargetPosition;
-	public void Execute() {
-		if (type == ActionType.UseItem) {
+	public virtual void Execute() {
+		/*if (type == ActionType.UseItem) {
 			OriginItem.Use(OriginCharacter, TargetCharacter);
 			TargetCharacter.GetComponent<BaseCharacter> ().HitPoints [0]-= 5;
 		} else if (type == ActionType.CastSpell) {	//execute spell or ability on target/spot
@@ -42,10 +42,8 @@ public class CharacterAction {
 				//we only need the target
 			} else {	//it is an area spell
 			}
-		}
-	}
-
-		
+		}*/
+	}		
 }
 
 /**

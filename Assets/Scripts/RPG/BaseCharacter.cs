@@ -204,12 +204,12 @@ public class BaseCharacter : MonoBehaviour {
 		return attrib [attr];
 	}
 
-	public BaseSkill GetSkill(string skill) {
+	public int GetSkill(string skill) {
 		foreach (var sk in skills) {
 			if (sk.Name == skill)
-				return sk;
+				return sk.baseValue;
 		}
-		return null;
+		return 0;
 	}
 	
 	/**

@@ -22,8 +22,11 @@ public class ItemFactory  {
 		XmlNodeList root = doc.SelectNodes ("items/item");
 		foreach (XmlNode node in root) {
 			BaseItem temp;
-			//if (node.Attributes.GetNamedItem("type").Value=="weapon")
+			if (node.Attributes.GetNamedItem("type").Value=="weapon")
 				temp = new ItemWeapon();
+			else 
+				temp = new BaseItem();
+
 			temp.Name = node.Attributes.GetNamedItem("name").Value;
 			temp.Desc = node.Attributes.GetNamedItem("description").Value;
 			temp.type = node.Attributes.GetNamedItem("type").Value;

@@ -33,7 +33,7 @@ public class Property {
 }
 
 [Serializable]
-public class BaseItem: ScriptableObject  {
+public class BaseItem {
 	public string Name;
 	public string Desc;
 	public string type;		//item type
@@ -49,7 +49,7 @@ public class BaseItem: ScriptableObject  {
 	public string ParentSkill;		//skill this item depends on
 	public float UseTime;
 	public float cooldown;
-	List<Modifier> mods;		//bonus and penalizations of this item
+	public List<Modifier> mods;		//bonus and penalizations of this item
 	public List<Property> props;
 
 	public BaseItem() {
@@ -57,45 +57,18 @@ public class BaseItem: ScriptableObject  {
 		props = new List<Property> ();
 	}
 
-	public void Use (GameObject owner, GameObject target) {
-		//TODO: get weapon damages, etc
-		//get item parent skill level
-		var ps = owner.GetComponent<BaseCharacter>().GetSkill(ParentSkill);
-		Debug.Log("Parent skill  is "+ps.Name);
-		Debug.Log(ps.baseValue);
-		if (type=="weapon") {
-			///weapon does damage: get all damage properties
-			foreach (Property p in props) {
-				if (p.type=="damage")
-					Debug.Log("Dmg "+p.name);				
-			}			
-		} else if (type=="potion") {
-			foreach (Property p in props) {
-				if (p.type == "restore") {
-					if (p.name == "hp") {
-						target.GetComponent<BaseCharacter>().HitPoints[0]+= p.value;
-						//check if max health was exceeded 
-						if (target.GetComponent<BaseCharacter>().HitPoints[0]>target.GetComponent<BaseCharacter>().HitPoints[1])
-							target.GetComponent<BaseCharacter>().HitPoints[0]=target.GetComponent<BaseCharacter>().HitPoints[1];
-					} else if (p.name == "energy") {
-						target.GetComponent<BaseCharacter>().EnergyPoints[0]+= p.value;
-						//check if max health was exceeded 
-						if (target.GetComponent<BaseCharacter>().EnergyPoints[0]>target.GetComponent<BaseCharacter>().EnergyPoints[1])
-							target.GetComponent<BaseCharacter>().EnergyPoints[0]=target.GetComponent<BaseCharacter>().EnergyPoints[1];
-					}
-				}
-			}
-		}
+	public virtual void Use (GameObject owner, GameObject target) {
+
 	}//Use
 
 	/**
 	 * For items with Area of Effect
 	 * */
-	public void Use (GameObject owner, Vector3 position) {
+	public virtual void Use (GameObject owner, Vector3 position) {
 		var ps = owner.GetComponent<BaseCharacter>().GetSkill(ParentSkill);
 	}
 
-	public void Equip(GameObject owner){
+	public virtual void Equip(GameObject owner){
 		var OwnSc = owner.GetComponent<BaseCharacter> ();
 		foreach (var m in mods) {
 			if (m.type == "strength") { 		//redo!!!
