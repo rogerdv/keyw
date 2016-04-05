@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: 5da2e36436ad7b54fa3bc1c34d2efa1b
-timeCreated: 1430165910
+timeCreated: 1459872439
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - crNormal: {fileID: 2800000, guid: d735d1ea4f800864aa9b30378aa9074e, type: 3}
+  - dlgPrefab: {fileID: 145406, guid: 380ab56eb76c1d8429fabda0d4f3585a, type: 2}
+  - invPrefab: {fileID: 170236, guid: b5089f076f3f1ae4494d7a808d606849, type: 2}
+  - optPrefab: {fileID: 158794, guid: 5e071a79340498f4e9b7e38bd4fb2dcf, type: 2}
+  - listPrefab: {fileID: 133228, guid: ca54d5f3787cbce4da82356676b57dac, type: 2}
+  - portraitPrefab: {fileID: 108416, guid: 1cf60334aec5a7b47b6250b9ca862157, type: 2}
+  - areaProjector: {fileID: 176256, guid: 584e56f51c62a964794a4b9860ad6152, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
