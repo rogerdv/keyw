@@ -14,7 +14,8 @@ public class UIManager : MonoBehaviour {
 	}
 
 	public void LoadGame() {
-		Application.LoadLevel("Calesoni_Castle");
+		//Application.LoadLevel("Calesoni_Castle");
+		LevelManager.Load("Calesoni_Castle");
 	}
 
 	public void QuitGame()
