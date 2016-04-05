@@ -8,7 +8,7 @@ public class ItemAsset
 	[MenuItem("Assets/Create/Item")]
 	public static void CreateAsset ()
 	{
-		CustomAssetUtility.CreateAsset<BaseItem>();
+		//CustomAssetUtility.CreateAsset<BaseItem>();
 	}
 }
 #endif

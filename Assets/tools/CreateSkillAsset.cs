@@ -8,7 +8,7 @@ public class SkillAsset
 	[MenuItem("Assets/Create/Base Skill")]
 	public static void CreateAsset ()
 	{
-		CustomAssetUtility.CreateAsset<BaseSkill>();
+		//CustomAssetUtility.CreateAsset<BaseSkill>();
 	}
 }
 #endif
