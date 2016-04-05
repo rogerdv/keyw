@@ -299,7 +299,654 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 1
+    animationImportErrors: 
+    animationImportWarnings: "\nInbetween bone default rotation found in this file
+      is different from the one found in the source avatar:\n\t'chest' : rotation
+      error = 7.680315 deg\n\nClip 'varsoi_male|idle_melee_spear' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has translation animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'forearm.L'
+      has translation animation that will be discarded.\n\t'forearm.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'neck' has scale animation that
+      will be discarded.\n\t'shoulder.R' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'thigh.R' has translation animation
+      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has translation animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|run_melee_spear' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'chest-1' has
+      scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'neck' has scale animation that will be discarded.\n\t'shoulder.R'
+      has scale animation that will be discarded.\n\t'thigh.R' has translation animation
+      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_attack_melee_1h.L' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has translation animation that will be discarded.\n\t'foot.L'
+      has scale animation that will be discarded.\n\t'toe.L' has scale animation that
+      will be discarded.\n\t'chest' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'chest-1' has scale animation that will
+      be discarded.\n\t'shoulder.L' has scale animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'forearm.L' has scale animation that will
+      be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'thumb.01.L' has scale animation
+      that will be discarded.\n\t'neck' has scale animation that will be discarded.\n\t'shoulder.R'
+      has scale animation that will be discarded.\n\t'upper_arm.R' has translation
+      animation that will be discarded.\n\t'hand.R' has scale animation that will
+      be discarded.\n\t'thigh.R' has translation animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has translation animation
+      that will be discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_attack_melee_1h.R' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has translation animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'shoulder.L'
+      has scale animation that will be discarded.\n\t'upper_arm.L' has translation
+      animation that will be discarded.\n\t'upper_arm.L' has scale animation that
+      will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_pinky.02.L' has scale animation
+      that will be discarded.\n\t'f_ring.01.L' has scale animation that will be discarded.\n\t'f_index.01.L'
+      has scale animation that will be discarded.\n\t'f_middle.01.L' has scale animation
+      that will be discarded.\n\t'neck' has scale animation that will be discarded.\n\t'shoulder.R'
+      has scale animation that will be discarded.\n\t'upper_arm.R' has translation
+      animation that will be discarded.\n\t'upper_arm.R' has scale animation that
+      will be discarded.\n\t'forearm.R' has translation animation that will be discarded.\n\t'forearm.R'
+      has scale animation that will be discarded.\n\t'hand.R' has scale animation
+      that will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thigh.R' has translation animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has translation animation
+      that will be discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_attack_melee_greatsword' has import
+      animation warnings that might lower retargeting quality:\nNote: Activate translation
+      DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has translation animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'forearm.L' has scale animation that will
+      be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'thumb.01.L' has scale animation
+      that will be discarded.\n\t'upper_arm.R' has translation animation that will
+      be discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'forearm.R'
+      has translation animation that will be discarded.\n\t'forearm.R' has scale animation
+      that will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'f_pinky.01.R'
+      has scale animation that will be discarded.\n\t'f_ring.01.R' has scale animation
+      that will be discarded.\n\t'f_index.01.R' has scale animation that will be discarded.\n\t'f_middle.01.R'
+      has scale animation that will be discarded.\n\t'thumb.01.R' has scale animation
+      that will be discarded.\n\t'thigh.R' has translation animation that will be
+      discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has translation animation that will be discarded.\n\t'shin.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'toe.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|VM_attack_melee_maceaxespear'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation
+      animation that will be discarded.\n\t'thigh.L' has scale animation that will
+      be discarded.\n\t'shin.L' has scale animation that will be discarded.\n\t'foot.L'
+      has translation animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'hand.L' has scale animation that will
+      be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'upper_arm.R' has translation animation that will be discarded.\n\t'upper_arm.R'
+      has scale animation that will be discarded.\n\t'forearm.R' has translation animation
+      that will be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'f_pinky.01.R' has scale animation
+      that will be discarded.\n\t'f_ring.01.R' has scale animation that will be discarded.\n\t'f_index.01.R'
+      has scale animation that will be discarded.\n\t'f_middle.01.R' has scale animation
+      that will be discarded.\n\t'thigh.R' has translation animation that will be
+      discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has translation animation that will be discarded.\n\t'shin.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'toe.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|VM_attack_range_bow'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation
+      animation that will be discarded.\n\t'thigh.L' has scale animation that will
+      be discarded.\n\t'shin.L' has translation animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'chest' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'chest-1' has scale animation
+      that will be discarded.\n\t'shoulder.L' has scale animation that will be discarded.\n\t'upper_arm.L'
+      has scale animation that will be discarded.\n\t'hand.L' has scale animation
+      that will be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'neck' has scale animation that will be discarded.\n\t'shoulder.R'
+      has scale animation that will be discarded.\n\t'thigh.R' has translation animation
+      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has translation animation that will be discarded.\n\t'shin.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'toe.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|VM_attack_range_crossbow'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation
+      animation that will be discarded.\n\t'thigh.L' has scale animation that will
+      be discarded.\n\t'shin.L' has translation animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'chest' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'chest-1' has scale animation
+      that will be discarded.\n\t'shoulder.L' has scale animation that will be discarded.\n\t'forearm.L'
+      has translation animation that will be discarded.\n\t'forearm.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'neck'
+      has scale animation that will be discarded.\n\t'shoulder.R' has scale animation
+      that will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has translation animation that will be discarded.\n\t'thigh.R' has scale animation
+      that will be discarded.\n\t'shin.R' has translation animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_attack_range_pistol.L' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'hand.L' has scale animation that will
+      be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'f_pinky.01.R' has scale animation
+      that will be discarded.\n\t'f_ring.01.R' has scale animation that will be discarded.\n\t'f_index.01.R'
+      has scale animation that will be discarded.\n\t'f_middle.01.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_attack_range_pistol.R' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'foot.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'chest-1'
+      has scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'upper_arm.L' has translation animation that will
+      be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'hand.L'
+      has scale animation that will be discarded.\n\t'f_pinky.01.L' has scale animation
+      that will be discarded.\n\t'f_ring.01.L' has scale animation that will be discarded.\n\t'f_index.01.L'
+      has scale animation that will be discarded.\n\t'f_middle.01.L' has scale animation
+      that will be discarded.\n\t'thumb.01.L' has scale animation that will be discarded.\n\t'neck'
+      has scale animation that will be discarded.\n\t'shoulder.R' has scale animation
+      that will be discarded.\n\t'upper_arm.R' has translation animation that will
+      be discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'forearm.R'
+      has scale animation that will be discarded.\n\t'hand.R' has scale animation
+      that will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thumb.01.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'toe.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|VM_idle' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'spine' has scale
+      animation that will be discarded.\n\t'chest' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'chest' has scale animation
+      that will be discarded.\n\t'chest-1' has scale animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'hand.L' has scale animation that will
+      be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'thumb.01.L' has scale animation that will be discarded.\n\t'head'
+      has scale animation that will be discarded.\n\t'upper_arm.R' has translation
+      animation that will be discarded.\n\t'upper_arm.R' has scale animation that
+      will be discarded.\n\t'forearm.R' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'f_pinky.01.R' has scale animation
+      that will be discarded.\n\t'f_ring.01.R' has scale animation that will be discarded.\n\t'f_index.01.R'
+      has scale animation that will be discarded.\n\t'f_middle.01.R' has scale animation
+      that will be discarded.\n\t'thumb.01.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_idle_melee_1h' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has scale animation that will be discarded.\n\t'hand.L' has scale animation
+      that will be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'neck' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'thigh.R' has translation animation
+      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has translation animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_idle_melee_2h_greatsword' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'thigh.L' has translation animation that will
+      be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'chest' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'forearm.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'neck' has scale animation that
+      will be discarded.\n\t'shoulder.R' has scale animation that will be discarded.\n\t'upper_arm.R'
+      has translation animation that will be discarded.\n\t'upper_arm.R' has scale
+      animation that will be discarded.\n\t'hand.R' has scale animation that will
+      be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thigh.R' has translation animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has translation animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_idle_melee_2h_maceaxespear' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'thigh.L' has translation animation that will
+      be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'chest' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'forearm.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'neck' has scale animation that
+      will be discarded.\n\t'shoulder.R' has scale animation that will be discarded.\n\t'upper_arm.R'
+      has translation animation that will be discarded.\n\t'upper_arm.R' has scale
+      animation that will be discarded.\n\t'hand.R' has scale animation that will
+      be discarded.\n\t'thigh.R' has translation animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has translation animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_idle_melee_staff' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'forearm.L'
+      has translation animation that will be discarded.\n\t'forearm.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'neck'
+      has scale animation that will be discarded.\n\t'shoulder.R' has scale animation
+      that will be discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has translation animation that will be discarded.\n\t'thigh.R' has scale animation
+      that will be discarded.\n\t'shin.R' has translation animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_idle_range_bow' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'chest' is inbetween humanoid transforms and has
+      rotation animation that will be discarded.\n\t'forearm.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'neck' has scale animation that
+      will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thigh.R' has translation animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has translation animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'toe.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|VM_idle_range_crossbow'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation
+      animation that will be discarded.\n\t'thigh.L' has scale animation that will
+      be discarded.\n\t'shin.L' has scale animation that will be discarded.\n\t'foot.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has scale animation that will be discarded.\n\t'forearm.L' has translation animation
+      that will be discarded.\n\t'forearm.L' has scale animation that will be discarded.\n\t'hand.L'
+      has scale animation that will be discarded.\n\t'f_pinky.01.L' has scale animation
+      that will be discarded.\n\t'f_ring.01.L' has scale animation that will be discarded.\n\t'f_index.01.L'
+      has scale animation that will be discarded.\n\t'f_middle.01.L' has scale animation
+      that will be discarded.\n\t'neck' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'f_pinky.01.R' has translation
+      animation that will be discarded.\n\t'thigh.R' has translation animation that
+      will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has translation animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_idle_range_pistol' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'chest' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'upper_arm.L' has translation animation
+      that will be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'upper_arm.R'
+      has translation animation that will be discarded.\n\t'upper_arm.R' has scale
+      animation that will be discarded.\n\t'hand.R' has scale animation that will
+      be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\nClip 'varsoi_male|VM_run' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'chest-1' has
+      scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'upper_arm.L' has translation animation that will
+      be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'forearm.L'
+      has scale animation that will be discarded.\n\t'hand.L' has scale animation
+      that will be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'thumb.01.L' has scale animation that will be discarded.\n\t'neck'
+      has scale animation that will be discarded.\n\t'shoulder.R' has scale animation
+      that will be discarded.\n\t'upper_arm.R' has translation animation that will
+      be discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'forearm.R'
+      has scale animation that will be discarded.\n\t'hand.R' has scale animation
+      that will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thumb.01.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has translation animation that will be discarded.\n\t'thigh.R' has scale animation
+      that will be discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_run_melee_1h' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'chest-1'
+      has scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_ring.02.L' has scale animation that will be discarded.\n\t'f_index.01.L'
+      has scale animation that will be discarded.\n\t'f_middle.01.L' has scale animation
+      that will be discarded.\n\t'neck' has scale animation that will be discarded.\n\t'shoulder.R'
+      has scale animation that will be discarded.\n\t'thigh.R' has translation animation
+      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_run_melee_2h_greatsword' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'thigh.L' has translation animation that will
+      be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'chest-1'
+      has scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'neck' has scale animation that will be discarded.\n\t'shoulder.R'
+      has scale animation that will be discarded.\n\t'hand.R' has scale animation
+      that will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thigh.R' has translation animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'toe.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|VM_run_melee_2h_maceaxespear'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation
+      animation that will be discarded.\n\t'thigh.L' has scale animation that will
+      be discarded.\n\t'shin.L' has scale animation that will be discarded.\n\t'foot.L'
+      has scale animation that will be discarded.\n\t'toe.L' has scale animation that
+      will be discarded.\n\t'chest' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'chest-1' has scale animation that will
+      be discarded.\n\t'shoulder.L' has scale animation that will be discarded.\n\t'neck'
+      has scale animation that will be discarded.\n\t'shoulder.R' has scale animation
+      that will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has translation animation that will be discarded.\n\t'thigh.R' has scale animation
+      that will be discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_run_melee_staff' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'chest-1'
+      has scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'neck'
+      has scale animation that will be discarded.\n\t'shoulder.R' has scale animation
+      that will be discarded.\n\t'thigh.R' has translation animation that will be
+      discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_run_range_bow' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'chest-1' has
+      scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'neck' has scale animation that
+      will be discarded.\n\t'shoulder.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has translation animation that will be discarded.\n\t'thigh.R' has scale animation
+      that will be discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_run_range_crossbow' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'chest-1'
+      has scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'hand.L'
+      has scale animation that will be discarded.\n\t'neck' has scale animation that
+      will be discarded.\n\t'shoulder.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has translation animation that will be discarded.\n\t'thigh.R' has scale animation
+      that will be discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_run_range_pistol' has import animation
+      warnings that might lower retargeting quality:\nNote: Activate translation DOF
+      on avatar to improve retargeting quality.\n\t'thigh.L' has translation animation
+      that will be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'chest-1'
+      has scale animation that will be discarded.\n\t'shoulder.L' has scale animation
+      that will be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'neck' has scale animation that
+      will be discarded.\n\t'shoulder.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has translation animation that will be discarded.\n\t'thigh.R' has scale animation
+      that will be discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\t'toe.R' has scale animation that
+      will be discarded.\n\nClip 'varsoi_male|VM_walk' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'thigh.L' has scale animation that will be
+      discarded.\n\t'shin.L' has scale animation that will be discarded.\n\t'spine'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'chest' has
+      scale animation that will be discarded.\n\t'chest-1' has scale animation that
+      will be discarded.\n\t'upper_arm.L' has translation animation that will be discarded.\n\t'upper_arm.L'
+      has scale animation that will be discarded.\n\t'forearm.L' has scale animation
+      that will be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'thumb.01.L' has scale animation
+      that will be discarded.\n\t'upper_arm.R' has translation animation that will
+      be discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'forearm.R'
+      has scale animation that will be discarded.\n\t'hand.R' has scale animation
+      that will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thumb.01.R' has scale animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_walk_melee_1h' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'hand.L' has scale animation that will
+      be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.02.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'thumb.01.L' has scale animation
+      that will be discarded.\n\t'upper_arm.R' has translation animation that will
+      be discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'f_pinky.01.R' has scale animation
+      that will be discarded.\n\t'f_ring.01.R' has scale animation that will be discarded.\n\t'f_index.01.R'
+      has scale animation that will be discarded.\n\t'f_middle.01.R' has scale animation
+      that will be discarded.\n\t'thigh.R' has translation animation that will be
+      discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_walk_melee_2h_greatsword' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'thigh.L' has translation animation that will
+      be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'forearm.L' has scale animation that will
+      be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'upper_arm.R' has translation
+      animation that will be discarded.\n\t'upper_arm.R' has scale animation that
+      will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'f_pinky.01.R'
+      has scale animation that will be discarded.\n\t'f_ring.01.R' has scale animation
+      that will be discarded.\n\t'f_index.01.R' has scale animation that will be discarded.\n\t'f_middle.01.R'
+      has scale animation that will be discarded.\n\t'thigh.R' has translation animation
+      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_walk_melee_2h_maceaxespear' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'thigh.L' has translation animation that will
+      be discarded.\n\t'thigh.L' has scale animation that will be discarded.\n\t'shin.L'
+      has scale animation that will be discarded.\n\t'foot.L' has scale animation
+      that will be discarded.\n\t'toe.L' has scale animation that will be discarded.\n\t'chest'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'forearm.L' has scale animation that will
+      be discarded.\n\t'hand.L' has scale animation that will be discarded.\n\t'f_pinky.01.L'
+      has scale animation that will be discarded.\n\t'f_ring.01.L' has scale animation
+      that will be discarded.\n\t'f_index.01.L' has scale animation that will be discarded.\n\t'f_middle.01.L'
+      has scale animation that will be discarded.\n\t'upper_arm.R' has translation
+      animation that will be discarded.\n\t'upper_arm.R' has scale animation that
+      will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'f_pinky.01.R'
+      has scale animation that will be discarded.\n\t'f_ring.01.R' has scale animation
+      that will be discarded.\n\t'f_index.01.R' has scale animation that will be discarded.\n\t'f_middle.01.R'
+      has scale animation that will be discarded.\n\t'thigh.R' has translation animation
+      that will be discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_walk_melee_staff' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'hand.L' has scale animation that will
+      be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'upper_arm.R' has translation animation that will be discarded.\n\t'upper_arm.R'
+      has scale animation that will be discarded.\n\t'forearm.R' has scale animation
+      that will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'f_pinky.01.R'
+      has scale animation that will be discarded.\n\t'f_ring.01.R' has scale animation
+      that will be discarded.\n\t'f_index.01.R' has scale animation that will be discarded.\n\t'f_middle.01.R'
+      has scale animation that will be discarded.\n\t'thumb.01.R' has scale animation
+      that will be discarded.\n\t'thigh.R' has translation animation that will be
+      discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_walk_range_bow' has import animation warnings that might lower
+      retargeting quality:\nNote: Activate translation DOF on avatar to improve retargeting
+      quality.\n\t'thigh.L' has translation animation that will be discarded.\n\t'thigh.L'
+      has scale animation that will be discarded.\n\t'shin.L' has scale animation
+      that will be discarded.\n\t'foot.L' has scale animation that will be discarded.\n\t'toe.L'
+      has scale animation that will be discarded.\n\t'chest' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'upper_arm.L'
+      has translation animation that will be discarded.\n\t'upper_arm.L' has scale
+      animation that will be discarded.\n\t'hand.L' has scale animation that will
+      be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'upper_arm.R' has translation animation that will be discarded.\n\t'upper_arm.R'
+      has scale animation that will be discarded.\n\t'hand.R' has scale animation
+      that will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'thigh.R' has translation animation that will be discarded.\n\t'thigh.R'
+      has scale animation that will be discarded.\n\t'shin.R' has scale animation
+      that will be discarded.\n\t'foot.R' has scale animation that will be discarded.\n\t'toe.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|VM_walk_range_crossbow'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation
+      animation that will be discarded.\n\t'thigh.L' has scale animation that will
+      be discarded.\n\t'shin.L' has scale animation that will be discarded.\n\t'foot.L'
+      has scale animation that will be discarded.\n\t'toe.L' has scale animation that
+      will be discarded.\n\t'chest' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'upper_arm.L' has translation animation
+      that will be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'hand.L'
+      has scale animation that will be discarded.\n\t'f_pinky.01.L' has scale animation
+      that will be discarded.\n\t'f_ring.01.L' has scale animation that will be discarded.\n\t'f_index.01.L'
+      has scale animation that will be discarded.\n\t'f_middle.01.L' has scale animation
+      that will be discarded.\n\t'upper_arm.R' has translation animation that will
+      be discarded.\n\t'upper_arm.R' has scale animation that will be discarded.\n\t'hand.R'
+      has scale animation that will be discarded.\n\t'f_pinky.01.R' has scale animation
+      that will be discarded.\n\t'f_ring.01.R' has scale animation that will be discarded.\n\t'f_index.01.R'
+      has scale animation that will be discarded.\n\t'f_middle.01.R' has scale animation
+      that will be discarded.\n\t'thigh.R' has translation animation that will be
+      discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n\nClip
+      'varsoi_male|VM_walk_range_pistol' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'chest' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'hand.L' has scale animation that will
+      be discarded.\n\t'upper_arm.R' has translation animation that will be discarded.\n\t'upper_arm.R'
+      has scale animation that will be discarded.\n\t'hand.R' has scale animation
+      that will be discarded.\n\t'f_pinky.01.R' has scale animation that will be discarded.\n\t'f_ring.01.R'
+      has scale animation that will be discarded.\n\t'f_index.01.R' has scale animation
+      that will be discarded.\n\t'f_middle.01.R' has scale animation that will be
+      discarded.\n\t'shin.R' has scale animation that will be discarded.\n\t'foot.R'
+      has scale animation that will be discarded.\n\nClip 'varsoi_male|walk_melee_spear'
+      has import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'thigh.L' has translation
+      animation that will be discarded.\n\t'thigh.L' has scale animation that will
+      be discarded.\n\t'shin.L' has scale animation that will be discarded.\n\t'foot.L'
+      has scale animation that will be discarded.\n\t'toe.L' has scale animation that
+      will be discarded.\n\t'chest' is inbetween humanoid transforms and has rotation
+      animation that will be discarded.\n\t'upper_arm.L' has translation animation
+      that will be discarded.\n\t'upper_arm.L' has scale animation that will be discarded.\n\t'forearm.L'
+      has scale animation that will be discarded.\n\t'hand.L' has scale animation
+      that will be discarded.\n\t'f_pinky.01.L' has scale animation that will be discarded.\n\t'f_ring.01.L'
+      has scale animation that will be discarded.\n\t'f_index.01.L' has scale animation
+      that will be discarded.\n\t'f_middle.01.L' has scale animation that will be
+      discarded.\n\t'upper_arm.R' has translation animation that will be discarded.\n\t'upper_arm.R'
+      has scale animation that will be discarded.\n\t'forearm.R' has scale animation
+      that will be discarded.\n\t'hand.R' has scale animation that will be discarded.\n\t'f_pinky.01.R'
+      has scale animation that will be discarded.\n\t'f_ring.01.R' has scale animation
+      that will be discarded.\n\t'f_index.01.R' has scale animation that will be discarded.\n\t'f_middle.01.R'
+      has scale animation that will be discarded.\n\t'thumb.01.R' has scale animation
+      that will be discarded.\n\t'thigh.R' has translation animation that will be
+      discarded.\n\t'thigh.R' has scale animation that will be discarded.\n\t'shin.R'
+      has scale animation that will be discarded.\n\t'foot.R' has scale animation
+      that will be discarded.\n\t'toe.R' has scale animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -9582,8 +10229,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
