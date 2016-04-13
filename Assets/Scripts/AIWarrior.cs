@@ -25,7 +25,7 @@ public class AIWarrior : BaseAI {
 		//Debug.Log("Warrior idle");
 		while(owner.AIstate == (int)AIStates.Idle)
 		{	
-			var prob = Random.Range(0,100);
+			/*var prob = Random.Range(0,100);
 			if (prob>95) {
 				var prefab = Resources.Load("FloatingText") as GameObject;
 				var t = Instantiate (prefab) as GameObject;
@@ -34,9 +34,10 @@ public class AIWarrior : BaseAI {
 				r.transform.localPosition = prefab.transform.localPosition;
 				r.transform.localScale = prefab.transform.localScale;
 				r.transform.localRotation = prefab.transform.localRotation;
+				//t.transform.LookAt(Camera.main.transform.position);
 				t.GetComponent<Text>().text = "I have a cast for a real game next week";
 				Destroy (t, 3);
-			}
+			}*/
 			yield return null;
 		}
 	}
