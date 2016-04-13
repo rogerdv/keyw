@@ -170,6 +170,7 @@ MonoBehaviour:
   state: 0
   inventory: []
   skills: []
+  abilities: []
   quests: []
   equip: []
   agent: {fileID: 0}
@@ -199,7 +200,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 50
 --- !u!114 &11456296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +372,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_DynamicPixelsPerUnit
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
