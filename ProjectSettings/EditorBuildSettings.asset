@@ -21,3 +21,7 @@ EditorBuildSettings:
     path: Assets/scenes/ambush-forest.unity
   - enabled: 0
     path: Assets/scenes/cale-gates.unity
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+  - enabled: 1
+    path: Assets/Scenes/char-creation-step2.unity
