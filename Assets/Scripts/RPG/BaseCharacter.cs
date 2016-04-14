@@ -16,8 +16,6 @@ enum CharacterState {
 	RunMelee1h = 7
 }
 
-
-
 enum BodySections {
 	bsHair = 0,
 	bsHead = 1,
@@ -27,7 +25,6 @@ enum BodySections {
 	bsLegs = 5,
 	bsFeet = 6
 }
-
 
 /**
  * This is the base class for all game entities, containing common
@@ -46,7 +43,7 @@ public class BaseCharacter : MonoBehaviour {
 	public string profession;
 
 	public int state;		//Animation state: combat, idle, etc
-	public List<BaseItem> inventory;
+	public Dictionary<int, BaseItem> inventory;
 	public List<BaseSkill> skills;
 	public List<BaseAbility> abilities;
 	public List<Quest> quests;
@@ -67,7 +64,7 @@ public class BaseCharacter : MonoBehaviour {
 		HitPoints = new float[2];
 		HitPoints [0] = 30;
 		EnergyPoints = new float[2];
-		inventory = new List<BaseItem>();
+		inventory = new Dictionary<int, BaseItem>();
 		quests = new List<Quest> ();
 		skills = new List<BaseSkill> ();
 		abilities = new List<BaseAbility> ();
