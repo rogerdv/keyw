@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<skills>
+	 <skill id="swords" name="Swords" description="The art of swordmanship includes short and long swords" pref_class="warrior,shenzu" exclusive_class=""/>	 
+	 <skill id="melee" name="Melee" description="Short range combat tricks, weapon independent" pref_class="warrior" exclusive_class=""/>
+	 <skill id="dodge" name="Dodge" description="The ability to stay away of melee attacks" pref_class="" exclusive_class=""/>
+	 <skill id="evasion" name="Evasion" description="The art of avoiding projectiles" pref_class="" exclusive_class=""/>
+	 <skill id="hammers" name="Hammers" description="" pref_class="warrior" exclusive_class=""/>
+	 <skill id="shields" name="Shields" description="" pref_class="warrior" exclusive_class=""/>
+	 <skill id="training " name="Physical training " description="The intense training increases warrior energy, allowing to fight for longer time" pref_class="" exclusive_class="warrior"/>
+	 <skill id="combat" name="Combat" description="Passive, increases melee weapon damage" pref_class="" exclusive_class="warrior"/>
+	 <skill id="daggers" name="Daggers" description="" pref_class="thief" exclusive_class=""/>
+	 <skill id="Wands" name="Wands" description="" pref_class="mage,cleric,shenzu" exclusive_class=""/>
+	 <skill id="fire" name="Elemental mastery: Fire" description="" pref_class="" exclusive_class="mage"/>	 
+	 <skill id="lightning" name="Elemental mastery: Lightning" description="" pref_class="" exclusive_class="mage"/>	
+	 <skill id="water" name="Elemental mastery: Water" description="" pref_class="" exclusive_class="mage"/>
+	 <skill id="conjuration" name="Conjuration" description="" pref_class="mage" exclusive_class=""/>
+	 <skill id="subterfuge" name="Subterfuge" description="The art of getting things by non legal methods" pref_class="thief,tracker" exclusive_class=""/>
+	 <skill id="assassin" name="Assassin arts" description="" pref_class="" exclusive_class="shenzu"/>
+	 <skill id="alchemy" name="Alchemy" description="The art of mixing potions" pref_class="" exclusive_class=""/>
+	 <skill id="divine" name="Divine powers" description="" pref_class="" exclusive_class=""/>
+	 <skill id="firearms" name="Firearms" description="Handling modern weaponry" pref_class="tracker" exclusive_class=""/>
+	 <skill id="lore" name="Lore" description="" pref_class="" exclusive_class=""/>
+	 <skill id="lore2" name="Lore 2" description="" pref_class="" exclusive_class=""/>
+	 <skill id="lore3" name="Lore 3" description="" pref_class="" exclusive_class=""/>
+	 <skill id="lore4" name="Lore 4" description="" pref_class="" exclusive_class=""/>
+</skills>
