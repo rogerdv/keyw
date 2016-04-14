@@ -52,9 +52,9 @@
   prefab="Weapons/iron-sword"
   bone="weapon_target_side.R_end"
   slot="weapon"
-  offset="0 0 0"
-  scale="1 1 1"
-  rotation="0 0 0"
+  offset="7.18 -3.47 -9.48"
+  scale="5 5 5"
+  rotation="39.778 180 180"
   range = "2.0" > 
    <property name="slash" value="8" type="damage" />
    <property name="speed" value="1.0" type="speed" />
@@ -68,7 +68,7 @@
   quality="4"
   type="armor"
   skill=""
-  description="A rough armor. It is rusted in a few spots... like a 90% of the surface."
+  description="A rough armor. It is a bit rusted... but just a 90% of the surface."
   portrait="Icons/iron-armor"
   prefab="Armors/iron-armor-pref"
   bone="hand.R"
