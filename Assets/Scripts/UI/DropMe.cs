@@ -18,6 +18,16 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	
 	public void OnDrop(PointerEventData data)
 	{
+		string item;
+		item = data.selectedObject.name;
+		var player = GameObject.FindGameObjectWithTag ("Player");
+		var psc = player.GetComponent<BaseCharacter>(); 
+		var inv = psc.inventory;
+		int idx=0; 
+		int.TryParse(item.Substring (7),out idx);
+		var slot = gameObject.GetComponent<EquipSlotType> ();
+		if (slot.ItemType != inv [idx].type) 
+			return;
 		containerImage.color = normalColor;
 		
 		if (receivingImage == null)
@@ -26,6 +36,17 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		Sprite dropSprite = GetDropSprite (data);
 		if (dropSprite != null)
 			receivingImage.overrideSprite = dropSprite;
+		//equip item
+		GameObject wprefab = Resources.Load (inv[idx].prefab) as GameObject;
+		GameObject weapon = Instantiate (wprefab) as GameObject;
+		foreach (Transform t in player.GetComponentsInChildren<Transform>()) {
+			if (t.name == inv [idx].attach) { //"weapon_target_side.R_end"
+				weapon.transform.SetParent (t);
+				weapon.transform.localPosition = inv[idx].offset;//new Vector3(9.2f, -9.9f,-12.4f);
+				weapon.transform.localRotation = Quaternion.Euler (inv[idx].rot);
+				weapon.transform.localScale = inv[idx].scale;//new Vector3(1,7f,7);
+			}
+		}
 	}
 
 	public void OnPointerEnter(PointerEventData data)

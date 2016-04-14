@@ -74,7 +74,10 @@ public class DialogUI : MonoBehaviour {
 					player.SetQuestStatus(a.id, a.value);
 
 				} else	if (a.ActionType == "GiveItem") {
-					player.inventory.Add(GameInstance.ItFactory.CreateItem(a.id));
+					int idx = UnityEngine.Random.Range(100,90000);
+					if (player.inventory.ContainsKey(idx))
+						idx = UnityEngine.Random.Range(90000,200000);
+					player.inventory[idx]=GameInstance.ItFactory.CreateItem(a.id);
 				} else if (a.ActionType == "RemoveItem") {
 
 				}
