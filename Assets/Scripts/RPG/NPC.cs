@@ -85,7 +85,10 @@ public class NPC : BaseCharacter {
 		foreach (XmlNode node in myitems) {
 			//Debug.Log("item "+node.Attributes.GetNamedItem("id").Value);
 			var item = GameInstance.ItFactory.CreateItem(node.Attributes.GetNamedItem("id").Value);
-			inventory.Add(item);
+			int idx = UnityEngine.Random.Range(100,90000);
+			if (inventory.ContainsKey(idx))
+				idx = UnityEngine.Random.Range(90000,200000);
+			inventory[idx] = item;
 		}
 	}
 
