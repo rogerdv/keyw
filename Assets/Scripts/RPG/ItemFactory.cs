@@ -24,6 +24,8 @@ public class ItemFactory  {
 			BaseItem temp;
 			if (node.Attributes.GetNamedItem("type").Value=="weapon")
 				temp = new ItemWeapon();
+			else if (node.Attributes.GetNamedItem("type").Value=="potion")
+				temp = new ItemPotion();
 			else 
 				temp = new BaseItem();
 
@@ -32,6 +34,7 @@ public class ItemFactory  {
 			temp.type = node.Attributes.GetNamedItem("type").Value;
 			temp.range = float.Parse(node.Attributes.GetNamedItem("range").Value);
 			temp.prefab = node.Attributes.GetNamedItem("prefab").Value;
+			temp.portrait = node.Attributes.GetNamedItem("portrait").Value;
 			temp.weight = int.Parse(node.Attributes.GetNamedItem("weight").Value);
 			temp.ParentSkill = node.Attributes.GetNamedItem("skill").Value;
 			var slot = node.Attributes.GetNamedItem("slot").Value;
@@ -42,6 +45,17 @@ public class ItemFactory  {
 			temp.attach = node.Attributes.GetNamedItem("bone").Value;
 			string[] vals; 
 			vals = node.Attributes.GetNamedItem("offset").Value.Split(' ');
+			float.TryParse(vals[0], out temp.offset.x);
+			float.TryParse(vals[1], out temp.offset.y );
+			float.TryParse(vals[2], out temp.offset.z);
+			vals = node.Attributes.GetNamedItem("rotation").Value.Split(' ');
+			float.TryParse(vals[0], out temp.rot.x);
+			float.TryParse(vals[1], out temp.rot.y);
+			float.TryParse(vals[2], out temp.rot.z);
+			vals = node.Attributes.GetNamedItem("scale").Value.Split(' ');
+			float.TryParse(vals[0], out temp.scale.x);
+			float.TryParse(vals[1], out temp.scale.y);
+			float.TryParse(vals[2], out temp.scale.z);
 			XmlNodeList properties = node.ChildNodes;
 			foreach (XmlNode pn in properties) {
 				var p = new Property();
