@@ -44,6 +44,9 @@ public class BaseItem {
 	public string portrait;	//icon image
 	public string attach;	//where to attach this item
 	public bool swap;		//does it swap a body section, like chest, hands, etc?
+	public Vector3 offset;
+	public Vector3 scale;
+	public Vector3 rot;
 	public ItemSlot slot;		//slot
 	public Attributes ParentAttr;		//attribute this item depends on
 	public string ParentSkill;		//skill this item depends on
