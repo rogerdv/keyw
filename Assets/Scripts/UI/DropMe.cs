@@ -18,13 +18,13 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	
 	public void OnDrop(PointerEventData data)
 	{
-		string item;
-		item = data.selectedObject.name;
+		string item = data.pointerDrag.name;
+		Debug.Log ("Trying to equip " + item);
 		var player = GameObject.FindGameObjectWithTag ("Player");
 		var psc = player.GetComponent<BaseCharacter>(); 
 		var inv = psc.inventory;
 		int idx=0; 
-		int.TryParse(item.Substring (7),out idx);
+		int.TryParse(item.Substring (item.IndexOf("_")+1),out idx);
 		var slot = gameObject.GetComponent<EquipSlotType> ();
 		if (slot.ItemType != inv [idx].type) 
 			return;
@@ -47,6 +47,8 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 				weapon.transform.localScale = inv[idx].scale;//new Vector3(1,7f,7);
 			}
 		}
+		psc.equip [(int)inv [idx].slot] = inv [idx];
+		inv [idx].Equip (player);
 	}
 
 	public void OnPointerEnter(PointerEventData data)

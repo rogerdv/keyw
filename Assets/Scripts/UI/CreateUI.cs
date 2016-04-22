@@ -104,6 +104,7 @@ public class CreateUI : MonoBehaviour {
 		GameInstance.meshes = parts;
 		GameInstance.prefab = prefab;
 		GameInstance.stats = baseStats;
+		//GameInstance.player.GetComponent<BaseCharacter> ().name = GameObject.Find ("InputField").GetComponent<InputField> ().text;
 		Destroy (player);
 		Application.LoadLevel("char-creation-step2");
 		//LevelManager.Load("Calesoni_Castle");
