@@ -10,11 +10,11 @@
   description="Ancient style great sword. It is old fashioned."
   portrait="Icons/great-sword"
   prefab="Weapons/ancient-grtsword"
-  bone="weapon_target_side.R_end"
+  bone="weapon_target_hand.R_end"
   slot="weapon"
-  offset="9.2 -9.9 -12.4"
-  scale="7 7 7"
-  rotation="35.56 358.5 358.9"
+  offset="1 -16.9 1.3"
+  scale="6 6 6"
+  rotation="359.46 359.148 359.1"
   range = "2.0" >   
    <property name="slash" value="12" type="damage" />
    <property name="speed" value="1.0" type="speed" />
@@ -24,18 +24,37 @@
  <item
   id="round-shield"
   name="rounded shield"
-  weight="6"
+  weight="5"
   quality="4"
   type="shield"
   skill=""
   description="A basic, rounded shield, with iron decorations to give you a sense of protection."
   portrait="Icons/iron-shield"
   prefab="Shields/iron-shield-prefab"
-  bone="hand.R"
+  bone="hand.L"
   slot="shield"
-  offset="0 0 0"
-  scale="0 0 0"
-  rotation="0 0 0"
+  offset="-0.4 -4.7 -0.7"
+  scale="700 700 700"
+  rotation="346.77 218.459 359.37"
+  range = "0.0" >
+   <property name="block" value="3" type="block" />    
+ </item>
+ 
+ <item
+  id="steel-round-shield"
+  name="Steel rounded shield"
+  weight="6"
+  quality="5"
+  type="shield"
+  skill=""
+  description="A well made steel shield"
+  portrait="Icons/steel-shield"
+  prefab="Shields/steel-shield-prefab"
+  bone="hand.L"
+  slot="shield"
+  offset="0 9.5 0"
+  scale="250 250 250"
+  rotation="20.9 8.6 -9.4"
   range = "0.0" >
    <property name="block" value="3" type="block" />    
  </item>
@@ -47,18 +66,81 @@
   quality="4"
   type="weapon"
   skill="swords"
-  description="A basic, rounded shield, with iron decorations to give you a sense of protection."
+  description="A normal sword."
   portrait="Icons/iron-sword"
   prefab="Weapons/iron-sword"
-  bone="weapon_target_side.R_end"
+  bone="weapon_target_hand.R_end"
   slot="weapon"
-  offset="7.18 -3.47 -9.48"
-  scale="5 5 5"
-  rotation="39.778 180 180"
+  offset="0.5 -13.1 2.2"
+  scale="6 6 6"
+  rotation="60.59 4.42 2.429"
   range = "2.0" > 
    <property name="slash" value="8" type="damage" />
    <property name="speed" value="1.0" type="speed" />
    <property name="range" value="1" type="range" /> 
+ </item>
+ 
+ <item
+  id="iron-axe"
+  name="Iron axe"
+  weight="4"
+  quality="4"
+  type="weapon"
+  skill="swords"
+  description="You feel you can chop a tree or a head with this."
+  portrait="Icons/iron-axe"
+  prefab="Weapons/iron-axe-prefab"
+  bone="weapon_target_hand.R_end"
+  slot="weapon"
+  offset="0 0 0.9"
+  scale="700 700 700"
+  rotation="0 0 0"
+  range = "2.0" > 
+   <property name="slash" value="8" type="damage" />
+   <property name="speed" value="1.0" type="speed" />
+   <property name="range" value="1" type="range" /> 
+ </item>
+ 
+ <item
+  id="steel-great-axe"
+  name="Steel great axe"
+  weight="4"
+  quality="4"
+  type="weapon"
+  skill="swords"
+  description="This axe was forged for some really big barbarian."
+  portrait="Icons/steel-greataxe"
+  prefab="Weapons/steel-greataxe-prefab"
+  bone="weapon_target_hand.R_end"
+  slot="weapon"
+  offset="0 0 0"
+  scale="500 500 500"
+  rotation="0 0 0"
+  range = "2.5" > 
+   <property name="slash" value="14" type="damage" />
+   <property name="speed" value="2.0" type="speed" />
+   <property name="range" value="3" type="range" /> 
+ </item>
+ 
+ <item
+  id="steel-spear"
+  name="A very good spear"
+  weight="4"
+  quality="4"
+  type="weapon"
+  skill="swords"
+  description="You cannot figure out any use for this other than pierce people."
+  portrait="Icons/steel-spear"
+  prefab="Weapons/steel-spear-prefab"
+  bone="weapon_target_hand.R_end"
+  slot="weapon"
+  offset="0 0 0"
+  scale="10 10 10"
+  rotation="0 0 0"
+  range = "3" > 
+   <property name="pierce" value="10" type="damage" />
+   <property name="speed" value="1.4" type="speed" />
+   <property name="range" value="3" type="range" /> 
  </item>
  
   <item
@@ -72,6 +154,7 @@
   portrait="Icons/iron-armor"
   prefab="Armors/iron-armor-pref"
   bone="hand.R"
+  swap = "torso"
   slot="chest"
   offset="0 0 0"
   scale="1 1 1"

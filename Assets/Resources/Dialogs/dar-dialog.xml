@@ -34,7 +34,7 @@
  <answer id="thanks">
     <option link="end">Thanks.</option>
     <action type="GiveItem" id="iron-sword" value="1" />
-    <action type="GiveItem" id="iron-armor" value="1" />
+    <action type="GiveItem" id="round-shield" value="1" />
     <action type="SetQuest" id="defend-getgear" value="stage1" />
  </answer>
 </dialog>

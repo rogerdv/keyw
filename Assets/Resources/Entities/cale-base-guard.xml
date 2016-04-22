@@ -3,7 +3,7 @@
 	<skills>
 	</skills>
 	<inventory>
-	 <item id="long-sword" amount="1" />	 
+	 <item id="iron-sword" amount="1" />	 
 	 <item id="iron-shield" amount="1" />
 	</inventory>
 </entity>

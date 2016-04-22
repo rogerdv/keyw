@@ -19,8 +19,5 @@
 	 <skill id="alchemy" name="Alchemy" description="The art of mixing potions" pref_class="" exclusive_class=""/>
 	 <skill id="divine" name="Divine powers" description="" pref_class="" exclusive_class=""/>
 	 <skill id="firearms" name="Firearms" description="Handling modern weaponry" pref_class="tracker" exclusive_class=""/>
-	 <skill id="lore" name="Lore" description="" pref_class="" exclusive_class=""/>
-	 <skill id="lore2" name="Lore 2" description="" pref_class="" exclusive_class=""/>
-	 <skill id="lore3" name="Lore 3" description="" pref_class="" exclusive_class=""/>
-	 <skill id="lore4" name="Lore 4" description="" pref_class="" exclusive_class=""/>
+	 <skill id="lore" name="Lore" description="" pref_class="" exclusive_class=""/>	 
 </skills>
