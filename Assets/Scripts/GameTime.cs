@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameTime {
 	public int day=3, hour=18, minute=37;
-	public float SecsPerMinute = 1.0f;		//Game minute duration, in seconds
+	public float SecsPerMinute = 3.0f;		//Game minute duration, in seconds
 	float counter = 0;
 	bool lightsOn = false;
 	float sunAngle = 0;
@@ -71,6 +71,7 @@ public class GameTime {
 			moonAngle = sunAngle - 180;
 			//Debug.Log(sunAngle);
 			sun.transform.rotation = Quaternion.Euler(sunAngle,0,0);
+			//sun.transform.rotation = Quaternion.Slerp(sun.transform.rotation, Quaternion.Euler(sunAngle,0,0), 5.0f);
 			moon.transform.rotation = Quaternion.Euler(moonAngle,0,0);
 		}
 		//if (hour > 18 || hour <7 && !lightsOn)
