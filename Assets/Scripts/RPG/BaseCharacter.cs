@@ -79,6 +79,7 @@ public class BaseCharacter : MonoBehaviour {
 		anim = GetComponentInChildren<Animator>();
 		anim.SetInteger ("CharacterState", (int)CharacterState.Idle);
 		state = (int)CharacterState.Idle;	
+		Name = "Player";
 	}
 
 	void OnLevelWasLoaded(int level) {
@@ -157,6 +158,19 @@ public class BaseCharacter : MonoBehaviour {
 			}
 			if (state == (int)CharacterState.Combat1h) {
 				anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);	
+				if (actions.isEmpty()) {
+					//set default attack
+					ActionAttack a = new ActionAttack();
+					a.type = ActionType.UseItem;
+					a.OriginItem = equip[(int)ItemSlot.Weapon];
+					a.loop = true;
+					a.time = 1.5f;
+					a.cooldown = 0;
+					a.OriginCharacter = gameObject;
+					a.TargetCharacter = target;
+
+					actions.addAction(a);
+				}
 			}
 			ExecuteActions();
 			//Check countdown timers for bonus or buffs

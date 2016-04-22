@@ -48,6 +48,7 @@ public class BaseItem {
 	public Vector3 scale;
 	public Vector3 rot;
 	public ItemSlot slot;		//slot
+	//public float speed;		//Time to use this item
 	public Attributes ParentAttr;		//attribute this item depends on
 	public string ParentSkill;		//skill this item depends on
 	public float UseTime;

@@ -32,16 +32,20 @@ public class ItemFactory  {
 			temp.Name = node.Attributes.GetNamedItem("name").Value;
 			temp.Desc = node.Attributes.GetNamedItem("description").Value;
 			temp.type = node.Attributes.GetNamedItem("type").Value;
+		
 			temp.range = float.Parse(node.Attributes.GetNamedItem("range").Value);
 			temp.prefab = node.Attributes.GetNamedItem("prefab").Value;
 			temp.portrait = node.Attributes.GetNamedItem("portrait").Value;
 			temp.weight = int.Parse(node.Attributes.GetNamedItem("weight").Value);
+			//temp.speed = int.Parse(node.Attributes.GetNamedItem("speed").Value);
 			temp.ParentSkill = node.Attributes.GetNamedItem("skill").Value;
 			var slot = node.Attributes.GetNamedItem("slot").Value;
 			if(slot=="weapon") 
 				temp.slot = ItemSlot.Weapon;
 			else if (slot=="shield") 
 				temp.slot = ItemSlot.Shield;
+			else if  (slot=="chest") 
+				temp.slot = ItemSlot.Chest;
 			temp.attach = node.Attributes.GetNamedItem("bone").Value;
 			string[] vals; 
 			vals = node.Attributes.GetNamedItem("offset").Value.Split(' ');
