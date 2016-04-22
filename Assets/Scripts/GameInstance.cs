@@ -228,7 +228,7 @@ public class GameInstance : Singleton<GameInstance> {
 					Destroy(marker);
 					areaMode = false;
 				}
-			} else if (Input.GetKeyDown (KeyCode.Mouse0) && clicks) {
+			} else if (Input.GetKeyDown (KeyCode.Mouse0) && clicks) { //left  click
 				if (areaMode) {
 					RaycastHit hit;					
 					Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -255,7 +255,8 @@ public class GameInstance : Singleton<GameInstance> {
 							var npcsc = selected.GetComponent<NPC> ();
 							//display NPC information
 							MsgBox.GetComponent<MsgList>().SetText("Clicked on " + npcsc.Name);
-
+							if (portrait!=null)
+								Destroy(portrait);
 							portrait = Instantiate(portraitPrefab);
 							var canvas = GameObject.Find("Canvas");
 							portrait.transform.SetParent(canvas.transform, false);
