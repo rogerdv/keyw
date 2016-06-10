@@ -67,7 +67,7 @@ public class AIWarrior : BaseAI {
 				}
 			}
 			owner.anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
-			owner.state = (int)CharacterState.Combat1h;
+			owner.AnimState = (int)CharacterState.Combat1h;
 			yield return null;
 		} else {
 			if (Vector3.Distance (owner.gameObject.transform.position, owner.target.transform.position) > owner.equip[(int)ItemSlot.Weapon].range && !owner.agent.hasPath) {
@@ -91,7 +91,7 @@ public class AIWarrior : BaseAI {
 					//owner.anim.SetInteger ("CharacterState", (int)CharacterState.AttackMelee1h);
 					//owner.state = (int)CharacterState.AttackMelee1h;
 					owner.anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);
-					owner.state = (int)CharacterState.Combat1h;
+					owner.AnimState = (int)CharacterState.Combat1h;
 				} 
 				yield return null;
 			}
@@ -103,7 +103,7 @@ public class AIWarrior : BaseAI {
 			owner.AIstate = (int)AIStates.Idle;
 			owner.actions.Clear();
 			owner.anim.SetInteger ("CharacterState", (int)CharacterState.Idle);			
-			owner.state = (int)CharacterState.Idle;
+			owner.AnimState = (int)CharacterState.Idle;
 			yield return null;
 		}
 	}

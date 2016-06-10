@@ -19,7 +19,7 @@ public class SlotBarUI : MonoBehaviour {
 			//temp hack: slot1 == attack
 			var PlayerSc =  GameInstance.player.GetComponent<BaseCharacter>();
 			if (PlayerSc.target!=null) {
-				PlayerSc.state = (int)CharacterState.Combat1h;
+				PlayerSc.AnimState = (int)CharacterState.Combat1h;
 				var npcsc = PlayerSc.target.GetComponent<NPC>();
 				var ai = PlayerSc.target.GetComponent<NPC>();
 				npcsc.AIstate = (int)AIStates.Combat;

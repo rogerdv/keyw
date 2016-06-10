@@ -41,7 +41,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	public void MoveTo(Vector3 coord) {
-		anim.SetInteger ("CharacterState", (int)CharacterState.Walking);
+		anim.SetInteger ("CharacterState", (int)CharacterState.Running);
 		agent.SetDestination (coord);
 	}
 	

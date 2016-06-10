@@ -286,7 +286,8 @@ public class GameInstance : Singleton<GameInstance> {
 								dlgWindow.transform.SetParent(canvas.transform, false);
 							} else 
 								MsgBox.GetComponent<MsgList>().SetText ("You are too far to talk.");
-						} else {
+						} else {	//clicked on the ground
+							Debug.Log("Clicked on the ground");
 							pcScript.MoveTo (new Vector3 (hit.point.x, hit.point.y, hit.point.z));
 						}
 					}
@@ -316,7 +317,7 @@ public class GameInstance : Singleton<GameInstance> {
 			} else if (Input.GetKeyDown(KeyCode.Alpha1)) { //action slot 1
 				//temporary hack: attack
 				if (pcScript.target!=null) {
-					pcScript.state = (int)CharacterState.Combat1h;
+					pcScript.AnimState = (int)CharacterState.Combat1h;
 					var npcsc = pcScript.target.GetComponent<NPC>();
 					var ai = pcScript.target.GetComponent<NPC>();
 					npcsc.AIstate = (int)AIStates.Combat;

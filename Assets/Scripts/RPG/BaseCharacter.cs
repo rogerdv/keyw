@@ -42,7 +42,7 @@ public class BaseCharacter : MonoBehaviour {
 	protected int group;
 	public string profession;
 
-	public int state;		//Animation state: combat, idle, etc
+	public int AnimState;		//Animation state: combat, idle, etc
 	public Dictionary<int, BaseItem> inventory;
 	public List<BaseSkill> skills;
 	public List<BaseAbility> abilities;
@@ -78,12 +78,12 @@ public class BaseCharacter : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponentInChildren<Animator>();
 		anim.SetInteger ("CharacterState", (int)CharacterState.Idle);
-		state = (int)CharacterState.Idle;	
+		AnimState = (int)CharacterState.Idle;	
 		Name = "Player";
 	}
 
 	void OnLevelWasLoaded(int level) {
-		state = (int)CharacterState.Idle;
+		AnimState = (int)CharacterState.Idle;
 		if (anim)
 			anim.SetInteger ("CharacterState", (int)CharacterState.Idle);
 	}
@@ -98,13 +98,16 @@ public class BaseCharacter : MonoBehaviour {
 
 	public void MoveTo(Vector3 coord) {
 		//moving clears the action queue
+		Debug.Log("Moving");
 		actions.Clear ();
-		if (state == (int)CharacterState.Combat1h) {
+
+		if (AnimState == (int)CharacterState.Combat1h) {
 			anim.SetInteger ("CharacterState", (int)CharacterState.RunMelee1h);
-			state = (int)CharacterState.RunMelee1h;
-		} else {
+			AnimState = (int)CharacterState.RunMelee1h;
+		} else if (AnimState==(int)CharacterState.Idle) {
+			Debug.Log("Is idle");
 			anim.SetInteger ("CharacterState", (int)CharacterState.Walking);
-			state = (int)CharacterState.Walking;
+			AnimState = (int)CharacterState.Walking;
 		}
 		agent.SetDestination (coord);
 	}
@@ -152,11 +155,12 @@ public class BaseCharacter : MonoBehaviour {
 		if (!GameInstance.pause) {
 			if (!anim.enabled)
 				anim.enabled = true;
-			if (!agent.hasPath && state==(int)CharacterState.Walking) {
+			if (Vector3.Distance(agent.destination,transform.position)<0.5 && AnimState==(int)CharacterState.Walking) {
+				Debug.Log("Destination reached");
 				anim.SetInteger ("CharacterState", (int)CharacterState.Idle);			
-				state = (int)CharacterState.Idle;
+				AnimState = (int)CharacterState.Idle;
 			}
-			if (state == (int)CharacterState.Combat1h) {
+			if (AnimState == (int)CharacterState.Combat1h) {
 				anim.SetInteger ("CharacterState", (int)CharacterState.Combat1h);	
 				if (actions.isEmpty()) {
 					//set default attack
