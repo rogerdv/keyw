@@ -1882,7 +1882,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 145926}
-  m_LocalRotation: {x: .000521500537, y: .707079709, z: .707110763, w: -.0056896694}
+  m_LocalRotation: {x: .000521500595, y: .707079768, z: .707110822, w: -.00568966987}
   m_LocalPosition: {x: 1.00332875e-06, y: 23.8627529, z: 1.3351135e-07}
   m_LocalScale: {x: .999999702, y: 1.00000012, z: .999999702}
   m_Children:
@@ -3222,14 +3222,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2645c7374fa46e41b67a2f3e5a458e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VisibleName: 
+  Name: 
   faction: 
   attrib: []
-  HitPoints: 
-  EnergyPoints: 
-  inventory: []
+  HitPoints: []
+  EnergyPoints: []
+  level: 0
+  profession: 
+  state: 0
   skills: []
+  abilities: []
+  quests: []
   equip: []
+  agent: {fileID: 0}
+  anim: {fileID: 0}
   target: {fileID: 0}
 --- !u!195 &19522376
 NavMeshAgent:
@@ -3239,7 +3245,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 193262}
   m_Enabled: 1
   m_Radius: .5
-  m_Speed: 1.5
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 500
@@ -3269,6 +3275,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Speed
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
