@@ -6,9 +6,239 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: chest
+    100004: chest-1
+    100006: chest_control
+    100008: chest_control_end
+    100010: elbow_IK_target.L
+    100012: elbow_IK_target.L_end
+    100014: elbow_IK_target.R
+    100016: elbow_IK_target.R_end
+    100018: f_index.01.L
+    100020: f_index.01.R
+    100022: f_index.02.L
+    100024: f_index.02.L_end
+    100026: f_index.02.R
+    100028: f_index.02.R_end
+    100030: f_middle.01.L
+    100032: f_middle.01.R
+    100034: f_middle.02.L
+    100036: f_middle.02.L_end
+    100038: f_middle.02.R
+    100040: f_middle.02.R_end
+    100042: f_pinky.01.L
+    100044: f_pinky.01.R
+    100046: f_pinky.02.L
+    100048: f_pinky.02.L_end
+    100050: f_pinky.02.R
+    100052: f_pinky.02.R_end
+    100054: f_ring.01.L
+    100056: f_ring.01.R
+    100058: f_ring.02.L
+    100060: f_ring.02.L_end
+    100062: f_ring.02.R
+    100064: f_ring.02.R_end
+    100066: finger_control.L
+    100068: finger_control.L_end
+    100070: finger_control.R
+    100072: finger_control.R_end
+    100074: foot.L
+    100076: foot.R
+    100078: foot_control.L
+    100080: foot_control.R
+    100082: foot_IK.L
+    100084: foot_IK.L_end
+    100086: foot_IK.R
+    100088: foot_IK.R_end
+    100090: forearm.L
+    100092: forearm.R
+    100094: hand.L
+    100096: hand.R
+    100098: hand_IK.L
+    100100: hand_IK.L_end
+    100102: hand_IK.R
+    100104: hand_IK.R_end
+    100106: head
+    100108: head_end
+    100110: heel_control.L
+    100112: heel_control.R
+    100114: hips
+    100116: iron_chest
+    100118: knee_target.L
+    100120: knee_target.L_end
+    100122: knee_target.R
+    100124: knee_target.R_end
+    100126: leg_IK.L
+    100128: leg_IK.L_end
+    100130: leg_IK.R
+    100132: leg_IK.R_end
+    100134: neck
+    100136: neck_control
+    100138: neck_control_end
+    100140: root
+    100142: shin.L
+    100144: shin.R
+    100146: shoulder.L
+    100148: shoulder.R
+    100150: shoulder_control.L
+    100152: shoulder_control.L_end
+    100154: shoulder_control.R
+    100156: shoulder_control.R_end
+    100158: spine
+    100160: thigh.L
+    100162: thigh.R
+    100164: thumb.01.L
+    100166: thumb.01.R
+    100168: thumb.02.L
+    100170: thumb.02.R
+    100172: thumb.03.L
+    100174: thumb.03.L_end
+    100176: thumb.03.R
+    100178: thumb.03.R_end
+    100180: toe.L
+    100182: toe.L_end
+    100184: toe.R
+    100186: toe.R_end
+    100188: toe_control.L
+    100190: toe_control.R
+    100192: toe_IK.L
+    100194: toe_IK.L_end
+    100196: toe_IK.R
+    100198: toe_IK.R_end
+    100200: upper_arm.L
+    100202: upper_arm.R
+    100204: varsoi_male
+    100206: weapon_target_back.L
+    100208: weapon_target_back.L_end
+    100210: weapon_target_back.R
+    100212: weapon_target_back.R_end
+    100214: weapon_target_hand.L
+    100216: weapon_target_hand.L_end
+    100218: weapon_target_hand.R
+    100220: weapon_target_hand.R_end
+    100222: weapon_target_side.L
+    100224: weapon_target_side.L_end
+    100226: weapon_target_side.R
+    100228: weapon_target_side.R_end
     400000: //RootNode
+    400002: chest
+    400004: chest-1
+    400006: chest_control
+    400008: chest_control_end
+    400010: elbow_IK_target.L
+    400012: elbow_IK_target.L_end
+    400014: elbow_IK_target.R
+    400016: elbow_IK_target.R_end
+    400018: f_index.01.L
+    400020: f_index.01.R
+    400022: f_index.02.L
+    400024: f_index.02.L_end
+    400026: f_index.02.R
+    400028: f_index.02.R_end
+    400030: f_middle.01.L
+    400032: f_middle.01.R
+    400034: f_middle.02.L
+    400036: f_middle.02.L_end
+    400038: f_middle.02.R
+    400040: f_middle.02.R_end
+    400042: f_pinky.01.L
+    400044: f_pinky.01.R
+    400046: f_pinky.02.L
+    400048: f_pinky.02.L_end
+    400050: f_pinky.02.R
+    400052: f_pinky.02.R_end
+    400054: f_ring.01.L
+    400056: f_ring.01.R
+    400058: f_ring.02.L
+    400060: f_ring.02.L_end
+    400062: f_ring.02.R
+    400064: f_ring.02.R_end
+    400066: finger_control.L
+    400068: finger_control.L_end
+    400070: finger_control.R
+    400072: finger_control.R_end
+    400074: foot.L
+    400076: foot.R
+    400078: foot_control.L
+    400080: foot_control.R
+    400082: foot_IK.L
+    400084: foot_IK.L_end
+    400086: foot_IK.R
+    400088: foot_IK.R_end
+    400090: forearm.L
+    400092: forearm.R
+    400094: hand.L
+    400096: hand.R
+    400098: hand_IK.L
+    400100: hand_IK.L_end
+    400102: hand_IK.R
+    400104: hand_IK.R_end
+    400106: head
+    400108: head_end
+    400110: heel_control.L
+    400112: heel_control.R
+    400114: hips
+    400116: iron_chest
+    400118: knee_target.L
+    400120: knee_target.L_end
+    400122: knee_target.R
+    400124: knee_target.R_end
+    400126: leg_IK.L
+    400128: leg_IK.L_end
+    400130: leg_IK.R
+    400132: leg_IK.R_end
+    400134: neck
+    400136: neck_control
+    400138: neck_control_end
+    400140: root
+    400142: shin.L
+    400144: shin.R
+    400146: shoulder.L
+    400148: shoulder.R
+    400150: shoulder_control.L
+    400152: shoulder_control.L_end
+    400154: shoulder_control.R
+    400156: shoulder_control.R_end
+    400158: spine
+    400160: thigh.L
+    400162: thigh.R
+    400164: thumb.01.L
+    400166: thumb.01.R
+    400168: thumb.02.L
+    400170: thumb.02.R
+    400172: thumb.03.L
+    400174: thumb.03.L_end
+    400176: thumb.03.R
+    400178: thumb.03.R_end
+    400180: toe.L
+    400182: toe.L_end
+    400184: toe.R
+    400186: toe.R_end
+    400188: toe_control.L
+    400190: toe_control.R
+    400192: toe_IK.L
+    400194: toe_IK.L_end
+    400196: toe_IK.R
+    400198: toe_IK.R_end
+    400200: upper_arm.L
+    400202: upper_arm.R
+    400204: varsoi_male
+    400206: weapon_target_back.L
+    400208: weapon_target_back.L_end
+    400210: weapon_target_back.R
+    400212: weapon_target_back.R_end
+    400214: weapon_target_hand.L
+    400216: weapon_target_hand.L_end
+    400218: weapon_target_hand.R
+    400220: weapon_target_hand.R_end
+    400222: weapon_target_side.L
+    400224: weapon_target_side.L_end
+    400226: weapon_target_side.R
+    400228: weapon_target_side.R_end
     2300000: //RootNode
+    2300002: iron_chest
     3300000: //RootNode
+    3300002: iron_chest
     4300000: iron_chest
   materials:
     importMaterials: 1
@@ -19,6 +249,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -62,8 +296,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
