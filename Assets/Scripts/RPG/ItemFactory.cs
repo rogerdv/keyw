@@ -46,6 +46,8 @@ public class ItemFactory  {
 				temp.slot = ItemSlot.Shield;
 			else if  (slot=="chest") 
 				temp.slot = ItemSlot.Chest;
+			else if (slot=="legs")
+				temp.slot = ItemSlot.Legs;
 			temp.attach = node.Attributes.GetNamedItem("bone").Value;
 			string[] vals; 
 			vals = node.Attributes.GetNamedItem("offset").Value.Split(' ');
