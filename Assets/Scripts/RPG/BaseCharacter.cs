@@ -17,13 +17,12 @@ enum CharacterState {
 }
 
 enum BodySections {
-	bsHair = 0,
-	bsHead = 1,
-	bsTorso = 2,
-	bsArms = 3,
-	bsHands = 4,
-	bsLegs = 5,
-	bsFeet = 6
+	bsHead = 0,
+	bsTorso = 1,
+	bsArms = 2,
+	bsHands = 3,
+	bsLegs = 4,
+	bsFeet = 5
 }
 
 /**
@@ -50,7 +49,9 @@ public class BaseCharacter : MonoBehaviour {
 	public ActionQueue actions;
 	Transform AttachPoint;
 	public BaseItem[] equip;		//equipped items
-	
+
+	public GameObject[] BaseParts;		//Default body parts
+
 	public NavMeshAgent agent;
 	public Animator anim;
 	public GameObject target;		/// selected entity
