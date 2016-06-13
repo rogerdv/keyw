@@ -7,39 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityStandardAssets.ImageEffects;
 
-#region TransformCatalog
-public class TransformCatalog : Dictionary<string, Transform>
-{
-	#region Constructors
-	public TransformCatalog(Transform transform)
-	{
-		Catalog(transform);
-	}
-	#endregion
-	
-	#region Catalog
-	private void Catalog(Transform transform)
-	{
-		Add(transform.name, transform);
-		foreach (Transform child in transform)
-			Catalog(child);
-	}
-	#endregion
-}
-#endregion
 
-
-#region DictionaryExtensions
-public class DictionaryExtensions
-{
-	public static TValue Find<TKey, TValue>(Dictionary<TKey, TValue> source, TKey key)
-	{
-		TValue value;
-		source.TryGetValue(key, out value);
-		return value;
-	}
-}
-#endregion
 
 /**
  * Manages all game info, instancing character, NPCs, etc
@@ -185,7 +153,7 @@ public class GameInstance : Singleton<GameInstance> {
 		BinaryFormatter bf = new BinaryFormatter();
 		var UserDir = System.Environment.GetFolderPath (System.Environment.SpecialFolder.MyDocuments);
 		FileStream file = File.Open(UserDir + "/keyw/quicksave.save", FileMode.Create);
-
+		//File.Move("test", "test2");
 		//todo: save level, game time, etc
 		bf.Serialize(file, Application.loadedLevelName);
 		pcScript.SaveToFile (file);
@@ -275,7 +243,7 @@ public class GameInstance : Singleton<GameInstance> {
 									if (npcsc.level>pcScript.level+2) {//set color red
 										t.GetComponent<Text>().color = Color.red;
 									} else if (npcsc.level>pcScript.level-2) {
-										t.GetComponent<Text>().color = Color.white;
+										t.GetComponent<Text>().color = Color.yellow;
 									} else
 										t.GetComponent<Text>().color = Color.blue;
 								}
@@ -426,6 +394,7 @@ public class GameInstance : Singleton<GameInstance> {
 			CopySkinnedMeshRenderer(temp, body[i], boneCatalog);
 			Destroy(temp);
 		}
+		parentGO.GetComponent<BaseCharacter>().BaseParts = new GameObject[5];
 	}
 
 	public static void CopySkinnedMeshRenderer(GameObject source, GameObject target, TransformCatalog bones) {
