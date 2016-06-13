@@ -166,6 +166,28 @@
  </item>
  
  <item
+  id="iron-pants"
+  name="Iron pants"
+  weight="10"
+  quality="4"
+  type="armor"
+  skill=""
+  description="Iron reinforced pants."
+  portrait="Icons/iron-armor"
+  prefab="Armors/iron-pants-pref"
+  bone=""
+  swap = "legs"
+  slot="legs"
+  offset="0 0 0"
+  scale="1 1 1"
+  rotation="0 0 0"
+  range = "1.0" >  
+   <property name="slash" value="5" type="protection" />   
+   <property name="blunt" value="2" type="protection" /> 
+   <property name="fire" value="1" type="protection" /> 
+ </item>
+ 
+ <item
   id="small-hp-potion"
   name="Small health potion"
   weight="1"
