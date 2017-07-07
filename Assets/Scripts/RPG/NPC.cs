@@ -20,7 +20,7 @@ public class NPC : BaseCharacter {
 	// Use this for initialization
 	void Start () {       
 		anim = GetComponentInChildren<Animator>();
-		agent = GetComponent<NavMeshAgent>();
+		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		AIstate = (int)AIStates.Idle;
 
 		//attrib = new BaseAttrib[Enum.GetValues (typeof(Attributes)).Length];

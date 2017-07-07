@@ -5,9 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using UnityStandardAssets.ImageEffects;
-
-
 
 /**
  * Manages all game info, instancing character, NPCs, etc
@@ -112,15 +109,15 @@ public class GameInstance : Singleton<GameInstance> {
 			} //if shadows
 			if (!options.ssao) { //disable ssao component
 				var cam = GameObject.FindGameObjectWithTag("MainCamera");
-				cam.GetComponent<ScreenSpaceAmbientOcclusion>().enabled = false;
+				//cam.GetComponent<ScreenSpaceAmbientOcclusion>().enabled = false;
 			}
 			if (!options.fxaa) { //disable ssao component
 				var cam = GameObject.FindGameObjectWithTag("MainCamera");
-				cam.GetComponent<Antialiasing>().enabled = false;
+				//cam.GetComponent<Antialiasing>().enabled = false;
 			}
 			if (!options.bloom) { //disable ssao component
 				var cam = GameObject.FindGameObjectWithTag("MainCamera");
-				cam.GetComponent<Bloom>().enabled = false;
+				//cam.GetComponent<Bloom>().enabled = false;
 			}
 			ReactivateEntities();
 			clock.Adjust();
@@ -293,7 +290,7 @@ public class GameInstance : Singleton<GameInstance> {
 					var prefab = Resources.Load("FloatingText") as GameObject;
 					var t = Instantiate (prefab) as GameObject;
 					RectTransform r = t.GetComponent<RectTransform> ();
-					t.transform.SetParent (pcScript.target.transform.FindChild ("MyCanvas"));
+					t.transform.SetParent (pcScript.target.transform.Find ("MyCanvas"));
 					r.transform.localPosition = prefab.transform.localPosition;
 					r.transform.localScale = prefab.transform.localScale;
 					r.transform.localRotation = prefab.transform.localRotation;

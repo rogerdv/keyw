@@ -52,7 +52,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	public GameObject[] BaseParts;		//Default body parts
 
-	public NavMeshAgent agent;
+	public UnityEngine.AI.NavMeshAgent agent;
 	public Animator anim;
 	public GameObject target;		/// selected entity
 
@@ -76,7 +76,7 @@ public class BaseCharacter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		agent = GetComponent<NavMeshAgent>();
+		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		anim = GetComponentInChildren<Animator>();
 		anim.SetInteger ("CharacterState", (int)CharacterState.Idle);
 		AnimState = (int)CharacterState.Idle;	

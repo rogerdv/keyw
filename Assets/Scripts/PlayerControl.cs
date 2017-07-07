@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviour {
 	//public Vector3 position;
 	public GameObject t;
 	
-    private NavMeshAgent agent;
+    private UnityEngine.AI.NavMeshAgent agent;
 	private Animator anim;
 
 	//Transform myTransform;
@@ -24,7 +24,7 @@ public class PlayerControl : MonoBehaviour {
 		
 	// Use this for initialization
 	void Start () {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		anim = GetComponentInChildren<Animator>();
 		anim.SetInteger ("CharacterState", (int)CharacterState.Idle);
 		//myTransform = transform;

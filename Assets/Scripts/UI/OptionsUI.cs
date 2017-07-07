@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using UnityStandardAssets.ImageEffects;
 
 public class OptionsUI : MonoBehaviour {
 	public GameObject ssao;
@@ -61,13 +60,13 @@ public class OptionsUI : MonoBehaviour {
 				if (c.isOn) {
 					GameInstance.options.ssao = true;
 					var cam = GameObject.FindGameObjectWithTag("MainCamera");
-					var ssaocomp = cam.GetComponent<ScreenSpaceAmbientOcclusion>();
-					if (ssaocomp !=null) ssaocomp.enabled = true;
+					//var ssaocomp = cam.GetComponent<ScreenSpaceAmbientOcclusion>();
+					//if (ssaocomp !=null) ssaocomp.enabled = true;
 				} else {
 					GameInstance.options.ssao = false;
 					var cam = GameObject.FindGameObjectWithTag("MainCamera");
-					var ssaocomp = cam.GetComponent<ScreenSpaceAmbientOcclusion>();
-					if (ssaocomp !=null) ssaocomp.enabled = false;
+					//var ssaocomp = cam.GetComponent<ScreenSpaceAmbientOcclusion>();
+					//if (ssaocomp !=null) ssaocomp.enabled = false;
 				}
 			}
 		}
@@ -103,13 +102,13 @@ public class OptionsUI : MonoBehaviour {
 				if (c.isOn) {
 					GameInstance.options.fxaa = true;
 					var cam = GameObject.FindGameObjectWithTag("MainCamera");
-					var aacomp = cam.GetComponent<Antialiasing>();
-					if (aacomp !=null) aacomp.enabled = true;
+					//var aacomp = cam.GetComponent<Antialiasing>();
+					//if (aacomp !=null) aacomp.enabled = true;
 				} else {
 					GameInstance.options.fxaa = false;
 					var cam = GameObject.FindGameObjectWithTag("MainCamera");
-					var aacomp = cam.GetComponent<Antialiasing>();
-					if (aacomp !=null) aacomp.enabled = false;
+					//var aacomp = cam.GetComponent<Antialiasing>();
+					//if (aacomp !=null) aacomp.enabled = false;
 				}
 			}
 		}

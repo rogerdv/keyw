@@ -27,7 +27,7 @@ public class SlotBarUI : MonoBehaviour {
 				var prefab = Resources.Load("FloatingText") as GameObject;
 				var t = Instantiate (prefab) as GameObject;
 				RectTransform r = t.GetComponent<RectTransform> ();
-				t.transform.SetParent (PlayerSc.target.transform.FindChild ("MyCanvas"));
+				t.transform.SetParent (PlayerSc.target.transform.Find ("MyCanvas"));
 				r.transform.localPosition = prefab.transform.localPosition;
 				r.transform.localScale = prefab.transform.localScale;
 				r.transform.localRotation = prefab.transform.localRotation;
